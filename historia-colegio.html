@@ -6,13 +6,11 @@
     <title>Historia del Colegio - Museo Escolar</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Nuevas tipografías -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Neuton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- HEADER INTACTO -->
     <header>
         <div class="logo-container">
             <img src="images/Blanco_LOGO_MUSEOESCOLAR_horizontal.png" alt="Logo Museo Escolar I.E. Héctor Abad Gómez" class="header-logo-img">
@@ -41,27 +39,25 @@
     </header>
 
     <main style="margin-top: 80px;">
-        <!-- Hero Section -->
         <section class="page-hero">
             <h5 class="hero-subtitle">HISTORIA DEL COLEGIO</h5>
             <h1 class="page-title">Historia del <em>colegio</em></h1>
             <p>Un recorrido por los momentos y memorias que construyeron la identidad de la Institución Educativa Héctor Abad Gómez.</p>
         </section>
 
-        <!-- Niqui Dice -->
-        <div class="page-niqui-container" style="position: relative; height: 100px; max-width: 1200px; margin: 0 auto;">
-            <div class="niqui-dialogue-container">
+        <div class="page-niqui-container" id="niquiBoxColegio">
+            <div class="niqui-dialogue-container-right">
                 <div class="niqui-avatar-wrapper">
                     <img src="images/placeholder-niqui.png" alt="Niqui" class="niqui-avatar-img">
                 </div>
                 <div class="niqui-tooltip">
+                    <button class="close-btn" id="closeBtnColegio">&times;</button>
                     <h5>NIQUI DICE:</h5>
                     <p>¡Aquí está la historia completa del colegio! Haz clic en cada año para descubrir lo que ocurrió 🏛️.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Línea de tiempo Horizontal -->
         <section class="horizontal-timeline-section container">
             <h5 class="section-subtitle" style="text-transform: uppercase;">Línea de tiempo</h5>
             <h2 class="section-title">Hitos que nos definieron</h2>
@@ -75,13 +71,11 @@
             </div>
 
             <div class="timeline-content-wrapper" style="margin-top: 40px;">
-                <!-- Panel 1962 -->
                 <div class="timeline-panel active" id="panel-1962">
                     <div class="timeline-text">
                         <h2 class="year-large">1962</h2>
                         <h3 style="font-family: var(--font-headings); font-size: 2.5rem; margin-bottom: 15px; color: var(--primary-blue);">Fundación</h3>
                         <p>Se abre el centro educativo en el norte de Medellín con vocación comunitaria y humanista.</p>
-                        <!-- Puntos de slide simulados -->
                         <div style="display:flex; gap:5px; margin-top:20px;">
                             <span style="width:10px; height:10px; border-radius:50%; background:var(--accent-yellow);"></span>
                             <span style="width:10px; height:10px; border-radius:50%; background:#ccc;"></span>
@@ -94,7 +88,6 @@
                     </div>
                 </div>
                 
-                <!-- Panel 1975 (Oculto por defecto) -->
                 <div class="timeline-panel" id="panel-1975">
                     <div class="timeline-text">
                         <h2 class="year-large">1975</h2>
@@ -105,10 +98,42 @@
                         <img src="https://via.placeholder.com/600x400?text=Sede+1975" alt="Sede 1975" class="responsive-img">
                     </div>
                 </div>
+
+                <div class="timeline-panel" id="panel-1989">
+                    <div class="timeline-text">
+                        <h2 class="year-large">1989</h2>
+                        <h3 style="font-family: var(--font-headings); font-size: 2.5rem; margin-bottom: 15px; color: var(--primary-blue);">En honor a Héctor Abad</h3>
+                        <p>La institución recibe el nombre del médico y humanista Héctor Abad Gómez tras su trágica muerte.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="https://via.placeholder.com/600x400?text=Sede+1989" alt="Sede 1989" class="responsive-img">
+                    </div>
+                </div>
+
+                <div class="timeline-panel" id="panel-2001">
+                    <div class="timeline-text">
+                        <h2 class="year-large">2001</h2>
+                        <h3 style="font-family: var(--font-headings); font-size: 2.5rem; margin-bottom: 15px; color: var(--primary-blue);">Nuevo Milenio</h3>
+                        <p>Consolidación de proyectos educativos y modernización de la infraestructura escolar.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="https://via.placeholder.com/600x400?text=Sede+2001" alt="Sede 2001" class="responsive-img">
+                    </div>
+                </div>
+
+                <div class="timeline-panel" id="panel-2024">
+                    <div class="timeline-text">
+                        <h2 class="year-large">2024</h2>
+                        <h3 style="font-family: var(--font-headings); font-size: 2.5rem; margin-bottom: 15px; color: var(--primary-blue);">Museo Interactivo</h3>
+                        <p>Lanzamiento oficial de la plataforma digital para preservar la memoria colectiva de la comunidad.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="https://via.placeholder.com/600x400?text=Sede+2024" alt="Sede 2024" class="responsive-img">
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Archivo Histórico Carrusel -->
         <section class="archive-section bg-blue">
             <div class="container">
                 <h5 class="section-subtitle light-text" style="color: var(--accent-yellow) !important; letter-spacing: 2px;">ARCHIVO HISTÓRICO</h5>
@@ -121,7 +146,6 @@
                 </div>
 
                 <div class="archive-carousel" style="padding: 10px 0;">
-                    <!-- Tarjeta 1 -->
                     <div class="archive-card">
                         <div class="card-img">
                             <span class="card-year tag">1962</span>
@@ -132,7 +156,6 @@
                             <p style="font-size: 14px; opacity: 0.9;">Fundación del centro educativo en el barrio Aranjuez con apenas tres aulas y veinte estudiantes.</p>
                         </div>
                     </div>
-                    <!-- Tarjeta 2 -->
                     <div class="archive-card">
                         <div class="card-img">
                             <span class="card-year tag">1975</span>
@@ -143,7 +166,6 @@
                             <p style="font-size: 14px; opacity: 0.9;">Inauguración del edificio principal que aún hoy alberga la mayor parte de las jornadas escolares.</p>
                         </div>
                     </div>
-                    <!-- Tarjeta 3 -->
                     <div class="archive-card">
                         <div class="card-img">
                             <span class="card-year tag">1989</span>
@@ -154,7 +176,6 @@
                             <p style="font-size: 14px; opacity: 0.9;">La institución recibe el nombre del médico y humanista Héctor Abad Gómez tras su trágica muerte.</p>
                         </div>
                     </div>
-                     <!-- Tarjeta 4 -->
                      <div class="archive-card">
                         <div class="card-img">
                             <span class="card-year tag">1998</span>
@@ -170,7 +191,6 @@
         </section>
     </main>
 
-    <!-- FRANJA DE ALIADOS -->
     <div class="partners-strip">
         <span>Universidad de Medellín</span>
         <span>U. de Antioquia</span>
@@ -182,7 +202,6 @@
         <span>Fund. PINTUCO</span>
     </div>
 
-    <!-- FOOTER INTACTO -->
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-col brand-col">

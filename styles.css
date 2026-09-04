@@ -938,9 +938,6 @@ nav ul li .btn-donate {
 .timeline-content { padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 
 /* Estadísticas Banner */
-.stats-banner { background-color: var(--primary-blue); color: white; display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; padding: 40px 20px; margin-bottom: 40px; }
-.stats-banner h2 { font-size: 3rem; color: var(--accent-yellow); margin-bottom: 5px; }
-.stats-banner p { font-size: 0.9rem; font-weight: 600; }
 .action-btn-container { margin-bottom: 60px; }
 .btn-primary { background: var(--accent-yellow); color: var(--dark-blue); padding: 15px 30px; border-radius: 30px; font-weight: bold; }
 
@@ -973,4 +970,48 @@ nav ul li .btn-donate {
     .timeline-item.left, .timeline-item.right { left: 0; }
     .timeline-item::after, .timeline-item.right::after { left: 10px; }
     .stats-banner { grid-template-columns: 1fr 1fr; gap: 20px; }
+}
+
+/* Alineación de Niqui a la derecha */
+.page-niqui-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end; /* Empuja el bloque a la derecha */
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+    margin-top: -40px; /* Superpone ligeramente a la sección anterior */
+}
+
+.niqui-dialogue-container-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+/* Banner de estadísticas redondeado (Historia del museo) */
+.stats-banner {
+    background-color: var(--primary-blue);
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    padding: 50px 20px;
+    margin: 40px auto 80px auto; /* Centrado horizontalmente */
+    max-width: 1000px; /* Limita el ancho para que no toque los bordes */
+    border-radius: 16px; /* Aplica las esquinas redondeadas */
+}
+
+.stats-banner h2 { 
+    font-size: 3rem; 
+    color: var(--accent-yellow); 
+    margin-bottom: 5px; 
+}
+
+.stats-banner p { 
+    font-size: 0.9rem; 
+    font-weight: 600; 
+    text-transform: uppercase;
 }

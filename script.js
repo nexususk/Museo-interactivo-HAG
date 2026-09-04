@@ -130,6 +130,25 @@ if (archiveCarousel && prevArchiveBtn && nextArchiveBtn) {
         archiveCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     });
 }
+
+const closeBtnMuseo = document.getElementById('closeBtnMuseo');
+const niquiBoxMuseo = document.getElementById('niquiBoxMuseo');
+
+if (closeBtnMuseo && niquiBoxMuseo) {
+    closeBtnMuseo.addEventListener('click', () => {
+        niquiBoxMuseo.style.display = 'none';
+    });
+}
+
+const closeBtnColegio = document.getElementById('closeBtnColegio');
+const niquiBoxColegio = document.getElementById('niquiBoxColegio');
+
+if (closeBtnColegio && niquiBoxColegio) {
+    closeBtnColegio.addEventListener('click', () => {
+        niquiBoxColegio.style.display = 'none';
+    });
+}
+
 });
 
 // --- LÓGICA PARA CERRAR EL CUADRO DE NIQUI ---
