@@ -1,0 +1,750 @@
+/* =========================================
+   VARIABLES Y RESET
+   ========================================= */
+:root {
+    --primary-blue: #3A6B9B;
+    --dark-blue: #234B75;
+    --accent-yellow: #FFC107;
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+    --bg-light: #F9F9F9;
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--bg-light);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* =========================================
+   HEADER & NAVEGACIÓN
+   ========================================= */
+header {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-text h1 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.logo-text p {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav ul li {
+    position: relative;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Menú Desplegable */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    color: var(--text-dark);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    min-width: 200px;
+    padding: 10px 0;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+.has-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f1f1f1;
+}
+
+.btn-donate {
+    background-color: var(--accent-yellow);
+    color: var(--dark-blue);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+}
+
+.btn-donate:hover {
+    transform: scale(1.05);
+}
+
+/* =========================================
+   HERO SECTION (CARRUSEL)
+   ========================================= */
+.hero {
+    margin-top: 80px;
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    background-color: var(--dark-blue);
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Transición suave entre imágenes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.hero-content {
+    margin-bottom: 80px; /* Deja espacio para los botones */
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.8s ease 0.3s; /* Pequeño retardo para animar el texto */
+}
+
+.hero-slide.active .hero-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.hero-content h2 {
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: var(--accent-yellow);
+    margin-bottom: 10px;
+}
+
+.hero-content h1 {
+    font-size: 64px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 20px;
+}
+
+.hero-buttons {
+    position: absolute;
+    bottom: 25%;
+    z-index: 10;
+    display: flex;
+    gap: 20px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.btn-primary {
+    background-color: var(--accent-yellow);
+    color: var(--dark-blue);
+    border: none;
+}
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+/* Controles manuales (Flechas y Puntos) */
+.hero-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.hero-nav:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.prev-hero { left: 40px; }
+.next-hero { right: 40px; }
+
+.hero-dots {
+    position: absolute;
+    bottom: 10%;
+    z-index: 10;
+    display: flex;
+    gap: 12px;
+}
+
+.h-dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.h-dot.active {
+    background-color: var(--accent-yellow);
+}
+/* =========================================
+   ESTADÍSTICAS
+   ========================================= */
+.stats-section {
+    background-color: var(--dark-blue);
+    color: white;
+    padding: 60px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stats-text {
+    flex: 1;
+    font-size: 16px;
+    padding-right: 50px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+.stats-numbers {
+    flex: 2;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.stat-item p {
+    font-size: 12px;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* =========================================
+   GUÍA (NIQUI)
+   ========================================= */
+.guide-section {
+    padding: 80px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.guide-content {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.guide-content h4 {
+    color: var(--primary-blue);
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.guide-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.guide-content span {
+    color: var(--primary-blue);
+    font-style: italic;
+}
+
+.guide-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* =========================================
+   MUSEO INTERACTIVO
+   ========================================= */
+.interactive-section {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 80px 40px;
+    text-align: center;
+    position: relative;
+}
+
+.interactive-section h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.niqui-tooltip {
+    background-color: white;
+    color: var(--text-dark);
+    padding: 15px;
+    border-radius: 8px;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    max-width: 300px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.niqui-tooltip h5 {
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.card {
+    width: 300px;
+    height: 200px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    border: 2px solid rgba(255,255,255,0.2);
+    background-image: url('https://via.placeholder.com/300x200?text=Sala');
+    background-size: cover;
+}
+
+.interactive-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* =========================================
+   GALERÍA SONORA
+   ========================================= */
+.sound-gallery {
+    padding: 80px 40px;
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+.sound-gallery .subtitle {
+    color: var(--primary-blue);
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.sound-gallery h2 {
+    font-size: 40px;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.sound-gallery .description {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    color: #555;
+}
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    padding: 8px 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background-color: var(--accent-yellow);
+    border-color: var(--accent-yellow);
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.carousel-nav {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--text-dark);
+    transition: background 0.3s;
+}
+
+.carousel-nav:hover {
+    background: #f1f1f1;
+}
+
+.gallery-card {
+    display: flex;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    width: 800px;
+    text-align: left;
+}
+
+.card-image-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    background-image: url('https://via.placeholder.com/400x500?text=Imagen+Sala');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: var(--accent-yellow);
+    color: var(--dark-blue);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.card-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-category {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: 1px;
+}
+
+.card-meta {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.card-content h3 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.card-text {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.podcast-box {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.podcast-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.podcast-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.podcast-icon {
+    background-color: #e0f2e9;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.podcast-details h4 {
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.podcast-details p {
+    font-size: 13px;
+    color: #777;
+}
+
+.play-btn {
+    margin-left: auto;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: var(--accent-yellow);
+}
+
+/* =========================================
+   ALIADOS & FOOTER
+   ========================================= */
+.partners-strip {
+    background-color: white;
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+    color: #666;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.main-footer {
+    background-color: var(--dark-blue);
+    color: white;
+    padding: 60px 40px 20px 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    gap: 40px;
+}
+
+.brand-col {
+    flex: 2;
+    max-width: 400px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.logo-icon-small {
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.brand-col p {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.social-links a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.links-col, .contact-col {
+    flex: 1;
+}
+
+.footer-col h4 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #aaa;
+}
+
+.links-col ul li {
+    margin-bottom: 12px;
+}
+
+.links-col ul li a {
+    font-size: 14px;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.links-col ul li a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.contact-col p {
+    font-size: 14px;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    font-size: 12px;
+    color: #aaa;
+}

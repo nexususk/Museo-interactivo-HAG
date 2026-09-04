@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museo Escolar I.E. Héctor Abad Gómez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">🏛️</div>
+            <div class="logo-text">
+                <h1>Museo Escolar</h1>
+                <p>I.E. Héctor Abad Gómez</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li>INICIO</li>
+                <li class="has-dropdown">HISTORIA ▾
+                    <ul class="dropdown-menu">
+                        <li>Historia del museo</li>
+                        <li>Historia del colegio</li>
+                    </ul>
+                </li>
+                <li>MUSEO INTERACTIVO</li>
+                <li class="has-dropdown">GALERÍA ▾
+                    <ul class="dropdown-menu">
+                        <li>Galería Visual</li>
+                        <li>Galería Sonora</li>
+                    </ul>
+                </li>
+                <li>APÓYANOS</li>
+                <li>CONTACTO</li>
+                <li><a href="#" class="btn-donate">¡DONA AQUÍ!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+   <section class="hero" id="hero">
+        
+        <div class="hero-slide active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x1080?text=Fondo+1');">
+            <div class="hero-content">
+                <h2>I.E. HÉCTOR ABAD GÓMEZ</h2>
+                <h1>Raíces y Sueños</h1>
+                <p>Identidad cultural y resistencia</p>
+            </div>
+        </div>
+
+        <div class="hero-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x1080/234B75/FFFFFF?text=Fondo+2');">
+            <div class="hero-content">
+                <h2>I.E. HÉCTOR ABAD GÓMEZ</h2>
+                <h1>Memoria Viva</h1>
+                <p>Un recorrido por nuestro pasado y presente</p>
+            </div>
+        </div>
+
+        <div class="hero-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x1080/3A6B9B/FFFFFF?text=Fondo+3');">
+            <div class="hero-content">
+                <h2>I.E. HÉCTOR ABAD GÓMEZ</h2>
+                <h1>Voces del Mañana</h1>
+                <p>Construyendo futuro desde las aulas</p>
+            </div>
+        </div>
+
+        <div class="hero-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x1080/FFC107/333333?text=Fondo+4');">
+            <div class="hero-content">
+                <h2>I.E. HÉCTOR ABAD GÓMEZ</h2>
+                <h1>Arte y Transformación</h1>
+                <p>Nuestra comunidad en movimiento</p>
+            </div>
+        </div>
+
+        <div class="hero-buttons">
+            <button class="btn-primary">EXPLORAR EL MUSEO</button>
+            <button class="btn-secondary">Conoce nuestra historia</button>
+        </div>
+
+        <button class="hero-nav prev-hero">❮</button>
+        <button class="hero-nav next-hero">❯</button>
+        
+        <div class="hero-dots">
+            <span class="h-dot active" data-slide="0"></span>
+            <span class="h-dot" data-slide="1"></span>
+            <span class="h-dot" data-slide="2"></span>
+            <span class="h-dot" data-slide="3"></span>
+        </div>
+    </section>
+
+    <!-- ESTADÍSTICAS -->
+    <section class="stats-section">
+        <div class="stats-text">
+            <p>La institución es un espacio de formación integral que impulsa formas de pensar y actuar que aportan a la construcción de nuestra tierra, nuestra gente y nuestros sueños.</p>
+        </div>
+        <div class="stats-numbers">
+            <div class="stat-item">
+                <h3>4+</h3>
+                <p>PROYECTOS</p>
+            </div>
+            <div class="stat-item">
+                <h3>2019</h3>
+                <p>DESDE ESE AÑO</p>
+            </div>
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>PARTICIPANTES</p>
+            </div>
+            <div class="stat-item">
+                <h3>40</h3>
+                <p>VOLUNTARIOS</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUÍA (NIQUI) -->
+    <section class="guide-section">
+        <div class="guide-content">
+            <h4>CONOCE A TU GUÍA</h4>
+            <h2>Hola, soy <span>Niqui</span></h2>
+            <p>Mi nombre viene de <strong>Niquitao</strong>, el barrio donde nacieron estas historias, estos murales y estos sueños. Desde aquí, voy a acompañarte en cada rincón de esta página.</p>
+            <br>
+            <p>Soy una caracola viajera: lenta pero segura, curiosa pero atenta. Cada sección tiene mi marca - búscala para saber qué vas a encontrar allí.</p>
+        </div>
+        <div class="guide-image">
+            <img src="https://via.placeholder.com/300x300?text=Ilustración+Niqui" alt="Guía Niqui" style="border-radius: 50%;">
+        </div>
+    </section>
+
+    <!-- MUSEO INTERACTIVO -->
+    <section class="interactive-section">
+        <div class="niqui-tooltip">
+            <h5>NIQUI DICE:</h5>
+            <p>¡Esta es la entrada al Museo Interactivo! Aquí tienes una vista de las salas que puedes explorar. Cada sala guarda historias únicas que te esperan 🏛️.</p>
+        </div>
+        <h2>MUSEO INTERACTIVO</h2>
+        <p>Descubre nuestras salas</p>
+        
+        <div class="cards-container">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+
+        <div class="interactive-buttons">
+            <button class="btn-primary">CONOCE NUESTRO MUSEO ➔</button>
+            <button class="btn-primary">VER LA GALERÍA ➔</button>
+        </div>
+    </section>
+
+    <!-- GALERÍA SONORA -->
+    <section class="sound-gallery">
+        <h4 class="subtitle">GALERÍA SONORA</h4>
+        <h2>Explora nuestro museo</h2>
+        <p class="description">Cada sala es una ventana hacia la memoria colectiva y los sueños de nuestra comunidad educativa.</p>
+        
+        <div class="gallery-filters">
+            <button class="filter-btn active">Todo</button>
+            <button class="filter-btn">2021</button>
+            <button class="filter-btn">2022</button>
+            <button class="filter-btn">2023</button>
+            <button class="filter-btn">2024</button>
+        </div>
+
+        <div class="carousel-container">
+            <button class="carousel-nav prev-btn">←</button>
+            
+            <div class="carousel-track">
+                <article class="gallery-card">
+                    <div class="card-image-wrapper">
+                        <div class="card-badge">1</div>
+                        <div class="card-image"></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">SALA DEL MUSEO</span>
+                        <span class="card-meta">Archivo institucional · 2021</span>
+                        <h3>Nuestra historia</h3>
+                        <p class="card-text">Los orígenes, hitos y transformaciones que forjaron la institución a lo largo del tiempo.</p>
+                        
+                        <div class="podcast-box">
+                            <span class="podcast-label">PODCAST ASOCIADO</span>
+                            <div class="podcast-info">
+                                <div class="podcast-icon">🎙️</div>
+                                <div class="podcast-details">
+                                    <h4>Los primeros años</h4>
+                                    <p>Episodio · 12 min</p>
+                                </div>
+                                <button class="play-btn">▶</button>
+                            </div>
+                        </div>
+                        <button class="btn-primary w-full">EXPLORA EL PODCAST ➔</button>
+                    </div>
+                </article>
+            </div>
+
+            <button class="carousel-nav next-btn">→</button>
+        </div>
+
+        <div class="carousel-indicators">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+    <!-- FRANJA DE ALIADOS -->
+    <div class="partners-strip">
+        <span>Universidad de Medellín</span>
+        <span>U. de Antioquia</span>
+        <span>Fundación Sura</span>
+        <span>MinTIC</span>
+        <span>Sec. de Educación</span>
+        <span>Corpocentro</span>
+        <span>Manguaba</span>
+        <span>Fund. PINTUCO</span>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <div class="logo-icon-small">🏛️</div>
+                    <div class="logo-text">
+                        <h3>I.E. Héctor Abad Gómez</h3>
+                    </div>
+                </div>
+                <p>Proyecto cultural enfocado en la memoria, el arte y la transformación social de nuestra comunidad educativa.</p>
+                <div class="social-links">
+                    <a href="#">IG</a>
+                    <a href="#">TK</a>
+                    <a href="#">YT</a>
+                    <a href="#">SP</a>
+                </div>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>EXPLORAR</h4>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Museo interactivo</a></li>
+                    <li><a href="#">Historia del museo</a></li>
+                    <li><a href="#">Historia del colegio</a></li>
+                    <li><a href="#">Apóyanos</a></li>
+                    <li><a href="#">Podcasts</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>CONTACTO</h4>
+                <p>Cra. 44 #43-56<br>Medellín, Colombia<br>museoeiehag.edu.co</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2024 I.E. Héctor Abad Gómez - Todos los derechos reservados</p>
+            <p>Hecho en Medellín 🍎</p>
+        </div>
+    </footer>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
