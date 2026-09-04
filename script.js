@@ -90,6 +90,46 @@ document.addEventListener('DOMContentLoaded', () => {
     // Iniciar el temporizador automático
     heroInterval = setInterval(nextHeroSlide, 5000);
     // --------------------------------
+
+    const yearButtons = document.querySelectorAll('.year-btn');
+const timelinePanels = document.querySelectorAll('.timeline-panel');
+
+if (yearButtons.length > 0) {
+    yearButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remover 'active' de todos los botones y paneles
+            yearButtons.forEach(btn => btn.classList.remove('active'));
+            timelinePanels.forEach(panel => panel.classList.remove('active'));
+
+            // Agregar 'active' al botón clickeado
+            button.classList.add('active');
+
+            // Mostrar el panel correspondiente
+            const year = button.getAttribute('data-year');
+            const targetPanel = document.getElementById(`panel-${year}`);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+            }
+        });
+    });
+}
+
+// --- LÓGICA CARRUSEL ARCHIVO HISTÓRICO ---
+const archiveCarousel = document.querySelector('.archive-carousel');
+const prevArchiveBtn = document.querySelector('.prev-archive');
+const nextArchiveBtn = document.querySelector('.next-archive');
+
+if (archiveCarousel && prevArchiveBtn && nextArchiveBtn) {
+    const scrollAmount = 320; // Ancho de la tarjeta + gap
+
+    nextArchiveBtn.addEventListener('click', () => {
+        archiveCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    prevArchiveBtn.addEventListener('click', () => {
+        archiveCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+}
 });
 
 // --- LÓGICA PARA CERRAR EL CUADRO DE NIQUI ---

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia del Colegio - Museo Escolar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Nuevas tipografías -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Neuton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HEADER INTACTO -->
+    <header>
+        <div class="logo-container">
+            <img src="images/Blanco_LOGO_MUSEOESCOLAR_horizontal.png" alt="Logo Museo Escolar I.E. Héctor Abad Gómez" class="header-logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li class="has-dropdown nav-active">HISTORIA ▾
+                    <ul class="dropdown-menu">
+                        <li><a href="historia-museo.html">Historia del museo</a></li>
+                        <li><a href="historia-colegio.html">Historia del colegio</a></li>
+                    </ul>
+                </li>
+                <li>MUSEO INTERACTIVO</li>
+                <li class="has-dropdown">GALERÍA ▾
+                    <ul class="dropdown-menu">
+                        <li>Galería Visual</li>
+                        <li>Galería Sonora</li>
+                    </ul>
+                </li>
+                <li>APÓYANOS</li>
+                <li>CONTACTO</li>
+                <li><a href="#" class="btn-donate">¡DONA AQUÍ!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="margin-top: 80px;">
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <h5 class="hero-subtitle">HISTORIA DEL COLEGIO</h5>
+            <h1 class="page-title">Historia del <em>colegio</em></h1>
+            <p>Un recorrido por los momentos y memorias que construyeron la identidad de la Institución Educativa Héctor Abad Gómez.</p>
+        </section>
+
+        <!-- Niqui Dice -->
+        <div class="page-niqui-container" style="position: relative; height: 100px; max-width: 1200px; margin: 0 auto;">
+            <div class="niqui-dialogue-container">
+                <div class="niqui-avatar-wrapper">
+                    <img src="images/placeholder-niqui.png" alt="Niqui" class="niqui-avatar-img">
+                </div>
+                <div class="niqui-tooltip">
+                    <h5>NIQUI DICE:</h5>
+                    <p>¡Aquí está la historia completa del colegio! Haz clic en cada año para descubrir lo que ocurrió 🏛️.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Línea de tiempo Horizontal -->
+        <section class="horizontal-timeline-section container">
+            <h5 class="section-subtitle" style="text-transform: uppercase;">Línea de tiempo</h5>
+            <h2 class="section-title">Hitos que nos definieron</h2>
+            
+            <div class="timeline-nav">
+                <button class="year-btn active" data-year="1962">1962</button>
+                <button class="year-btn" data-year="1975">1975</button>
+                <button class="year-btn" data-year="1989">1989</button>
+                <button class="year-btn" data-year="2001">2001</button>
+                <button class="year-btn" data-year="2024">2024</button>
+            </div>
+
+            <div class="timeline-content-wrapper" style="margin-top: 40px;">
+                <!-- Panel 1962 -->
+                <div class="timeline-panel active" id="panel-1962">
+                    <div class="timeline-text">
+                        <h2 class="year-large">1962</h2>
+                        <h3 style="font-family: var(--font-headings); font-size: 2.5rem; margin-bottom: 15px; color: var(--primary-blue);">Fundación</h3>
+                        <p>Se abre el centro educativo en el norte de Medellín con vocación comunitaria y humanista.</p>
+                        <!-- Puntos de slide simulados -->
+                        <div style="display:flex; gap:5px; margin-top:20px;">
+                            <span style="width:10px; height:10px; border-radius:50%; background:var(--accent-yellow);"></span>
+                            <span style="width:10px; height:10px; border-radius:50%; background:#ccc;"></span>
+                            <span style="width:10px; height:10px; border-radius:50%; background:#ccc;"></span>
+                            <span style="width:10px; height:10px; border-radius:50%; background:#ccc;"></span>
+                        </div>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="https://via.placeholder.com/600x400?text=Colegio+1962" alt="Colegio 1962" class="responsive-img">
+                    </div>
+                </div>
+                
+                <!-- Panel 1975 (Oculto por defecto) -->
+                <div class="timeline-panel" id="panel-1975">
+                    <div class="timeline-text">
+                        <h2 class="year-large">1975</h2>
+                        <h3 style="font-family: var(--font-headings); font-size: 2.5rem; margin-bottom: 15px; color: var(--primary-blue);">Nueva Sede</h3>
+                        <p>Inauguración del edificio principal que aún hoy alberga la mayor parte de las jornadas escolares.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="https://via.placeholder.com/600x400?text=Sede+1975" alt="Sede 1975" class="responsive-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Archivo Histórico Carrusel -->
+        <section class="archive-section bg-blue">
+            <div class="container">
+                <h5 class="section-subtitle light-text" style="color: var(--accent-yellow) !important; letter-spacing: 2px;">ARCHIVO HISTÓRICO</h5>
+                <div class="archive-header">
+                    <h2 class="section-title light-text" style="color: white; font-size: 2.5rem;">Historias que <em>permanecen</em></h2>
+                    <div class="carousel-controls" style="display:flex; gap:10px;">
+                        <button class="prev-archive" style="display:flex; justify-content:center; align-items:center;">←</button>
+                        <button class="next-archive" style="display:flex; justify-content:center; align-items:center;">→</button>
+                    </div>
+                </div>
+
+                <div class="archive-carousel" style="padding: 10px 0;">
+                    <!-- Tarjeta 1 -->
+                    <div class="archive-card">
+                        <div class="card-img">
+                            <span class="card-year tag">1962</span>
+                            <img src="https://via.placeholder.com/350x200?text=Pasos" alt="Primeros pasos">
+                        </div>
+                        <div class="card-content">
+                            <h4>Los primeros pasos</h4>
+                            <p style="font-size: 14px; opacity: 0.9;">Fundación del centro educativo en el barrio Aranjuez con apenas tres aulas y veinte estudiantes.</p>
+                        </div>
+                    </div>
+                    <!-- Tarjeta 2 -->
+                    <div class="archive-card">
+                        <div class="card-img">
+                            <span class="card-year tag">1975</span>
+                            <img src="https://via.placeholder.com/350x200?text=Sede" alt="Nueva Sede">
+                        </div>
+                        <div class="card-content">
+                            <h4>Una nueva sede</h4>
+                            <p style="font-size: 14px; opacity: 0.9;">Inauguración del edificio principal que aún hoy alberga la mayor parte de las jornadas escolares.</p>
+                        </div>
+                    </div>
+                    <!-- Tarjeta 3 -->
+                    <div class="archive-card">
+                        <div class="card-img">
+                            <span class="card-year tag">1989</span>
+                            <img src="https://via.placeholder.com/350x200?text=Hector+Abad" alt="Honor">
+                        </div>
+                        <div class="card-content">
+                            <h4>En honor a Héctor Abad</h4>
+                            <p style="font-size: 14px; opacity: 0.9;">La institución recibe el nombre del médico y humanista Héctor Abad Gómez tras su trágica muerte.</p>
+                        </div>
+                    </div>
+                     <!-- Tarjeta 4 -->
+                     <div class="archive-card">
+                        <div class="card-img">
+                            <span class="card-year tag">1998</span>
+                            <img src="https://via.placeholder.com/350x200?text=Comunidad" alt="Crecimiento">
+                        </div>
+                        <div class="card-content">
+                            <h4>Crecimiento comunitario</h4>
+                            <p style="font-size: 14px; opacity: 0.9;">La matrícula supera los dos mil estudiantes. Referente del norte de Medellín.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FRANJA DE ALIADOS -->
+    <div class="partners-strip">
+        <span>Universidad de Medellín</span>
+        <span>U. de Antioquia</span>
+        <span>Fundación Sura</span>
+        <span>MinTIC</span>
+        <span>Sec. de Educación</span>
+        <span>Corpocentro</span>
+        <span>Manguaba</span>
+        <span>Fund. PINTUCO</span>
+    </div>
+
+    <!-- FOOTER INTACTO -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <div class="logo-icon-small">🏛️</div>
+                    <div class="logo-text">
+                        <h3>I.E. Héctor Abad Gómez</h3>
+                    </div>
+                </div>
+                <p>Proyecto cultural enfocado en la memoria, el arte y la transformación social de nuestra comunidad educativa.</p>
+                <div class="social-links">
+                    <a href="#">IG</a>
+                    <a href="#">TK</a>
+                    <a href="#">YT</a>
+                    <a href="#">SP</a>
+                </div>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>EXPLORAR</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Museo interactivo</a></li>
+                    <li><a href="historia-museo.html">Historia del museo</a></li>
+                    <li><a href="historia-colegio.html">Historia del colegio</a></li>
+                    <li><a href="#">Apóyanos</a></li>
+                    <li><a href="#">Podcasts</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>CONTACTO</h4>
+                <p>Cra. 44 #43-56<br>Medellín, Colombia<br>museoeiehag.edu.co</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2024 I.E. Héctor Abad Gómez - Todos los derechos reservados</p>
+            <p>Hecho en Medellín 🍎</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

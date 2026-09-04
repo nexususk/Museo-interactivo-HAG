@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia del Museo - Museo Escolar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Aquí están las nuevas tipografías Manrope y Neuton -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Neuton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HEADER INTACTO -->
+    <header>
+        <div class="logo-container">
+            <img src="images/Blanco_LOGO_MUSEOESCOLAR_horizontal.png" alt="Logo Museo Escolar I.E. Héctor Abad Gómez" class="header-logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li class="has-dropdown nav-active">HISTORIA ▾
+                    <ul class="dropdown-menu">
+                        <li><a href="historia-museo.html">Historia del museo</a></li>
+                        <li><a href="historia-colegio.html">Historia del colegio</a></li>
+                    </ul>
+                </li>
+                <li>MUSEO INTERACTIVO</li>
+                <li class="has-dropdown">GALERÍA ▾
+                    <ul class="dropdown-menu">
+                        <li>Galería Visual</li>
+                        <li>Galería Sonora</li>
+                    </ul>
+                </li>
+                <li>APÓYANOS</li>
+                <li>CONTACTO</li>
+                <li><a href="#" class="btn-donate">¡DONA AQUÍ!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="margin-top: 80px;">
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <h5 class="hero-subtitle">HISTORIA DEL MUSEO</h5>
+            <h1 class="page-title">Historia del <em>museo</em></h1>
+            <p>Cómo nació y creció el proyecto del Museo Interactivo Héctor Abad Gómez.</p>
+        </section>
+
+        <!-- Niqui Dice -->
+        <div class="page-niqui-container" style="position: relative; height: 100px; max-width: 1200px; margin: 0 auto;">
+            <div class="niqui-dialogue-container">
+                <div class="niqui-avatar-wrapper">
+                    <img src="images/placeholder-niqui.png" alt="Niqui" class="niqui-avatar-img">
+                </div>
+                <div class="niqui-tooltip">
+                    <h5>NIQUI DICE:</h5>
+                    <p>¡Esta es mi propia historia! Aquí descubrirás cómo nació el museo y cómo llegué a ser tu guía.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Intro Museo -->
+        <section class="museum-intro container">
+            <div class="intro-text">
+                <h5 class="section-subtitle">¿POR QUÉ ESTE MUSEO?</h5>
+                <h2 class="section-title">Un proyecto de memoria colectiva</h2>
+                <p>El Museo Interactivo Héctor Abad Gómez nació en 2019 como una iniciativa de docentes y estudiantes que querían preservar la historia de la institución antes de que se perdiera en el tiempo.</p>
+                <p>Hoy es una plataforma digital viva, alimentada por la comunidad educativa, que conecta pasado y presente a través de fotografías, documentos, testimonios y experiencias interactivas.</p>
+            </div>
+            <div class="intro-image">
+                <img src="https://via.placeholder.com/600x400?text=Exposicion+Museo" alt="Exposición Museo" class="responsive-img">
+            </div>
+        </section>
+
+        <!-- Línea de Tiempo Vertical -->
+        <section class="vertical-timeline-section">
+            <h2 class="text-center section-title">Cómo creció el proyecto</h2>
+            <div class="timeline-v">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h4 style="color: var(--primary-blue); font-family: var(--font-headings); font-size: 1.5rem;">2019</h4>
+                        <h5 style="color: var(--accent-yellow); font-size: 1.1rem; margin-bottom: 10px;">La idea nace</h5>
+                        <p>Un grupo de docentes y estudiantes propone crear un espacio digital para preservar la memoria institucional.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h4 style="color: var(--primary-blue); font-family: var(--font-headings); font-size: 1.5rem;">2021</h4>
+                        <h5 style="color: var(--accent-yellow); font-size: 1.1rem; margin-bottom: 10px;">Primeras colecciones</h5>
+                        <p>Se digitalizan los primeros archivos fotográficos y documentos históricos de la institución.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h4 style="color: var(--primary-blue); font-family: var(--font-headings); font-size: 1.5rem;">2022</h4>
+                        <h5 style="color: var(--accent-yellow); font-size: 1.1rem; margin-bottom: 10px;">Nace el podcast</h5>
+                        <p>Se lanza la primera temporada de podcasts con testimonios de egresados y docentes históricos.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h4 style="color: var(--primary-blue); font-family: var(--font-headings); font-size: 1.5rem;">2023</h4>
+                        <h5 style="color: var(--accent-yellow); font-size: 1.1rem; margin-bottom: 10px;">Niqui llega</h5>
+                        <p>Niqui se convierte en la mascota y guía oficial del museo digital, representando el barrio Niquitao.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner Estadísticas -->
+        <section class="stats-banner">
+            <div class="stat-item">
+                <h2>4+</h2>
+                <p>PROYECTOS ACTIVOS</p>
+            </div>
+            <div class="stat-item">
+                <h2>500+</h2>
+                <p>PARTICIPANTES</p>
+            </div>
+            <div class="stat-item">
+                <h2>8</h2>
+                <p>EPISODIOS DE PODCAST</p>
+            </div>
+            <div class="stat-item">
+                <h2>60+</h2>
+                <p>AÑOS DE HISTORIA CAPTURADA</p>
+            </div>
+        </section>
+        
+        <div class="action-btn-container text-center" style="margin-bottom: 60px;">
+            <a href="#" class="btn-primary" style="display: inline-block;">CONTRIBUYE AL MUSEO →</a>
+        </div>
+    </main>
+
+    <!-- FRANJA DE ALIADOS -->
+    <div class="partners-strip">
+        <span>Universidad de Medellín</span>
+        <span>U. de Antioquia</span>
+        <span>Fundación Sura</span>
+        <span>MinTIC</span>
+        <span>Sec. de Educación</span>
+        <span>Corpocentro</span>
+        <span>Manguaba</span>
+        <span>Fund. PINTUCO</span>
+    </div>
+
+    <!-- FOOTER INTACTO -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <div class="logo-icon-small">🏛️</div>
+                    <div class="logo-text">
+                        <h3>I.E. Héctor Abad Gómez</h3>
+                    </div>
+                </div>
+                <p>Proyecto cultural enfocado en la memoria, el arte y la transformación social de nuestra comunidad educativa.</p>
+                <div class="social-links">
+                    <a href="#">IG</a>
+                    <a href="#">TK</a>
+                    <a href="#">YT</a>
+                    <a href="#">SP</a>
+                </div>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>EXPLORAR</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Museo interactivo</a></li>
+                    <li><a href="historia-museo.html">Historia del museo</a></li>
+                    <li><a href="historia-colegio.html">Historia del colegio</a></li>
+                    <li><a href="#">Apóyanos</a></li>
+                    <li><a href="#">Podcasts</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>CONTACTO</h4>
+                <p>Cra. 44 #43-56<br>Medellín, Colombia<br>museoeiehag.edu.co</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2024 I.E. Héctor Abad Gómez - Todos los derechos reservados</p>
+            <p>Hecho en Medellín 🍎</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
