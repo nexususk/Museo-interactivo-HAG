@@ -91,3 +91,22 @@ document.addEventListener('DOMContentLoaded', () => {
     heroInterval = setInterval(nextHeroSlide, 5000);
     // --------------------------------
 });
+
+// --- LÓGICA PARA CERRAR EL CUADRO DE NIQUI ---
+    const closeBtn = document.getElementById('closeNiqui');
+    const niquiBox = document.getElementById('niquiBox');
+
+    if (closeBtn && niquiBox) {
+        closeBtn.addEventListener('click', () => {
+            niquiBox.style.display = 'none'; // Oculta el cuadro al hacer clic
+        });
+    }
+// --- LÓGICA PARA CERRAR EL CUADRO DE NIQUI EN GALERÍA SONORA ---
+    const closeBtnGallery = document.getElementById('closeNiquiGallery');
+    const niquiGalleryBox = document.getElementById('niquiGalleryBox');
+
+    if (closeBtnGallery && niquiGalleryBox) {
+        closeBtnGallery.addEventListener('click', () => {
+            niquiGalleryBox.style.display = 'none'; // Oculta el cuadro al hacer clic en la X
+        });
+    }

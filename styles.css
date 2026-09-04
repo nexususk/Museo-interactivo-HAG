@@ -34,7 +34,7 @@ ul {
 }
 
 /* =========================================
-   HEADER & NAVEGACIÓN
+   HEADER & NAVEGACIÓN (Con Logo y Estilos)
    ========================================= */
 header {
     background-color: var(--primary-blue);
@@ -54,27 +54,12 @@ header {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 15px;
 }
 
-.logo-icon {
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo-text h1 {
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.logo-text p {
-    font-size: 12px;
-    opacity: 0.8;
+.header-logo-img {
+    height: 80px; /* Altura ideal para que encaje perfecto en la barra */
+    width: auto;
+    object-fit: contain;
 }
 
 nav ul {
@@ -88,6 +73,27 @@ nav ul li {
     font-weight: 500;
     font-size: 14px;
     cursor: pointer;
+    color: rgba(255, 255, 255, 0.5); /* Opacidad al 50% para el menú inactivo */
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efecto hover: pasa a blanco completo al pasar el mouse */
+nav ul li:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Botón activo (INICIO): Blanco fijo */
+nav ul li.nav-active {
+    color: #FFFFFF;
+    opacity: 1;
+    font-weight: 600;
+}
+
+/* Excepción para que el botón de donar no pierda su color original */
+nav ul li:has(.btn-donate), 
+nav ul li .btn-donate {
+    opacity: 1 !important;
+    color: var(--dark-blue) !important;
 }
 
 /* Menú Desplegable */
@@ -112,6 +118,8 @@ nav ul li {
 .dropdown-menu li {
     padding: 10px 20px;
     border-bottom: 1px solid #eee;
+    color: var(--text-dark) !important;
+    opacity: 1 !important;
 }
 
 .dropdown-menu li:last-child {
@@ -120,6 +128,7 @@ nav ul li {
 
 .dropdown-menu li:hover {
     background-color: #f1f1f1;
+    color: var(--text-dark) !important;
 }
 
 .btn-donate {
@@ -129,12 +138,12 @@ nav ul li {
     border-radius: 5px;
     font-weight: 700;
     transition: transform 0.2s ease;
+    display: inline-block;
 }
 
 .btn-donate:hover {
     transform: scale(1.05);
 }
-
 /* =========================================
    HERO SECTION (CARRUSEL)
    ========================================= */
@@ -397,6 +406,16 @@ nav ul li {
     border: 2px solid rgba(255,255,255,0.2);
     background-image: url('https://via.placeholder.com/300x200?text=Sala');
     background-size: cover;
+    
+    /* Agrega estas tres líneas para la animación de elevación y sombra */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por encima de cualquier card */
+.card:hover {
+    transform: translateY(-8px); /* Hace que la tarjeta se eleve un poco hacia arriba */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Le añade una sombra sutil para dar profundidad */
 }
 
 .interactive-buttons {
@@ -431,6 +450,27 @@ nav ul li {
     max-width: 600px;
     margin: 0 auto 40px auto;
     color: #555;
+}
+
+/* =========================================
+   ESTILOS ESPECÍFICOS PARA EL DIÁLOGO DE NIQUI EN GALERÍA SONORA
+   ========================================= */
+.sound-gallery {
+    position: relative; /* Necesario para que Niqui se posicione bien dentro de esta sección */
+}
+
+.sound-gallery .niqui-dialogue-container {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 10;
+}
+
+.sound-gallery .niqui-tooltip {
+    border: 1px solid #eaeaea;
 }
 
 .gallery-filters {
@@ -747,4 +787,115 @@ nav ul li {
     padding-top: 20px;
     font-size: 12px;
     color: #aaa;
+}
+
+/* =========================================
+   ANIMACIONES GLOBALES PARA TODOS LOS BOTONES
+   ========================================= */
+
+/* Botón principal (Estilo similar a "¡DONA AQUÍ!": crece con zoom al pasar el mouse) */
+.btn-primary {
+    background-color: var(--accent-yellow);
+    color: var(--dark-blue);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05); /* Efecto zoom dinámico */
+}
+
+/* Botón secundario (Estilo tipo "Conoce nuestra historia": el fondo se pone más blanco/translúcido) */
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.25); /* Se vuelve un blanco suave y translúcido */
+    border-color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================
+   ESTILOS PARA EL DIÁLOGO Y AVATAR DE NIQUI
+   ========================================= */
+.niqui-dialogue-container {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 10;
+}
+
+.niqui-avatar-wrapper {
+    width: 65px;
+    height: 65px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 3px solid white;
+    overflow: hidden;
+}
+
+.niqui-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.niqui-tooltip {
+    background-color: white;
+    color: var(--text-dark);
+    padding: 15px 20px;
+    border-radius: 12px;
+    max-width: 320px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+}
+
+.niqui-tooltip h5 {
+    color: #F5A623;
+    margin-bottom: 5px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+/* Estilo para el botón de cerrar (X) del cuadro de Niqui */
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--text-dark);
+}
+
+/* Aseguramos que el tooltip tenga posición relativa para que la X se ubique bien dentro */
+.niqui-tooltip {
+    position: relative !important;
 }

@@ -12,18 +12,13 @@
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
+   <header>
         <div class="logo-container">
-            <div class="logo-icon">🏛️</div>
-            <div class="logo-text">
-                <h1>Museo Escolar</h1>
-                <p>I.E. Héctor Abad Gómez</p>
-            </div>
+            <img src="images/Blanco_LOGO_MUSEOESCOLAR_horizontal.png" alt="Logo Museo Escolar I.E. Héctor Abad Gómez" class="header-logo-img">
         </div>
         <nav>
             <ul>
-                <li>INICIO</li>
+                <li class="nav-active">INICIO</li>
                 <li class="has-dropdown">HISTORIA ▾
                     <ul class="dropdown-menu">
                         <li>Historia del museo</li>
@@ -134,12 +129,20 @@
         </div>
     </section>
 
-    <!-- MUSEO INTERACTIVO -->
+   <!-- MUSEO INTERACTIVO -->
     <section class="interactive-section">
-        <div class="niqui-tooltip">
-            <h5>NIQUI DICE:</h5>
-            <p>¡Esta es la entrada al Museo Interactivo! Aquí tienes una vista de las salas que puedes explorar. Cada sala guarda historias únicas que te esperan 🏛️.</p>
+        
+        <div class="niqui-dialogue-container" id="niquiBox">
+            <div class="niqui-avatar-wrapper">
+                <img src="images/placeholder-niqui.png" alt="Niqui Guía" class="niqui-avatar-img">
+            </div>
+            <div class="niqui-tooltip">
+                <button class="close-btn" id="closeNiqui">&times;</button>
+                <h5>NIQUI DICE:</h5>
+                <p>¡Esta es la entrada al Museo Interactivo! Aquí tienes una vista de las salas que puedes explorar. Cada sala guarda historias únicas que te esperan 🏛️.</p>
+            </div>
         </div>
+
         <h2>MUSEO INTERACTIVO</h2>
         <p>Descubre nuestras salas</p>
         
@@ -154,10 +157,22 @@
             <button class="btn-primary">VER LA GALERÍA ➔</button>
         </div>
     </section>
-
     <!-- GALERÍA SONORA -->
-    <section class="sound-gallery">
-        <h4 class="subtitle">GALERÍA SONORA</h4>
+    
+	<section class="sound-gallery">
+
+        <div class="niqui-dialogue-container" id="niquiGalleryBox">
+            <div class="niqui-avatar-wrapper">
+                <img src="images/placeholder-niqui.png" alt="Niqui Guía" class="niqui-avatar-img">
+            </div>
+            <div class="niqui-tooltip">
+                <button class="close-btn" id="closeNiquiGallery">&times;</button>
+                <h5>NIQUI DICE:</h5>
+                <p>¡Bienvenido a la galería sonora! Aquí podrás encontrar relatos sonoros y podcast de los murales.</p>
+            </div>
+        </div>
+
+               <h4 class="subtitle">GALERÍA SONORA</h4>
         <h2>Explora nuestro museo</h2>
         <p class="description">Cada sala es una ventana hacia la memoria colectiva y los sueños de nuestra comunidad educativa.</p>
         
