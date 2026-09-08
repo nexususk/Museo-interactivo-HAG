@@ -24,8 +24,8 @@
                 <li class="nav-active">INICIO</li>
                 <li class="has-dropdown">HISTORIA ▾
                     <ul class="dropdown-menu">
-                        <li>Historia del museo</li>
-                        <li>Historia del colegio</li>
+                        <li><a href="historia-museo.html">Historia del museo</a></li>
+                        <li><a href="historia-colegio.html">Historia del colegio</a></li>
                     </ul>
                 </li>
                 <li>MUSEO INTERACTIVO</li>
@@ -142,7 +142,7 @@
             <div class="niqui-tooltip">
                 <button class="close-btn" id="closeNiqui">&times;</button>
                 <h5>NIQUI DICE:</h5>
-                <p>¡Esta es la entrada al Museo Interactivo! Aquí tienes una vista de las salas que puedes explorar. Cada sala guarda historias únicas que te esperan 🏛️.</p>
+                <p>¡Esta es la entrada al Museo Interactivo! Aquí tienes una vista de las salas que puedes explorar. Cada sala guarda historias únicas que te esperan .</p>
             </div>
         </div>
 
@@ -161,8 +161,7 @@
         </div>
     </section>
     <!-- GALERÍA SONORA -->
-    
-	<section class="sound-gallery">
+    <section class="sound-gallery">
 
         <div class="niqui-dialogue-container" id="niquiGalleryBox">
             <div class="niqui-avatar-wrapper">
@@ -175,32 +174,31 @@
             </div>
         </div>
 
-               <h4 class="subtitle">GALERÍA SONORA</h4>
+        <h4 class="subtitle">GALERÍA SONORA</h4>
         <h2>Explora nuestro museo</h2>
         <p class="description">Cada sala es una ventana hacia la memoria colectiva y los sueños de nuestra comunidad educativa.</p>
         
+        <!-- Nuevos botones de filtro -->
         <div class="gallery-filters">
-            <button class="filter-btn active">Todo</button>
-            <button class="filter-btn">2021</button>
-            <button class="filter-btn">2022</button>
-            <button class="filter-btn">2023</button>
-            <button class="filter-btn">2024</button>
+            <button class="filter-btn active" data-category="podcast">Podcast</button>
+            <button class="filter-btn" data-category="relatos">Relatos sonoros</button>
         </div>
 
         <div class="carousel-container">
-            <button class="carousel-nav prev-btn">←</button>
+            <button class="carousel-nav prev-btn" id="soundPrev">←</button>
             
             <div class="carousel-track">
-                <article class="gallery-card">
+              <!-- Panel 1: Podcast (Sin el badge 1) -->
+                <article class="gallery-card sound-panel active" id="panel-podcast">
                     <div class="card-image-wrapper">
-                        <div class="card-badge">1</div>
-                        <div class="card-image"></div>
+                        <!-- ELIMINAMOS EL <div class="card-badge">1</div> DE AQUÍ -->
+                        <div class="card-image" style="background-image: url('https://via.placeholder.com/400x500?text=Podcast+Imagen');"></div>
                     </div>
                     <div class="card-content">
-                        <span class="card-category">SALA DEL MUSEO</span>
+                        <span class="card-category">EPISODIO DE PODCAST</span>
                         <span class="card-meta">Archivo institucional · 2021</span>
-                        <h3>Nuestra historia</h3>
-                        <p class="card-text">Los orígenes, hitos y transformaciones que forjaron la institución a lo largo del tiempo.</p>
+                        <h3>Nuestra historia en voz alta</h3>
+                        <p class="card-text">Los orígenes, hitos y transformaciones narrados por los protagonistas de nuestra institución.</p>
                         
                         <div class="podcast-box">
                             <span class="podcast-label">PODCAST ASOCIADO</span>
@@ -216,30 +214,61 @@
                         <button class="btn-primary w-full">EXPLORA EL PODCAST ➔</button>
                     </div>
                 </article>
+
+                <!-- Panel 2: Relatos Sonoros (Sin el badge 2) -->
+                <article class="gallery-card sound-panel" id="panel-relatos" style="display: none;">
+                    <div class="card-image-wrapper">
+                        <!-- ELIMINAMOS EL <div class="card-badge">2</div> DE AQUÍ -->
+                        <div class="card-image" style="background-image: url('https://via.placeholder.com/400x500?text=Relatos+Sonoros');"></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">RELATO SONORO</span>
+                        <span class="card-meta">Voces del barrio · 2022</span>
+                        <h3>Memorias de Niquitao</h3>
+                        <p class="card-text">Relatos íntimos y vivencias de los fundadores y primeros habitantes que dieron vida al sector.</p>
+                        
+                        <div class="podcast-box">
+                            <span class="podcast-label">AUDIO RELATO</span>
+                            <div class="podcast-info">
+                                <div class="podcast-icon">🎧</div>
+                                <div class="podcast-details">
+                                    <h4>Memorias del barrio</h4>
+                                    <p>Relato · 8 min</p>
+                                </div>
+                                <button class="play-btn">▶</button>
+                            </div>
+                        </div>
+                        <button class="btn-primary w-full">ESCUCHA EL RELATO ➔</button>
+                    </div>
+                </article>
             </div>
-
-            <button class="carousel-nav next-btn">→</button>
-        </div>
-
-        <div class="carousel-indicators">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+            <button class="carousel-nav next-btn" id="soundNext">→</button>
         </div>
     </section>
 
-    <!-- FRANJA DE ALIADOS -->
-    <div class="partners-strip">
-        <span>Universidad de Medellín</span>
-        <span>U. de Antioquia</span>
-        <span>Fundación Sura</span>
-        <span>MinTIC</span>
-        <span>Sec. de Educación</span>
-        <span>Corpocentro</span>
-        <span>Manguaba</span>
-        <span>Fund. PINTUCO</span>
+   <!-- FRANJA DE ALIADOS (CARRUSEL AUTOMÁTICO) -->
+    <div class="partners-carousel-section">
+        <div class="partners-track">
+            <!-- Grupo 1 de Logos (Placeholders) -->
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=U.+de+Medellín" alt="Universidad de Medellín"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=U.+de+Antioquia" alt="U. de Antioquia"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Fundación+Sura" alt="Fundación Sura"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=MinTIC" alt="MinTIC"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Sec.+Educación" alt="Sec. de Educación"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Corpocentro" alt="Corpocentro"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Manguaba" alt="Manguaba"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Fund.+PINTUCO" alt="Fund. PINTUCO"></div>
+
+            <!-- Grupo 2 duplicado (Esencial para crear el efecto infinito sin saltos) -->
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=U.+de+Medellín" alt="Universidad de Medellín"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=U.+de+Antioquia" alt="U. de Antioquia"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Fundación+Sura" alt="Fundación Sura"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=MinTIC" alt="MinTIC"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Sec.+Educación" alt="Sec. de Educación"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Corpocentro" alt="Corpocentro"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Manguaba" alt="Manguaba"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Fund.+PINTUCO" alt="Fund. PINTUCO"></div>
+        </div>
     </div>
 
     <!-- FOOTER -->

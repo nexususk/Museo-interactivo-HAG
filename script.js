@@ -113,6 +113,45 @@ if (yearButtons.length > 0) {
         });
     });
 }
+// --- LÓGICA DE GALERÍA SONORA (PODCAST / RELATOS SONOROS) ---
+    const soundFilterButtons = document.querySelectorAll('.sound-gallery .filter-btn');
+    const soundPanels = document.querySelectorAll('.sound-panel');
+
+    if (soundFilterButtons.length > 0 && soundPanels.length > 0) {
+        soundFilterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                soundFilterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const category = button.getAttribute('data-category');
+
+                soundPanels.forEach(panel => {
+                    if (panel.id === `panel-${category}`) {
+                        panel.style.display = 'flex';
+                        panel.classList.add('active');
+                    } else {
+                        panel.style.display = 'none';
+                        panel.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Permitir que las flechas laterales alternen entre Podcast y Relatos sonoros
+        const soundPrev = document.getElementById('soundPrev');
+        const soundNext = document.getElementById('soundNext');
+
+        function toggleSoundPanel() {
+            const currentActiveBtn = document.querySelector('.sound-gallery .filter-btn.active');
+            const otherBtn = Array.from(soundFilterButtons).find(btn => btn !== currentActiveBtn);
+            if (otherBtn) {
+                otherBtn.click();
+            }
+        }
+
+        if (soundPrev) soundPrev.addEventListener('click', toggleSoundPanel);
+        if (soundNext) soundNext.addEventListener('click', toggleSoundPanel);
+    }
 
 // --- LÓGICA CARRUSEL ARCHIVO HISTÓRICO ---
 const archiveCarousel = document.querySelector('.archive-carousel');

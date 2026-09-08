@@ -101,29 +101,45 @@ nav ul li .btn-donate {
     color: var(--dark-blue) !important;
 }
 
-/* Menú Desplegable */
-.dropdown-menu {
-    display: none;
+/* =========================================
+   MENÚ DESPLEGABLE CORREGIDO
+   ========================================= */
+.has-dropdown {
+    position: relative;
+}
+
+/* Espacio invisible para que el cursor no pierda el enlace al viajar al menú */
+.has-dropdown::after {
+    content: '';
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: white;
-    color: var(--text-dark);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    min-width: 200px;
-    padding: 10px 0;
-    border-radius: 4px;
-    margin-top: 15px;
+    width: 100%;
+    height: 15px; 
 }
 
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background-color: white;
+    color: var(--text-dark);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    min-width: 200px;
+    padding: 10px 0;
+    border-radius: 6px;
+    z-index: 1100;
+}
+
+/* Muestra el menú al hacer hover sobre el elemento padre */
 .has-dropdown:hover .dropdown-menu {
     display: block;
 }
 
 .dropdown-menu li {
-    padding: 10px 20px;
+    padding: 0;
     border-bottom: 1px solid #eee;
-    color: var(--text-dark) !important;
     opacity: 1 !important;
 }
 
@@ -131,25 +147,19 @@ nav ul li .btn-donate {
     border-bottom: none;
 }
 
-.dropdown-menu li:hover {
+/* Estilo para los enlaces internos del dropdown para que abarquen toda el área clickeable */
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--text-dark) !important;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.dropdown-menu li a:hover {
     background-color: #f1f1f1;
     color: var(--text-dark) !important;
-}
-
-.btn-donate {
-    background-color: var(--accent-yellow);
-    color: var(--dark-blue);
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: 700;
-    transition: transform 0.2s ease;
-    display: inline-block;
-}
-
-.btn-donate:hover {
-    transform: scale(1.05);
-}
-/* =========================================
+}/* =========================================
    HERO SECTION (CARRUSEL)
    ========================================= */
 .hero {
@@ -793,7 +803,59 @@ nav ul li .btn-donate {
     font-size: 12px;
     color: #aaa;
 }
+/* =========================================
+   CARRUSEL AUTOMÁTICO DE ALIADOS (LOGOS)
+   ========================================= */
+.partners-carousel-section {
+    background-color: white;
+    padding: 30px 0;
+    border-top: 1px solid #eee;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
 
+/* Contenedor que se mueve de manera infinita */
+.partners-track {
+    display: flex;
+    width: max-content;
+    animation: scrollLogos 25s linear infinite; /* Velocidad del carrusel (25 segundos) */
+    align-items: center;
+}
+
+/* Pausar el movimiento automáticamente si el usuario pasa el mouse por encima */
+.partners-carousel-section:hover .partners-track {
+    animation-play-state: paused;
+}
+
+.partner-slide {
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partner-slide img {
+    height: 45px; /* Altura estándar para los logos / placeholders */
+    width: auto;
+    object-fit: contain;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.partner-slide img:hover {
+    opacity: 1; /* Resalta el logo al pasar el cursor */
+}
+
+/* Animación de desplazamiento continuo */
+@keyframes scrollLogos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
 /* =========================================
    ANIMACIONES GLOBALES PARA TODOS LOS BOTONES
    ========================================= */
