@@ -100,6 +100,20 @@ nav ul li .btn-donate {
     opacity: 1 !important;
     color: var(--dark-blue) !important;
 }
+.btn-donate {
+    background-color: var(--accent-yellow);
+    color: var(--dark-blue) !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+    display: inline-block;
+    opacity: 1 !important;
+}
+
+.btn-donate:hover {
+    transform: scale(1.05);
+}
 
 /* =========================================
    MENÚ DESPLEGABLE CORREGIDO
@@ -1076,4 +1090,170 @@ nav ul li .btn-donate {
     font-size: 0.9rem; 
     font-weight: 600; 
     text-transform: uppercase;
+}
+
+
+/* =========================================
+   SOLUCIÓN DEFINITIVA MENÚ MÓVIL (MODAL FLOTANTE)
+   ========================================= */
+@media (max-width: 768px) {
+    .logo-container .header-logo-img {
+        height: 45px !important;
+        width: auto !important;
+    }
+
+    header {
+        overflow: visible !important;
+        position: fixed !important;
+        padding: 0 10px !important;
+    }
+    
+    nav {
+        width: auto !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap !important;
+        padding-bottom: 5px;
+    }
+
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav ul {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 20px !important;
+        padding-right: 15px !important;
+        white-space: nowrap !important;
+    }
+
+    /* Transformamos el menú desplegable en una ventana flotante limpia y centrada en móviles */
+    .has-dropdown {
+        position: relative !important;
+    }
+
+    .has-dropdown .dropdown-menu {
+        position: fixed !important;
+        display: none !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        background-color: #ffffff !important;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.5) !important;
+        width: 85% !important;
+        max-width: 300px !important;
+        padding: 20px 0 !important;
+        z-index: 999999 !important;
+        border-radius: 12px !important;
+        text-align: center !important;
+    }
+
+    .has-dropdown.open .dropdown-menu {
+        display: block !important;
+    }
+
+    .dropdown-menu li {
+        border-bottom: 1px solid #eee !important;
+        padding: 5px 0 !important;
+    }
+
+    .dropdown-menu li:last-child {
+        border-bottom: none !important;
+    }
+
+    .dropdown-menu li a {
+        color: #234B75 !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        padding: 12px 20px !important;
+        display: block !important;
+    }
+
+    /* Mantenemos todas las demás reglas responsive intactas */
+    main {
+        margin-top: 80px !important;
+    }
+    .hero {
+        margin-top: 80px !important;
+        height: 75vh;
+        min-height: 480px;
+        position: relative;
+    }
+    .hero-content {
+        margin-bottom: 0 !important;
+        padding: 0 20px;
+    }
+    .hero-content h2 { font-size: 14px; }
+    .hero-content h1 { font-size: 32px; line-height: 1.2; }
+    .hero-content p { font-size: 16px; }
+    .hero-buttons {
+        position: absolute !important;
+        bottom: 20px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 85% !important;
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 10;
+    }
+    .btn-primary, .btn-secondary {
+        width: 100% !important;
+        text-align: center;
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+    .hero-dots { bottom: 130px !important; }
+
+    .stats-section { flex-direction: column; text-align: center; padding: 40px 20px; }
+    .stats-text { padding-right: 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 20px; margin-bottom: 20px; }
+    .stats-numbers { flex-wrap: wrap; gap: 20px; }
+    .stat-item { width: 45%; }
+
+    .guide-section { flex-direction: column-reverse; text-align: center; padding: 40px 20px; }
+    .guide-content { padding-right: 0; margin-top: 30px; }
+    .guide-content h2 { font-size: 36px; }
+
+    .niqui-dialogue-container,
+    .sound-gallery .niqui-dialogue-container,
+    .page-niqui-container {
+        position: relative;
+        top: 0; left: 0;
+        margin: 0 auto 30px auto;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    .niqui-tooltip, .sound-gallery .niqui-tooltip { max-width: 100%; }
+    .niqui-dialogue-container-right { justify-content: center; flex-direction: column; }
+    .page-niqui-container { margin-top: -20px; }
+
+    .cards-container { flex-direction: column; align-items: center; }
+    .card { width: 100%; max-width: 320px; }
+    .interactive-buttons { flex-direction: column; width: 100%; }
+
+    .gallery-card { flex-direction: column; width: 100%; }
+    .card-image-wrapper { height: 250px; }
+    .card-content h3 { font-size: 24px; }
+    .carousel-nav { display: none; }
+
+    .museum-intro, .timeline-panel { grid-template-columns: 1fr; }
+    .timeline-v::after { left: 20px; }
+    .timeline-item { width: 100%; padding-left: 50px; padding-right: 10px; text-align: left; }
+    .timeline-item.left, .timeline-item.right { left: 0; }
+    .timeline-item::after, .timeline-item.right::after { left: 10px; }
+    .page-title { font-size: 2.2rem; }
+    .timeline-nav { white-space: nowrap; padding-bottom: 10px; }
+    .archive-header { flex-direction: column; text-align: center; gap: 15px; }
+    .archive-card { min-width: 280px; }
+    .stats-banner { grid-template-columns: 1fr 1fr; gap: 30px; max-width: 100%; margin: 20px 10px; }
+
+    .footer-content { flex-direction: column; gap: 40px; text-align: center; }
+    .brand-col { max-width: 100%; }
+    .footer-logo { sessionStorage: center; justify-content: center; }
+    .social-links { justify-content: center; }
+    .footer-bottom { flex-direction: column; text-align: center; gap: 15px; }
 }

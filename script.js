@@ -1,15 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Evitar que los enlaces con "#" recarguen la página
-    document.querySelectorAll('a, button').forEach(el => {
-        el.addEventListener('click', (e) => {
-            if(el.getAttribute('href') === '#') {
-                e.preventDefault();
-            }
-        });
-    });
-
-    // Interacción de los botones de filtro (Galería Sonora)
+    // 1. Interacción de los botones de filtro (Galería Sonora)
     const filterButtons = document.querySelectorAll('.filter-btn');
     
     filterButtons.forEach(button => {
@@ -19,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Interacción básica de los indicadores del carrusel
+    // 2. Interacción básica de los indicadores del carrusel
     const dots = document.querySelectorAll('.dot');
     
     dots.forEach(dot => {
@@ -28,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
             dot.classList.add('active');
         });
     });
-// --- LÓGICA DEL CARRUSEL HERO ---
+
+    // 3. Lógica del carrusel Hero
     const slides = document.querySelectorAll('.hero-slide');
     const heroDots = document.querySelectorAll('.h-dot');
     const prevHeroBtn = document.querySelector('.prev-hero');
@@ -38,34 +30,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalSlides = slides.length;
     let heroInterval;
 
-    // Función para actualizar las clases activas
     function updateHeroCarousel() {
         slides.forEach(slide => slide.classList.remove('active'));
         heroDots.forEach(dot => dot.classList.remove('active'));
         
-        slides[currentSlide].classList.add('active');
-        heroDots[currentSlide].classList.add('active');
+        if(slides[currentSlide]) slides[currentSlide].classList.add('active');
+        if(heroDots[currentSlide]) heroDots[currentSlide].classList.add('active');
     }
 
-    // Ir a la siguiente imagen
     function nextHeroSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateHeroCarousel();
+        if(totalSlides > 0) {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateHeroCarousel();
+        }
     }
 
-    // Ir a la imagen anterior
     function prevHeroSlide() {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        updateHeroCarousel();
+        if(totalSlides > 0) {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateHeroCarousel();
+        }
     }
 
-    // Reiniciar el contador automático si el usuario hace clic manualmente
     function resetHeroInterval() {
         clearInterval(heroInterval);
-        heroInterval = setInterval(nextHeroSlide, 5000); // 5000ms = 5 segundos
+        heroInterval = setInterval(nextHeroSlide, 5000);
     }
 
-    // Eventos para las flechas
     if(nextHeroBtn && prevHeroBtn) {
         nextHeroBtn.addEventListener('click', () => {
             nextHeroSlide();
@@ -78,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Eventos para los puntos indicadores de abajo
     heroDots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             currentSlide = index;
@@ -87,33 +77,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Iniciar el temporizador automático
-    heroInterval = setInterval(nextHeroSlide, 5000);
-    // --------------------------------
+    if(totalSlides > 0) {
+        heroInterval = setInterval(nextHeroSlide, 5000);
+    }
 
+    // 4. Línea de tiempo (Colegio)
     const yearButtons = document.querySelectorAll('.year-btn');
-const timelinePanels = document.querySelectorAll('.timeline-panel');
+    const timelinePanels = document.querySelectorAll('.timeline-panel');
 
-if (yearButtons.length > 0) {
-    yearButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remover 'active' de todos los botones y paneles
-            yearButtons.forEach(btn => btn.classList.remove('active'));
-            timelinePanels.forEach(panel => panel.classList.remove('active'));
+    if (yearButtons.length > 0) {
+        yearButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                yearButtons.forEach(btn => btn.classList.remove('active'));
+                timelinePanels.forEach(panel => panel.classList.remove('active'));
 
-            // Agregar 'active' al botón clickeado
-            button.classList.add('active');
+                button.classList.add('active');
 
-            // Mostrar el panel correspondiente
-            const year = button.getAttribute('data-year');
-            const targetPanel = document.getElementById(`panel-${year}`);
-            if (targetPanel) {
-                targetPanel.classList.add('active');
-            }
+                const year = button.getAttribute('data-year');
+                const targetPanel = document.getElementById(`panel-${year}`);
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                }
+            });
         });
-    });
-}
-// --- LÓGICA DE GALERÍA SONORA (PODCAST / RELATOS SONOROS) ---
+    }
+
+    // 5. Lógica de Galería Sonora
     const soundFilterButtons = document.querySelectorAll('.sound-gallery .filter-btn');
     const soundPanels = document.querySelectorAll('.sound-panel');
 
@@ -137,7 +126,6 @@ if (yearButtons.length > 0) {
             });
         });
 
-        // Permitir que las flechas laterales alternen entre Podcast y Relatos sonoros
         const soundPrev = document.getElementById('soundPrev');
         const soundNext = document.getElementById('soundNext');
 
@@ -153,58 +141,80 @@ if (yearButtons.length > 0) {
         if (soundNext) soundNext.addEventListener('click', toggleSoundPanel);
     }
 
-// --- LÓGICA CARRUSEL ARCHIVO HISTÓRICO ---
-const archiveCarousel = document.querySelector('.archive-carousel');
-const prevArchiveBtn = document.querySelector('.prev-archive');
-const nextArchiveBtn = document.querySelector('.next-archive');
+    // 6. Carrusel Archivo Histórico
+    const archiveCarousel = document.querySelector('.archive-carousel');
+    const prevArchiveBtn = document.querySelector('.prev-archive');
+    const nextArchiveBtn = document.querySelector('.next-archive');
 
-if (archiveCarousel && prevArchiveBtn && nextArchiveBtn) {
-    const scrollAmount = 320; // Ancho de la tarjeta + gap
+    if (archiveCarousel && prevArchiveBtn && nextArchiveBtn) {
+        const scrollAmount = 320; 
 
-    nextArchiveBtn.addEventListener('click', () => {
-        archiveCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    });
+        nextArchiveBtn.addEventListener('click', () => {
+            archiveCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
 
-    prevArchiveBtn.addEventListener('click', () => {
-        archiveCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    });
-}
+        prevArchiveBtn.addEventListener('click', () => {
+            archiveCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+    }
 
-const closeBtnMuseo = document.getElementById('closeBtnMuseo');
-const niquiBoxMuseo = document.getElementById('niquiBoxMuseo');
+    // 7. Botones de cierre de Niqui
+    const closeBtnMuseo = document.getElementById('closeBtnMuseo');
+    const niquiBoxMuseo = document.getElementById('niquiBoxMuseo');
+    if (closeBtnMuseo && niquiBoxMuseo) {
+        closeBtnMuseo.addEventListener('click', () => {
+            niquiBoxMuseo.style.display = 'none';
+        });
+    }
 
-if (closeBtnMuseo && niquiBoxMuseo) {
-    closeBtnMuseo.addEventListener('click', () => {
-        niquiBoxMuseo.style.display = 'none';
-    });
-}
+    const closeBtnColegio = document.getElementById('closeBtnColegio');
+    const niquiBoxColegio = document.getElementById('niquiBoxColegio');
+    if (closeBtnColegio && niquiBoxColegio) {
+        closeBtnColegio.addEventListener('click', () => {
+            niquiBoxColegio.style.display = 'none';
+        });
+    }
 
-const closeBtnColegio = document.getElementById('closeBtnColegio');
-const niquiBoxColegio = document.getElementById('niquiBoxColegio');
-
-if (closeBtnColegio && niquiBoxColegio) {
-    closeBtnColegio.addEventListener('click', () => {
-        niquiBoxColegio.style.display = 'none';
-    });
-}
-
-});
-
-// --- LÓGICA PARA CERRAR EL CUADRO DE NIQUI ---
     const closeBtn = document.getElementById('closeNiqui');
     const niquiBox = document.getElementById('niquiBox');
-
     if (closeBtn && niquiBox) {
         closeBtn.addEventListener('click', () => {
-            niquiBox.style.display = 'none'; // Oculta el cuadro al hacer clic
+            niquiBox.style.display = 'none';
         });
     }
-// --- LÓGICA PARA CERRAR EL CUADRO DE NIQUI EN GALERÍA SONORA ---
+
     const closeBtnGallery = document.getElementById('closeNiquiGallery');
     const niquiGalleryBox = document.getElementById('niquiGalleryBox');
-
     if (closeBtnGallery && niquiGalleryBox) {
         closeBtnGallery.addEventListener('click', () => {
-            niquiGalleryBox.style.display = 'none'; // Oculta el cuadro al hacer clic en la X
+            niquiGalleryBox.style.display = 'none';
         });
     }
+
+    // 8. Control de menú desplegable en móviles corregido para clics directos en .has-dropdown
+    const dropdowns = document.querySelectorAll('.has-dropdown');
+
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.stopPropagation();
+                
+                // Cierra los demás menús abiertos
+                dropdowns.forEach(item => {
+                    if (item !== dropdown) item.classList.remove('open');
+                });
+                
+                // Alterna la clase open en el menú actual
+                dropdown.classList.toggle('open');
+            }
+        });
+    });
+
+    // Cierra el menú al hacer clic en cualquier otra parte de la pantalla
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 && !e.target.closest('.has-dropdown')) {
+            dropdowns.forEach(dropdown => dropdown.classList.remove('open'));
+        }
+    });
+
+});
