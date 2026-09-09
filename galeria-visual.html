@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Visual - Museo Escolar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Neuton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+   <header>
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="images/Blanco_LOGO_MUSEOESCOLAR_horizontal.png" alt="Logo Museo Escolar I.E. Héctor Abad Gómez" class="header-logo-img">
+        </a>
+    </div>
+    
+    <!-- Botón Hamburguesa (Solo aparece en móviles) -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav id="mainNav">
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li class="has-dropdown">HISTORIA ▾
+                <ul class="dropdown-menu">
+                    <li><a href="historia-museo.html">Historia del museo</a></li>
+                    <li><a href="historia-colegio.html">Historia del colegio</a></li>
+                </ul>
+            </li>
+            <li><a href="#">MUSEO INTERACTIVO</a></li>
+            <li class="has-dropdown">GALERÍA ▾
+                <ul class="dropdown-menu">
+                    <li><a href="galeria-visual.html">Galería Visual</a></li>
+                    <li><a href="galeria-sonora.html">Galería Sonora</a></li>
+                </ul>
+            </li>
+            <li><a href="#">APÓYANOS</a></li>
+            <li><a href="#">CONTACTO</a></li>
+            <li><a href="#" class="btn-donate">¡DONA AQUÍ!</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <main style="margin-top: 80px;">
+        <!-- Hero Galería -->
+        <section class="page-hero">
+            <h5 class="hero-subtitle">MURALES DE LA INSTITUCIÓN</h5>
+            <h1 class="page-title">Galería <em>Visual</em></h1>
+            <p>Un recorrido por el legado de Héctor Abad Gómez y los valores de nuestra institución plasmados en el arte urbano.</p>
+        </section>
+
+        <!-- Niqui Dice -->
+        <div class="page-niqui-container" id="niquiBoxGaleriaVisual">
+            <div class="niqui-dialogue-container-right">
+                <div class="niqui-avatar-wrapper">
+                    <img src="images/placeholder-niqui.png" alt="Niqui" class="niqui-avatar-img">
+                </div>
+                <div class="niqui-tooltip">
+                    <button class="close-btn" id="closeBtnGaleriaVisual">&times;</button>
+                    <h5>NIQUI DICE:</h5>
+                    <p>¡Bienvenido a la galería de murales! Aquí podrás encontrar las 43 obras expuestas en la institución. Haz clic en cualquiera para conocer su historia.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            
+            <!-- SECCIÓN 1: MOVILIDAD HUMANA (8 Murales) -->
+            <section class="gallery-category">
+                <h2 class="section-title">Movilidad Humana</h2>
+                <p class="category-desc">Refleja el tránsito, la búsqueda de oportunidades y los caminos recorridos por las comunidades en constante movimiento, honrando el derecho a un lugar seguro.</p>
+                
+               <div class="gallery-grid">
+            <!-- Mural 1 -->
+                <div class="mural-item" data-title="Nombre del Mural 1" data-desc="Aquí va la descripción del mural 1 que aparecerá en el popup al hacer clic.">
+                    <img src="images/tu-mural-1.jpg" alt="Mural 1">
+                </div>
+
+                <!-- Mural 2 -->
+                <div class="mural-item" data-title="Nombre del Mural 2" data-desc="Aquí va la descripción del mural 2 que aparecerá en el popup al hacer clic.">
+                    <img src="images/tu-mural-2.jpg" alt="Mural 2">
+                </div>
+
+                <!-- Mural 3 -->
+                <div class="mural-item" data-title="Nombre del Mural 3" data-desc="Aquí va la descripción del mural 3 que aparecerá en el popup al hacer clic.">
+                    <img src="images/tu-mural-3.jpg" alt="Mural 3">
+                </div>
+
+                <!-- Mural 4 -->
+                <div class="mural-item" data-title="Nombre del Mural 4" data-desc="Aquí va la descripción del mural 4 que aparecerá en el popup al hacer clic.">
+                    <img src="images/tu-mural-4.jpg" alt="Mural 4">
+                </div>
+
+                <!-- Mural 5 -->
+                <div class="mural-item" data-title="Nombre del Mural 5" data-desc="Aquí va la descripción del mural 5 que aparecerá en el popup al hacer clic.">
+                    <img src="images/tu-mural-5.jpg" alt="Mural 5">
+                </div>
+
+                <!-- Mural 6 -->
+                <div class="mural-item" data-title="Nombre del Mural 6" data-desc="Aquí va la descripción del mural 6 que aparecerá en el popup al hacer clic.">
+                    <img src="images/tu-mural-6.jpg" alt="Mural 6">
+                </div>
+
+                <!-- Mural 7 -->
+                <div class="mural-item" data-title="Nombre del Mural 7" data-desc="Aquí va la descripción del mural 7 que aparecerá en el popup al hacer clic.">
+                    <img src="images/tu-mural-7.jpg" alt="Mural 7">
+                </div>
+
+                <!-- Mural 8 -->
+                <div class="mural-item" data-title="Nombre del Mural 8" data-desc="Aquí va la descripción del mural 8 que aparecerá en el popup al hacer clic.">
+                    <img src="images/tu-mural-8.jpg" alt="Mural 8">
+                </div>
+            </div>
+            </section>
+
+            <!-- SECCIÓN 2: MIGRACIÓN (6 Murales) -->
+            <section class="gallery-category" style="margin-top: 60px;">
+                <h2 class="section-title">Migración</h2>
+                <p class="category-desc">Una mirada empática hacia quienes dejan su tierra atrás. Estos murales celebran la valentía de los migrantes y el enriquecimiento cultural que traen consigo.</p>
+                
+                <div class="gallery-grid">
+                    <!-- MURAL ITEM: Copia y pega este bloque hasta tener los 6 murales -->
+                    <div class="mural-item" data-title="Título del Mural Migración 1" data-desc="Descripción del mural sobre migración.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Migración+1" alt="Migración 1">
+                    </div>
+                    <div class="mural-item" data-title="Título del Mural Migración 2" data-desc="Descripción del mural sobre migración.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Migración+1" alt="Migración 2">
+                    </div>
+                    <div class="mural-item" data-title="Título del Mural Migración 3" data-desc="Descripción del mural sobre migración.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Migración+1" alt="Migración 3">
+                    </div>
+                    <div class="mural-item" data-title="Título del Mural Migración 4" data-desc="Descripción del mural sobre migración.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Migración+1" alt="Migración 4">
+                    </div>
+                    <div class="mural-item" data-title="Título del Mural Migración 5" data-desc="Descripción del mural sobre migración.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Migración+1" alt="Migración 5">
+                    </div>
+                    <div class="mural-item" data-title="Título del Mural Migración 6" data-desc="Descripción del mural sobre migración.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Migración+1" alt="Migración 6">
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SECCIÓN 3: INCLUSIÓN (16 Murales) -->
+            <section class="gallery-category" style="margin-top: 60px;">
+                <h2 class="section-title">Inclusión</h2>
+                <p class="category-desc">Abrazamos a todos. Esta amplia colección representa la inclusión en todas sus formas, abarcando desde la equidad de género hasta el reconocimiento y respeto profundo por nuestras comunidades indígenas.</p>
+                
+                <div class="gallery-grid">
+                    <!-- MURAL ITEM: Copia y pega este bloque hasta tener los 16 murales -->
+                    <div class="mural-item" data-title="El despertar de la naturaleza" data-desc="¿Cuándo fue la última vez que te detuviste a contemplar el vínculo que nos une con la tierra? La artista colombiana Gleo (Natalia Gallego) transforma los muros en una puerta a la contemplación.">
+                        <img src="https://via.placeholder.com/300x300?text=Gleo+Mural" alt="Inclusión 1">
+                    </div>
+                    <div class="mural-item" data-title="El despertar de la naturaleza" data-desc="¿Cuándo fue la última vez que te detuviste a contemplar el vínculo que nos une con la tierra? La artista colombiana Gleo (Natalia Gallego) transforma los muros en una puerta a la contemplación.">
+                        <img src="https://via.placeholder.com/300x300?text=Gleo+Mural" alt="Inclusión 2">
+                    </div>
+                    <div class="mural-item" data-title="El despertar de la naturaleza" data-desc="¿Cuándo fue la última vez que te detuviste a contemplar el vínculo que nos une con la tierra? La artista colombiana Gleo (Natalia Gallego) transforma los muros en una puerta a la contemplación.">
+                        <img src="https://via.placeholder.com/300x300?text=Gleo+Mural" alt="Inclusión 3">
+                    </div>
+                    <div class="mural-item" data-title="El despertar de la naturaleza" data-desc="¿Cuándo fue la última vez que te detuviste a contemplar el vínculo que nos une con la tierra? La artista colombiana Gleo (Natalia Gallego) transforma los muros en una puerta a la contemplación.">
+                        <img src="https://via.placeholder.com/300x300?text=Gleo+Mural" alt="Inclusión 4">
+                    </div>
+                    <div class="mural-item" data-title="El despertar de la naturaleza" data-desc="¿Cuándo fue la última vez que te detuviste a contemplar el vínculo que nos une con la tierra? La artista colombiana Gleo (Natalia Gallego) transforma los muros en una puerta a la contemplación.">
+                        <img src="https://via.placeholder.com/300x300?text=Gleo+Mural" alt="Inclusión 5">
+                    </div>
+                    <div class="mural-item" data-title="El despertar de la naturaleza" data-desc="¿Cuándo fue la última vez que te detuviste a contemplar el vínculo que nos une con la tierra? La artista colombiana Gleo (Natalia Gallego) transforma los muros en una puerta a la contemplación.">
+                        <img src="https://via.placeholder.com/300x300?text=Gleo+Mural" alt="Inclusión 6">
+                    </div>
+                    <div class="mural-item" data-title="El despertar de la naturaleza" data-desc="¿Cuándo fue la última vez que te detuviste a contemplar el vínculo que nos une con la tierra? La artista colombiana Gleo (Natalia Gallego) transforma los muros en una puerta a la contemplación.">
+                        <img src="https://via.placeholder.com/300x300?text=Gleo+Mural" alt="Inclusión 7">
+                    </div>
+                    <div class="mural-item" data-title="El despertar de la naturaleza" data-desc="¿Cuándo fue la última vez que te detuviste a contemplar el vínculo que nos une con la tierra? La artista colombiana Gleo (Natalia Gallego) transforma los muros en una puerta a la contemplación.">
+                        <img src="https://via.placeholder.com/300x300?text=Gleo+Mural" alt="Inclusión 8">
+                    </div>
+                    <div class="mural-item" data-title="El despertar de la naturaleza" data-desc="¿Cuándo fue la última vez que te detuviste a contemplar el vínculo que nos une con la tierra? La artista colombiana Gleo (Natalia Gallego) transforma los muros en una puerta a la contemplación.">
+                        <img src="https://via.placeholder.com/300x300?text=Gleo+Mural" alt="Inclusión 9">
+                    </div>
+                    <div class="mural-item" data-title="El despertar de la naturaleza" data-desc="¿Cuándo fue la última vez que te detuviste a contemplar el vínculo que nos une con la tierra? La artista colombiana Gleo (Natalia Gallego) transforma los muros en una puerta a la contemplación.">
+                        <img src="https://via.placeholder.com/300x300?text=Gleo+Mural" alt="Inclusión 10">
+                    </div>
+                    <div class="mural-item" data-title="El despertar de la naturaleza" data-desc="¿Cuándo fue la última vez que te detuviste a contemplar el vínculo que nos une con la tierra? La artista colombiana Gleo (Natalia Gallego) transforma los muros en una puerta a la contemplación.">
+                        <img src="https://via.placeholder.com/300x300?text=Gleo+Mural" alt="Inclusión 11">
+                    </div>
+                    <div class="mural-item" data-title="El despertar de la naturaleza" data-desc="¿Cuándo fue la última vez que te detuviste a contemplar el vínculo que nos une con la tierra? La artista colombiana Gleo (Natalia Gallego) transforma los muros en una puerta a la contemplación.">
+                        <img src="https://via.placeholder.com/300x300?text=Gleo+Mural" alt="Inclusión 12">
+                    </div>
+                    <div class="mural-item" data-title="El despertar de la naturaleza" data-desc="¿Cuándo fue la última vez que te detuviste a contemplar el vínculo que nos une con la tierra? La artista colombiana Gleo (Natalia Gallego) transforma los muros en una puerta a la contemplación.">
+                        <img src="https://via.placeholder.com/300x300?text=Gleo+Mural" alt="Inclusión 13">
+                    </div>
+                    <div class="mural-item" data-title="El despertar de la naturaleza" data-desc="¿Cuándo fue la última vez que te detuviste a contemplar el vínculo que nos une con la tierra? La artista colombiana Gleo (Natalia Gallego) transforma los muros en una puerta a la contemplación.">
+                        <img src="https://via.placeholder.com/300x300?text=Gleo+Mural" alt="Inclusión 14">
+                    </div>
+                    <div class="mural-item" data-title="El despertar de la naturaleza" data-desc="¿Cuándo fue la última vez que te detuviste a contemplar el vínculo que nos une con la tierra? La artista colombiana Gleo (Natalia Gallego) transforma los muros en una puerta a la contemplación.">
+                        <img src="https://via.placeholder.com/300x300?text=Gleo+Mural" alt="Inclusión 15">
+                    </div>
+                    <div class="mural-item" data-title="El despertar de la naturaleza" data-desc="¿Cuándo fue la última vez que te detuviste a contemplar el vínculo que nos une con la tierra? La artista colombiana Gleo (Natalia Gallego) transforma los muros en una puerta a la contemplación.">
+                        <img src="https://via.placeholder.com/300x300?text=Gleo+Mural" alt="Inclusión 16">
+                    </div>
+                    
+                </div>
+            </section>
+
+            <!-- SECCIÓN 4: DIVERSIDAD (13 Murales) -->
+            <section class="gallery-category" style="margin-top: 60px;">
+                <h2 class="section-title">Diversidad</h2>
+                <p class="category-desc">La belleza radica en nuestras diferencias. Un homenaje a la pluralidad de pensamientos, colores, formas de amar y de vivir que conforman el tejido de nuestra institución.</p>
+                
+                <div class="gallery-grid">
+                    <!-- MURAL ITEM: Copia y pega este bloque hasta tener los 13 murales -->
+                    <div class="mural-item" data-title="Título de Diversidad 1" data-desc="Descripción del mural sobre la diversidad.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Diversidad" alt="Diversidad 1">
+                    </div>
+                    <div class="mural-item" data-title="Título de Diversidad 2" data-desc="Descripción del mural sobre la diversidad.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Diversidad" alt="Diversidad 2">
+                    </div>
+                    <div class="mural-item" data-title="Título de Diversidad 3" data-desc="Descripción del mural sobre la diversidad.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Diversidad" alt="Diversidad 3">
+                    </div>
+                    <div class="mural-item" data-title="Título de Diversidad 4" data-desc="Descripción del mural sobre la diversidad.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Diversidad" alt="Diversidad 4">
+                    </div>
+                    <div class="mural-item" data-title="Título de Diversidad 5" data-desc="Descripción del mural sobre la diversidad.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Diversidad" alt="Diversidad 5">
+                    </div>
+                    <div class="mural-item" data-title="Título de Diversidad 6" data-desc="Descripción del mural sobre la diversidad.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Diversidad" alt="Diversidad 6">
+                    </div>
+                    <div class="mural-item" data-title="Título de Diversidad 7" data-desc="Descripción del mural sobre la diversidad.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Diversidad" alt="Diversidad 7">
+                    </div>
+                    <div class="mural-item" data-title="Título de Diversidad 8" data-desc="Descripción del mural sobre la diversidad.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Diversidad" alt="Diversidad 8">
+                    </div>
+                    <div class="mural-item" data-title="Título de Diversidad 9" data-desc="Descripción del mural sobre la diversidad.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Diversidad" alt="Diversidad 9">
+                    </div>
+                    <div class="mural-item" data-title="Título de Diversidad 10" data-desc="Descripción del mural sobre la diversidad.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Diversidad" alt="Diversidad 10">
+                    </div>
+                    <div class="mural-item" data-title="Título de Diversidad 11" data-desc="Descripción del mural sobre la diversidad.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Diversidad" alt="Diversidad 11">
+                    </div>
+                    <div class="mural-item" data-title="Título de Diversidad 12" data-desc="Descripción del mural sobre la diversidad.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Diversidad" alt="Diversidad 12">
+                    </div>
+                    <div class="mural-item" data-title="Título de Diversidad 13" data-desc="Descripción del mural sobre la diversidad.">
+                        <img src="https://via.placeholder.com/300x300?text=Mural+Diversidad" alt="Diversidad 13">
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- MODAL POPUP PARA LOS MURALES -->
+    <div class="mural-modal" id="muralModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeMuralModal">&times;</button>
+            <div class="modal-image">
+                <img src="" alt="Mural seleccionado" id="modalImage">
+            </div>
+            <div class="modal-text">
+                <h3 id="modalTitle">Título del Mural</h3>
+                <p id="modalDesc">Descripción completa del mural.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FRANJA DE ALIADOS -->
+    <div class="partners-carousel-section">
+        <div class="partners-track">
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=U.+de+Medellín" alt="Universidad de Medellín"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=U.+de+Antioquia" alt="U. de Antioquia"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Fundación+Sura" alt="Fundación Sura"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=MinTIC" alt="MinTIC"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Sec.+Educación" alt="Sec. de Educación"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Corpocentro" alt="Corpocentro"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Manguaba" alt="Manguaba"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Fund.+PINTUCO" alt="Fund. PINTUCO"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=U.+de+Medellín" alt="Universidad de Medellín"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=U.+de+Antioquia" alt="U. de Antioquia"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Fundación+Sura" alt="Fundación Sura"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=MinTIC" alt="MinTIC"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Sec.+Educación" alt="Sec. de Educación"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Corpocentro" alt="Corpocentro"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Manguaba" alt="Manguaba"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Fund.+PINTUCO" alt="Fund. PINTUCO"></div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <!-- (El mismo contenido de tu footer original) -->
+        <div class="footer-content">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <div class="logo-icon-small">🏛️</div>
+                    <div class="logo-text">
+                        <h3>I.E. Héctor Abad Gómez</h3>
+                    </div>
+                </div>
+                <p>Proyecto cultural enfocado en la memoria, el arte y la transformación social de nuestra comunidad educativa.</p>
+                <div class="social-links">
+                    <a href="#">IG</a>
+                    <a href="#">TK</a>
+                    <a href="#">YT</a>
+                    <a href="#">SP</a>
+                </div>
+            </div>
+            <div class="footer-col links-col">
+                <h4>EXPLORAR</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Museo interactivo</a></li>
+                    <li><a href="historia-museo.html">Historia del museo</a></li>
+                    <li><a href="historia-colegio.html">Historia del colegio</a></li>
+                    <li><a href="galeria-visual.html">Galería visual</a></li>
+                    <li><a href="galeria-sonora.html">Galería sonora</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-col">
+                <h4>CONTACTO</h4>
+                <p>Cra. 44 #43-56<br>Medellín, Colombia<br>museoeiehag.edu.co</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 I.E. Héctor Abad Gómez - Todos los derechos reservados</p>
+            <p>Hecho en Medellín 🍎</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

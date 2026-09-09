@@ -12,31 +12,41 @@
 <body>
 
     <header>
-        <div class="logo-container">
+    <div class="logo-container">
+        <a href="index.html">
             <img src="images/Blanco_LOGO_MUSEOESCOLAR_horizontal.png" alt="Logo Museo Escolar I.E. Héctor Abad Gómez" class="header-logo-img">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">INICIO</a></li>
-                <li class="has-dropdown nav-active">HISTORIA ▾
-                    <ul class="dropdown-menu">
-                        <li><a href="historia-museo.html">Historia del museo</a></li>
-                        <li><a href="historia-colegio.html">Historia del colegio</a></li>
-                    </ul>
-                </li>
-                <li>MUSEO INTERACTIVO</li>
-                <li class="has-dropdown">GALERÍA ▾
-                    <ul class="dropdown-menu">
-                        <li>Galería Visual</li>
-                        <li>Galería Sonora</li>
-                    </ul>
-                </li>
-                <li>APÓYANOS</li>
-                <li>CONTACTO</li>
-                <li><a href="#" class="btn-donate">¡DONA AQUÍ!</a></li>
-            </ul>
-        </nav>
-    </header>
+        </a>
+    </div>
+    
+    <!-- Botón Hamburguesa (Solo aparece en móviles) -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav id="mainNav">
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li class="has-dropdown">HISTORIA ▾
+                <ul class="dropdown-menu">
+                    <li><a href="historia-museo.html">Historia del museo</a></li>
+                    <li><a href="historia-colegio.html">Historia del colegio</a></li>
+                </ul>
+            </li>
+            <li><a href="#">MUSEO INTERACTIVO</a></li>
+            <li class="has-dropdown">GALERÍA ▾
+                <ul class="dropdown-menu">
+                    <li><a href="galeria-visual.html">Galería Visual</a></li>
+                    <li><a href="galeria-sonora.html">Galería Sonora</a></li>
+                </ul>
+            </li>
+            <li><a href="#">APÓYANOS</a></li>
+            <li><a href="#">CONTACTO</a></li>
+            <li><a href="#" class="btn-donate">¡DONA AQUÍ!</a></li>
+        </ul>
+    </nav>
+</header>
 
     <main style="margin-top: 80px;">
         <section class="page-hero">
@@ -235,14 +245,13 @@
             </div>
 
             <div class="footer-col links-col">
-                <h4>EXPLORAR</h4>
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="#">Museo interactivo</a></li>
                     <li><a href="historia-museo.html">Historia del museo</a></li>
                     <li><a href="historia-colegio.html">Historia del colegio</a></li>
-                    <li><a href="#">Apóyanos</a></li>
-                    <li><a href="#">Podcasts</a></li>
+                    <li><a href="galeria-visual.html">Galería visual</a></li>
+                    <li><a href="galeria-sonora.html">Galería sonora</a></li>
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </div>

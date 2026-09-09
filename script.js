@@ -216,5 +216,74 @@ document.addEventListener('DOMContentLoaded', () => {
             dropdowns.forEach(dropdown => dropdown.classList.remove('open'));
         }
     });
+    // 9. Cierre de Niqui en la nueva Galería Visual
+    const closeBtnGaleriaVisual = document.getElementById('closeBtnGaleriaVisual');
+    const niquiBoxGaleriaVisual = document.getElementById('niquiBoxGaleriaVisual');
+    if (closeBtnGaleriaVisual && niquiBoxGaleriaVisual) {
+        closeBtnGaleriaVisual.addEventListener('click', () => {
+            niquiBoxGaleriaVisual.style.display = 'none';
+        });
+    }
+
+    // 10. Lógica del Modal (Popup) interactivo de los Murales
+    const murals = document.querySelectorAll('.mural-item');
+    const modal = document.getElementById('muralModal');
+    
+    if (murals.length > 0 && modal) {
+        const modalImg = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const closeModalBtn = document.getElementById('closeMuralModal');
+
+        // Al hacer clic en cualquier mural, inyecta su título, descripción e imagen en el modal
+        murals.forEach(mural => {
+            mural.addEventListener('click', () => {
+                const imgSrc = mural.querySelector('img').src;
+                const title = mural.getAttribute('data-title');
+                const desc = mural.getAttribute('data-desc');
+
+                modalImg.src = imgSrc;
+                modalTitle.textContent = title;
+                modalDesc.textContent = desc;
+
+                modal.classList.add('active');
+                // Evita que el fondo haga scroll mientras el modal está abierto
+                document.body.style.overflow = 'hidden'; 
+            });
+        });
+
+        // Cerrar modal al tocar la X
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Cerrar modal al tocar la parte oscura afuera de la tarjeta blanca
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+    // Menú Hamburguesa Responsive
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mainNav = document.getElementById('mainNav');
+
+    if (hamburgerBtn && mainNav) {
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+
+        // Cierra el menú automáticamente al hacer clic en cualquier opción
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+    }
 
 });
