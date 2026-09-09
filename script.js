@@ -285,5 +285,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
+// Cierre de Niqui en la nueva Galería Sonora
+    const closeBtnGaleriaSonora = document.getElementById('closeBtnGaleriaSonora');
+    const niquiBoxGaleriaSonora = document.getElementById('niquiBoxGaleriaSonora');
+    if (closeBtnGaleriaSonora && niquiBoxGaleriaSonora) {
+        closeBtnGaleriaSonora.addEventListener('click', () => {
+            niquiBoxGaleriaSonora.style.display = 'none';
+        });
+    }
 });

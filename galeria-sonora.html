@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Sonora - Museo Escolar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Neuton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="images/Blanco_LOGO_MUSEOESCOLAR_horizontal.png" alt="Logo Museo Escolar" class="header-logo-img">
+            </a>
+        </div>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+        <nav id="mainNav">
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li class="has-dropdown">HISTORIA ▾
+                    <ul class="dropdown-menu">
+                        <li><a href="historia-museo.html">Historia del museo</a></li>
+                        <li><a href="historia-colegio.html">Historia del colegio</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">MUSEO INTERACTIVO</a></li>
+                <li class="has-dropdown">GALERÍA ▾
+                    <ul class="dropdown-menu">
+                        <li><a href="galeria-visual.html">Galería Visual</a></li>
+                        <li><a href="galeria-sonora.html">Galería Sonora</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">APÓYANOS</a></li>
+                <li><a href="#">CONTACTO</a></li>
+                <li><a href="#" class="btn-donate">¡DONA AQUÍ!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="margin-top: 80px; background-color: #FAFAFA; padding-bottom: 60px;">
+        <!-- Hero Galería Sonora -->
+        <section class="page-hero">
+            <h5 class="hero-subtitle">ARCHIVO DE EPISODIOS</h5>
+            <h1 class="page-title">Galería <em>sonora</em></h1>
+            <p>Escucha las historias de nuestra institución narradas por quienes las vivieron.</p>
+        </section>
+
+        <!-- Niqui Dice -->
+        <div class="page-niqui-container" id="niquiBoxGaleriaSonora">
+            <div class="niqui-dialogue-container-right">
+                <div class="niqui-avatar-wrapper">
+                    <img src="images/placeholder-niqui.png" alt="Niqui" class="niqui-avatar-img">
+                </div>
+                <div class="niqui-tooltip">
+                    <button class="close-btn" id="closeBtnGaleriaSonora">&times;</button>
+                    <h5>NIQUI DICE:</h5>
+                    <p>¡Bienvenido al archivo de podcasts! Filtra por tema o escucha el episodio destacado. ¡Que lo disfrutes! 🎧</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 1: PODCAST (SPOTIFY EMBED) -->
+        <section class="container" style="margin-top: 20px;">
+            <h2 class="section-title text-center" style="color: #CBA052; font-family: var(--font-headings); font-size: 3rem;">Podcast</h2>
+            
+            <div class="spotify-container">
+                <!-- Se usa el formato "/embed/show/" de Spotify para que cargue la lista de episodios -->
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/show/0t5j8xwTU0EZu17c2sRldK?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: RELATOS SONOROS (LISTA DE 7 EPISODIOS) -->
+        <section class="container" style="margin-top: 40px;">
+            <h2 class="section-title text-center" style="color: #CBA052; font-family: var(--font-headings); font-size: 3rem; margin-bottom: 40px;">Relatos sonoros</h2>
+            
+            <h3 style="font-family: var(--font-headings); font-size: 2rem; color: #333; margin-bottom: 20px;">Todos los episodios</h3>
+
+            <div class="relatos-list">
+                
+                <!-- Relato 1 -->
+                <div class="relato-card">
+                    <img src="https://via.placeholder.com/120?text=EP+01" alt="EP 01" class="relato-img">
+                    <div class="relato-info">
+                        <span class="relato-meta">EP 01 · JUNIO 2024</span>
+                        <h3>La memoria del barrio</h3>
+                        <p class="relato-mural">Mural "Las Alas del Barrio" · Colectivo Arte · Colegio del barrio</p>
+                        <p class="relato-tags">Identidad, sueños y raíces territoriales</p>
+                    </div>
+                    <div class="relato-action">
+                        <span class="relato-time">1:23 min</span>
+                        <!-- Placeholder del audio real -->
+                        <audio id="audio-ep1" src=""></audio>
+                        <button class="play-audio-btn" onclick="document.getElementById('audio-ep1').play()">▶</button>
+                    </div>
+                </div>
+
+                <!-- Relato 2 -->
+                <div class="relato-card">
+                    <img src="https://via.placeholder.com/120?text=EP+02" alt="EP 02" class="relato-img">
+                    <div class="relato-info">
+                        <span class="relato-meta">EP 02 · MARZO 2023</span>
+                        <h3>Manos que Construyen Paz</h3>
+                        <p class="relato-mural">Mural "Manos que Construyen Paz" · María García</p>
+                        <p class="relato-tags">Proceso colectivo y participación comunitaria</p>
+                    </div>
+                    <div class="relato-action">
+                        <span class="relato-time">1:30 min</span>
+                        <audio id="audio-ep2" src=""></audio>
+                        <button class="play-audio-btn" onclick="document.getElementById('audio-ep2').play()">▶</button>
+                    </div>
+                </div>
+
+                <!-- Relato 3 -->
+                <div class="relato-card">
+                    <img src="https://via.placeholder.com/120?text=EP+03" alt="EP 03" class="relato-img">
+                    <div class="relato-info">
+                        <span class="relato-meta">EP 03 · ENERO 2024</span>
+                        <h3>Raíces y Sueños</h3>
+                        <p class="relato-mural">Mural "Raíces y Sueños" · Arte Social · Galería Sueños</p>
+                        <p class="relato-tags">Memoria, territorio y sentido de pertenencia</p>
+                    </div>
+                    <div class="relato-action">
+                        <span class="relato-time">1:13 min</span>
+                        <audio id="audio-ep3" src=""></audio>
+                        <button class="play-audio-btn" onclick="document.getElementById('audio-ep3').play()">▶</button>
+                    </div>
+                </div>
+
+                <!-- Relato 4 -->
+                <div class="relato-card">
+                    <img src="https://via.placeholder.com/120?text=EP+04" alt="EP 04" class="relato-img">
+                    <div class="relato-info">
+                        <span class="relato-meta">EP 04 · NOV 2022</span>
+                        <h3>La fuerza del pueblo</h3>
+                        <p class="relato-mural">Mural "La Fuerza del Pueblo" · Jhoan Sebastián Montoya</p>
+                        <p class="relato-tags">Arte urbano, grafiti y expresión juvenil</p>
+                    </div>
+                    <div class="relato-action">
+                        <span class="relato-time">1:08 min</span>
+                        <audio id="audio-ep4" src=""></audio>
+                        <button class="play-audio-btn" onclick="document.getElementById('audio-ep4').play()">▶</button>
+                    </div>
+                </div>
+
+                <!-- Relato 5 -->
+                <div class="relato-card">
+                    <img src="https://via.placeholder.com/120?text=EP+05" alt="EP 05" class="relato-img">
+                    <div class="relato-info">
+                        <span class="relato-meta">EP 05 · AGOSTO 2020</span>
+                        <h3>El plato que nunca quedaba vacío</h3>
+                        <p class="relato-mural">Mural "El plato que nunca quedaba vacío" · Juan David Jiménez</p>
+                        <p class="relato-tags">Arte urbano, grafiti y expresión juvenil</p>
+                    </div>
+                    <div class="relato-action">
+                        <span class="relato-time">2:50 min</span>
+                        <audio id="audio-ep5" src=""></audio>
+                        <button class="play-audio-btn" onclick="document.getElementById('audio-ep5').play()">▶</button>
+                    </div>
+                </div>
+
+                <!-- Relato 6 -->
+                <div class="relato-card">
+                    <img src="https://via.placeholder.com/120?text=EP+06" alt="EP 06" class="relato-img">
+                    <div class="relato-info">
+                        <span class="relato-meta">EP 06 · FEB 2021</span>
+                        <h3>Nadie sabía exactamente cuándo aparecía</h3>
+                        <p class="relato-mural">Mural "Nadie sabía exactamente cuándo aparecía" · Christian Bran Arboleda</p>
+                        <p class="relato-tags">Arte urbano, grafiti y expresión juvenil</p>
+                    </div>
+                    <div class="relato-action">
+                        <span class="relato-time">2:54 min</span>
+                        <audio id="audio-ep6" src=""></audio>
+                        <button class="play-audio-btn" onclick="document.getElementById('audio-ep6').play()">▶</button>
+                    </div>
+                </div>
+
+                <!-- Relato 7 -->
+                <div class="relato-card">
+                    <img src="https://via.placeholder.com/120?text=EP+07" alt="EP 07" class="relato-img">
+                    <div class="relato-info">
+                        <span class="relato-meta">EP 07 · DIC 2019</span>
+                        <h3>La ciudad de las máscaras caídas</h3>
+                        <p class="relato-mural">Mural "La ciudad de las máscaras caídas" · Juan Rodríguez</p>
+                        <p class="relato-tags">Arte urbano, grafiti y expresión juvenil</p>
+                    </div>
+                    <div class="relato-action">
+                        <span class="relato-time">2:40 min</span>
+                        <audio id="audio-ep7" src=""></audio>
+                        <button class="play-audio-btn" onclick="document.getElementById('audio-ep7').play()">▶</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FRANJA DE ALIADOS -->
+    <div class="partners-carousel-section">
+        <div class="partners-track">
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=U.+de+Medellín" alt="Universidad de Medellín"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=U.+de+Antioquia" alt="U. de Antioquia"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Fundación+Sura" alt="Fundación Sura"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=MinTIC" alt="MinTIC"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Sec.+Educación" alt="Sec. de Educación"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Corpocentro" alt="Corpocentro"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Manguaba" alt="Manguaba"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Fund.+PINTUCO" alt="Fund. PINTUCO"></div>
+            <!-- Duplicado para efecto infinito -->
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=U.+de+Medellín" alt="Universidad de Medellín"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=U.+de+Antioquia" alt="U. de Antioquia"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Fundación+Sura" alt="Fundación Sura"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=MinTIC" alt="MinTIC"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Sec.+Educación" alt="Sec. de Educación"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Corpocentro" alt="Corpocentro"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Manguaba" alt="Manguaba"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Fund.+PINTUCO" alt="Fund. PINTUCO"></div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <div class="logo-icon-small">🏛️</div>
+                    <div class="logo-text"><h3>I.E. Héctor Abad Gómez</h3></div>
+                </div>
+                <p>Proyecto cultural enfocado en la memoria, el arte y la transformación social de nuestra comunidad educativa.</p>
+                <div class="social-links">
+                    <a href="#">IG</a><a href="#">TK</a><a href="#">YT</a><a href="#">SP</a>
+                </div>
+            </div>
+            <div class="footer-col links-col">
+                <h4>EXPLORAR</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Museo interactivo</a></li>
+                    <li><a href="historia-museo.html">Historia del museo</a></li>
+                    <li><a href="historia-colegio.html">Historia del colegio</a></li>
+                    <li><a href="galeria-visual.html">Galería visual</a></li>
+                    <li><a href="galeria-sonora.html">Galería sonora</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-col">
+                <h4>CONTACTO</h4>
+                <p>Cra. 44 #43-56<br>Medellín, Colombia<br>museoeiehag.edu.co</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 I.E. Héctor Abad Gómez - Todos los derechos reservados</p>
+            <p>Hecho en Medellín 🍎</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
