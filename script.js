@@ -293,4 +293,12 @@ document.addEventListener('DOMContentLoaded', () => {
             niquiBoxGaleriaSonora.style.display = 'none';
         });
     }
+// Cierre del cuadro de Niqui en Apóyanos
+    const closeBtnApoyanos = document.getElementById('closeBtnApoyanos');
+    const niquiBoxApoyanos = document.getElementById('niquiBoxApoyanos');
+    if (closeBtnApoyanos && niquiBoxApoyanos) {
+        closeBtnApoyanos.addEventListener('click', () => {
+            niquiBoxApoyanos.style.display = 'none';
+        });
+    }
 });

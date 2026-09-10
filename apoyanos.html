@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apóyanos - Museo Escolar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Neuton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="images/Blanco_LOGO_MUSEOESCOLAR_horizontal.png" alt="Logo Museo Escolar I.E. Héctor Abad Gómez" class="header-logo-img">
+            </a>
+        </div>
+        
+        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="mainNav">
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li class="has-dropdown">HISTORIA ▾
+                    <ul class="dropdown-menu">
+                        <li><a href="historia-museo.html">Historia del museo</a></li>
+                        <li><a href="historia-colegio.html">Historia del colegio</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">MUSEO INTERACTIVO</a></li>
+                <li class="has-dropdown">GALERÍA ▾
+                    <ul class="dropdown-menu">
+                        <li><a href="galeria-visual.html">Galería Visual</a></li>
+                        <li><a href="galeria-sonora.html">Galería Sonora</a></li>
+                    </ul>
+                </li>
+                <li class="nav-active"><a href="apoyanos.html">APÓYANOS</a></li>
+                <li><a href="#">CONTACTO</a></li>
+                <li><a href="#" class="btn-donate">¡DONA AQUÍ!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="margin-top: 80px;">
+        <section class="page-hero">
+            <h5 class="hero-subtitle">APÓYANOS</h5>
+            <h1 class="page-title">Ayúdanos a preservar nuestra <em>memoria</em></h1>
+            <p>Tu aporte — grande o pequeño — es parte de la historia que construimos juntos.</p>
+        </section>
+
+        <div class="page-niqui-container" id="niquiBoxApoyanos">
+            <div class="niqui-dialogue-container-right">
+                <div class="niqui-avatar-wrapper">
+                    <img src="images/placeholder-niqui.png" alt="Niqui" class="niqui-avatar-img">
+                </div>
+                <div class="niqui-tooltip">
+                    <button class="close-btn" id="closeBtnApoyanos">&times;</button>
+                    <h5>NIQUI DICE:</h5>
+                    <p>¡Gracias por querer contribuir! Aquí puedes compartir lo que tengas: fotos, documentos, recuerdos — todo es bienvenido 💛</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="container apoyanos-section">
+            <div class="apoyanos-layout">
+                
+                <div class="apoyanos-left-col">
+                    <h2 class="apoyanos-title">¿Cómo puedes aportar?</h2>
+                    <p class="apoyanos-desc">
+                        Los miembros de nuestra comunidad pueden contribuir fotografías, documentos, historias, testimonios, objetos o cualquier material relacionado con la historia de la institución.
+                    </p>
+
+                    <div class="aportes-grid">
+                        <div class="aporte-card">
+                            <div class="aporte-icon">📷</div>
+                            <h3>FOTOGRAFÍAS</h3>
+                            <p>Imágenes históricas, retratos, eventos escolares de cualquier época.</p>
+                        </div>
+
+                        <div class="aporte-card">
+                            <div class="aporte-icon">📄</div>
+                            <h3>DOCUMENTOS</h3>
+                            <p>Actas, boletines, cartas, certificados y registros oficiales.</p>
+                        </div>
+
+                        <div class="aporte-card">
+                            <div class="aporte-icon">🎙️</div>
+                            <h3>TESTIMONIOS</h3>
+                            <p>Audios o videos de tu experiencia en la institución.</p>
+                        </div>
+
+                        <div class="aporte-card">
+                            <div class="aporte-icon">🧱</div>
+                            <h3>OBJETOS</h3>
+                            <p>Elementos físicos que guardan la memoria de la escuela.</p>
+                        </div>
+                    </div>
+
+                    <a href="#" class="btn-quiero-aportar">QUIERO APORTAR ➔</a>
+                </div>
+
+                <div class="apoyanos-right-col">
+                    <div class="library-img-card">
+                        <img src="images/biblioteca-historia.jpg" alt="Biblioteca del Museo">
+                        <div class="badge-aportes">
+                            <span class="badge-num">+300</span>
+                            <span class="badge-text">APORTES RECIBIDOS</span>
+                        </div>
+                    </div>
+
+                    <div class="proyecto-cultural-card">
+                        <h4>¿QUIERES SER PARTE DE ESTE PROYECTO CULTURAL?</h4>
+                        <p>Puedes donar talentos, proponer tu trabajo como artista o colaborar con nuestras tradiciones.</p>
+                        <a href="#" class="btn-quiero-participar">QUIERO PARTICIPAR</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="callout-banner">
+    <div class="callout-content">
+        <h2>Tu historia también hace parte de <em>la nuestra.</em></h2>
+        <p>Explora el museo digital y contribuye a preservar la memoria de la Institución Educativa Héctor Abad Gómez.</p>
+        <a href="#" class="btn-primary callout-btn">QUIERO APORTAR AHORA</a>
+    </div>
+</section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <div class="logo-icon-small">🏛️</div>
+                    <div class="logo-text"><h3>I.E. Héctor Abad Gómez</h3></div>
+                </div>
+                <p>Proyecto cultural enfocado en la memoria, el arte y la transformación social de nuestra comunidad educativa.</p>
+                <div class="social-links">
+                    <a href="#">IG</a><a href="#">TK</a><a href="#">YT</a><a href="#">SP</a>
+                </div>
+            </div>
+            <div class="footer-col links-col">
+                <h4>EXPLORAR</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Museo interactivo</a></li>
+                    <li><a href="historia-museo.html">Historia del museo</a></li>
+                    <li><a href="historia-colegio.html">Historia del colegio</a></li>
+                    <li><a href="galeria-visual.html">Galería visual</a></li>
+                    <li><a href="galeria-sonora.html">Galería sonora</a></li>
+                    <li><a href="apoyanos.html">Apóyanos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-col">
+                <h4>CONTACTO</h4>
+                <p>Cra. 44 #43-56<br>Medellín, Colombia<br>museoeiehag.edu.co</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 I.E. Héctor Abad Gómez - Todos los derechos reservados</p>
+            <p>Hecho en Medellín 🍎</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
