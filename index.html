@@ -169,7 +169,7 @@
                 <button class="btn-primary" onclick="window.location.href='galeria-visual.html'">VER LA GALERÍA ➔</button>
         </div>
     </section>
-    <!-- GALERÍA SONORA -->
+  <!-- GALERÍA SONORA -->
     <section class="sound-gallery">
 
         <div class="niqui-dialogue-container" id="niquiGalleryBox">
@@ -187,7 +187,7 @@
         <h2>Explora nuestro museo</h2>
         <p class="description">Cada sala es una ventana hacia la memoria colectiva y los sueños de nuestra comunidad educativa.</p>
         
-        <!-- Nuevos botones de filtro -->
+        <!-- Botones de filtro -->
         <div class="gallery-filters">
             <button class="filter-btn active" data-category="podcast">Podcast</button>
             <button class="filter-btn" data-category="relatos">Relatos sonoros</button>
@@ -197,57 +197,46 @@
             <button class="carousel-nav prev-btn" id="soundPrev">←</button>
             
             <div class="carousel-track">
-              <!-- Panel 1: Podcast (Sin el badge 1) -->
+              <!-- Panel 1: Podcast con el Episodio 1 embebido -->
                 <article class="gallery-card sound-panel active" id="panel-podcast">
-                    <div class="card-image-wrapper">
-                        <!-- ELIMINAMOS EL <div class="card-badge">1</div> DE AQUÍ -->
-                        <div class="card-image" style="background-image: url('https://via.placeholder.com/400x500?text=Podcast+Imagen');"></div>
-                    </div>
-                    <div class="card-content">
+                    <div class="card-content" style="flex: 1; padding: 30px; text-align: left;">
                         <span class="card-category">EPISODIO DE PODCAST</span>
-                        <span class="card-meta">Archivo institucional · 2021</span>
+                        <span class="card-meta">Temporada 1 · Episodio 1</span>
                         <h3>Nuestra historia en voz alta</h3>
-                        <p class="card-text">Los orígenes, hitos y transformaciones narrados por los protagonistas de nuestra institución.</p>
+                        <p class="card-text" style="margin-bottom: 15px;">Los orígenes, hitos y transformaciones narrados por los protagonistas de nuestra institución.</p>
                         
-                        <div class="podcast-box">
-                            <span class="podcast-label">PODCAST ASOCIADO</span>
-                            <div class="podcast-info">
-                                <div class="podcast-icon">🎙️</div>
-                                <div class="podcast-details">
-                                    <h4>Los primeros años</h4>
-                                    <p>Episodio · 12 min</p>
-                                </div>
-                                <button class="play-btn">▶</button>
-                            </div>
+                        <div class="podcast-box" style="padding: 0; background: none; margin-bottom: 20px;">
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/5rFumRE30o2RvPJRMm4hQp?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                         </div>
-                        <button class="btn-primary w-full">EXPLORA EL PODCAST ➔</button>
+                        <button class="btn-primary w-full" onclick="window.location.href='galeria-sonora.html'">EXPLORA EL PODCAST ➔</button>
                     </div>
                 </article>
 
-                <!-- Panel 2: Relatos Sonoros (Sin el badge 2) -->
-                <article class="gallery-card sound-panel" id="panel-relatos" style="display: none;">
+                <!-- Panel 2: Relatos Sonoros (Reproducible) -->
+                <article class="gallery-card sound-panel relato-card" id="panel-relatos" style="display: none;">
                     <div class="card-image-wrapper">
-                        <!-- ELIMINAMOS EL <div class="card-badge">2</div> DE AQUÍ -->
-                        <div class="card-image" style="background-image: url('https://via.placeholder.com/400x500?text=Relatos+Sonoros');"></div>
+                        <div class="card-image" style="background-image: url('https://via.placeholder.com/400x500?text=Relato+1');"></div>
                     </div>
-                    <div class="card-content">
+                    <div class="card-content" style="text-align: left;">
                         <span class="card-category">RELATO SONORO</span>
-                        <span class="card-meta">Voces del barrio · 2022</span>
-                        <h3>Memorias de Niquitao</h3>
-                        <p class="card-text">Relatos íntimos y vivencias de los fundadores y primeros habitantes que dieron vida al sector.</p>
+                        <span class="card-meta">EP 01 · JUNIO 2024</span>
+                        <h3>La memoria del barrio</h3>
+                        <p class="card-text">Mural "Las Alas del Barrio" · Colectivo Arte</p>
                         
                         <div class="podcast-box">
-                            <span class="podcast-label">AUDIO RELATO</span>
-                            <div class="podcast-info">
+                            <span class="podcast-label">AUDIO DEL RELATO</span>
+                            <div class="podcast-info" style="display: flex; align-items: center; gap: 15px;">
                                 <div class="podcast-icon">🎧</div>
-                                <div class="podcast-details">
-                                    <h4>Memorias del barrio</h4>
-                                    <p>Relato · 8 min</p>
+                                <div class="podcast-details" style="flex: 1;">
+                                    <h4>La memoria del barrio</h4>
+                                    <p>1:23 min · Identidad y raíces</p>
                                 </div>
-                                <button class="play-btn">▶</button>
+                                <!-- Elementos de audio y botón enlazados al script -->
+                                <audio class="relato-audio" src="tu-audio-1.mp3"></audio>
+                                <button class="play-audio-btn" style="width: 40px; height: 40px; border-radius: 50%; background-color: #E05D2A; color: white; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px;">▶</button>
                             </div>
                         </div>
-                        <button class="btn-primary w-full">ESCUCHA EL RELATO ➔</button>
+                        <button class="btn-primary w-full" onclick="window.location.href='galeria-sonora.html'">ESCUCHA EL RELATO ➔</button>
                     </div>
                 </article>
             </div>
