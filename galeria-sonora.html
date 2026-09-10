@@ -44,7 +44,7 @@
         </nav>
     </header>
 
-    <main style="margin-top: 80px; background-color: #FAFAFA; padding-bottom: 60px;">
+    <main style="margin-top: 80px;">
         <!-- Hero Galería Sonora -->
         <section class="page-hero">
             <h5 class="hero-subtitle">ARCHIVO DE EPISODIOS</h5>
@@ -66,140 +66,233 @@
             </div>
         </div>
 
-        <!-- SECCIÓN 1: PODCAST (SPOTIFY EMBED) -->
-        <section class="container" style="margin-top: 20px;">
-            <h2 class="section-title text-center" style="color: #CBA052; font-family: var(--font-headings); font-size: 3rem;">Podcast</h2>
+      <!-- SECCIÓN 1: PODCAST Y NIQUI -->
+        <section class="container podcast-layout">
             
-            <div class="spotify-container">
-                <!-- Se usa el formato "/embed/show/" de Spotify para que cargue la lista de episodios -->
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/show/0t5j8xwTU0EZu17c2sRldK?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <!-- Columna Izquierda: Niqui Dice -->
+            <div class="podcast-niqui-col">
+                <div class="niqui-dialogue-container-left" id="niquiBoxPodcast">
+                    <div class="niqui-avatar-wrapper" style="margin: 0 auto 15px auto;">
+                        <img src="images/placeholder-niqui.png" alt="Niqui" class="niqui-avatar-img">
+                    </div>
+                    <div class="niqui-tooltip">
+                        <button class="close-btn" id="closeBtnPodcast">&times;</button>
+                        <h5>NIQUI DICE:</h5>
+                        <p><strong>Extramural</strong> usa el arte público para transformar comunidades y crear espacios inclusivos. Este podcast explora un proyecto transformador: la creación de nuestro <strong>Museo Escolar</strong>, inspirado en la movilidad humana y la diversidad cultural. ¡Escucha nuestra historia!</p>
+                    </div>
+                </div>
             </div>
-        </section>
 
-        <!-- SECCIÓN 2: RELATOS SONOROS (LISTA DE 7 EPISODIOS) -->
-        <section class="container" style="margin-top: 40px;">
-            <h2 class="section-title text-center" style="color: #CBA052; font-family: var(--font-headings); font-size: 3rem; margin-bottom: 40px;">Relatos sonoros</h2>
-            
-            <h3 style="font-family: var(--font-headings); font-size: 2rem; color: #333; margin-bottom: 20px;">Todos los episodios</h3>
-
-            <div class="relatos-list">
+            <!-- Columna Derecha: Podcasts por temporadas centrados -->
+            <div class="podcast-content-col">
+                <h2 class="section-title text-center" style="color: #CBA052; font-family: var(--font-headings); font-size: 3rem; margin-bottom: 30px;">Podcast</h2>
                 
-                <!-- Relato 1 -->
-                <div class="relato-card">
-                    <img src="https://via.placeholder.com/120?text=EP+01" alt="EP 01" class="relato-img">
-                    <div class="relato-info">
-                        <span class="relato-meta">EP 01 · JUNIO 2024</span>
-                        <h3>La memoria del barrio</h3>
-                        <p class="relato-mural">Mural "Las Alas del Barrio" · Colectivo Arte · Colegio del barrio</p>
-                        <p class="relato-tags">Identidad, sueños y raíces territoriales</p>
+                <!-- TEMPORADA 1 -->
+                <div class="podcast-season">
+                    <h3 style="font-family: var(--font-headings); font-size: 2rem; color: #333; margin-bottom: 15px; text-align: center;">Temporada 1</h3>
+                    <div class="podcast-carousel-wrapper">
+                        <button class="carousel-nav prev-ep" id="prev-s1">←</button>
+                        <div class="podcast-carousel-track" id="track-s1">
+                            <div class="podcast-slide active">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/5rFumRE30o2RvPJRMm4hQp?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            <div class="podcast-slide">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/01ypzK2XmA6kLATiG7BiUz?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            <div class="podcast-slide">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/3l8w8ylLdYQTDQJn5WkK85?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            <div class="podcast-slide">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/3vjyv7jOrQNuNAA4lch8Yf?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            <div class="podcast-slide">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/43iTvUYtZks4CakXA6moA0?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            <div class="podcast-slide">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/1E5c6clUYwsjzFTb3sGKlf?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            <div class="podcast-slide">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/28hxjiVlZx7t0Qm85bWIpw?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <button class="carousel-nav next-ep" id="next-s1">→</button>
                     </div>
-                    <div class="relato-action">
-                        <span class="relato-time">1:23 min</span>
-                        <!-- Placeholder del audio real -->
-                        <audio id="audio-ep1" src=""></audio>
-                        <button class="play-audio-btn" onclick="document.getElementById('audio-ep1').play()">▶</button>
-                    </div>
+                    <p class="episode-indicator" id="ind-s1">Episodio 1 de 7</p>
                 </div>
 
-                <!-- Relato 2 -->
-                <div class="relato-card">
-                    <img src="https://via.placeholder.com/120?text=EP+02" alt="EP 02" class="relato-img">
-                    <div class="relato-info">
-                        <span class="relato-meta">EP 02 · MARZO 2023</span>
-                        <h3>Manos que Construyen Paz</h3>
-                        <p class="relato-mural">Mural "Manos que Construyen Paz" · María García</p>
-                        <p class="relato-tags">Proceso colectivo y participación comunitaria</p>
+                <!-- TEMPORADA 2 -->
+                <div class="podcast-season" style="margin-top: 50px;">
+                    <h3 style="font-family: var(--font-headings); font-size: 2rem; color: #333; margin-bottom: 15px; text-align: center;">Temporada 2</h3>
+                    <div class="podcast-carousel-wrapper">
+                        <button class="carousel-nav prev-ep" id="prev-s2">←</button>
+                        <div class="podcast-carousel-track" id="track-s2">
+                            <div class="podcast-slide active">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/6mA7bn7KKXVuqtdTskgQBO?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            <div class="podcast-slide">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/3x2jJvgoNXXAsIOGHjtAXd?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            <div class="podcast-slide">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/7awNRagjpmyDI89dLTmy2e?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            <div class="podcast-slide">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/6Jc6CCmJ7uBnDw5hiRTZMW?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            <div class="podcast-slide">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/6r48f03PWfMsNc3XIpUd4t?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            <div class="podcast-slide">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/2peva91WGNFYMsXFCOCDvz?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            <div class="podcast-slide">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/55VPwjBpJ2qgobi0XugBWl?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <button class="carousel-nav next-ep" id="next-s2">→</button>
                     </div>
-                    <div class="relato-action">
-                        <span class="relato-time">1:30 min</span>
-                        <audio id="audio-ep2" src=""></audio>
-                        <button class="play-audio-btn" onclick="document.getElementById('audio-ep2').play()">▶</button>
-                    </div>
+                    <p class="episode-indicator" id="ind-s2">Episodio 1 de 7</p>
                 </div>
-
-                <!-- Relato 3 -->
-                <div class="relato-card">
-                    <img src="https://via.placeholder.com/120?text=EP+03" alt="EP 03" class="relato-img">
-                    <div class="relato-info">
-                        <span class="relato-meta">EP 03 · ENERO 2024</span>
-                        <h3>Raíces y Sueños</h3>
-                        <p class="relato-mural">Mural "Raíces y Sueños" · Arte Social · Galería Sueños</p>
-                        <p class="relato-tags">Memoria, territorio y sentido de pertenencia</p>
-                    </div>
-                    <div class="relato-action">
-                        <span class="relato-time">1:13 min</span>
-                        <audio id="audio-ep3" src=""></audio>
-                        <button class="play-audio-btn" onclick="document.getElementById('audio-ep3').play()">▶</button>
-                    </div>
-                </div>
-
-                <!-- Relato 4 -->
-                <div class="relato-card">
-                    <img src="https://via.placeholder.com/120?text=EP+04" alt="EP 04" class="relato-img">
-                    <div class="relato-info">
-                        <span class="relato-meta">EP 04 · NOV 2022</span>
-                        <h3>La fuerza del pueblo</h3>
-                        <p class="relato-mural">Mural "La Fuerza del Pueblo" · Jhoan Sebastián Montoya</p>
-                        <p class="relato-tags">Arte urbano, grafiti y expresión juvenil</p>
-                    </div>
-                    <div class="relato-action">
-                        <span class="relato-time">1:08 min</span>
-                        <audio id="audio-ep4" src=""></audio>
-                        <button class="play-audio-btn" onclick="document.getElementById('audio-ep4').play()">▶</button>
-                    </div>
-                </div>
-
-                <!-- Relato 5 -->
-                <div class="relato-card">
-                    <img src="https://via.placeholder.com/120?text=EP+05" alt="EP 05" class="relato-img">
-                    <div class="relato-info">
-                        <span class="relato-meta">EP 05 · AGOSTO 2020</span>
-                        <h3>El plato que nunca quedaba vacío</h3>
-                        <p class="relato-mural">Mural "El plato que nunca quedaba vacío" · Juan David Jiménez</p>
-                        <p class="relato-tags">Arte urbano, grafiti y expresión juvenil</p>
-                    </div>
-                    <div class="relato-action">
-                        <span class="relato-time">2:50 min</span>
-                        <audio id="audio-ep5" src=""></audio>
-                        <button class="play-audio-btn" onclick="document.getElementById('audio-ep5').play()">▶</button>
-                    </div>
-                </div>
-
-                <!-- Relato 6 -->
-                <div class="relato-card">
-                    <img src="https://via.placeholder.com/120?text=EP+06" alt="EP 06" class="relato-img">
-                    <div class="relato-info">
-                        <span class="relato-meta">EP 06 · FEB 2021</span>
-                        <h3>Nadie sabía exactamente cuándo aparecía</h3>
-                        <p class="relato-mural">Mural "Nadie sabía exactamente cuándo aparecía" · Christian Bran Arboleda</p>
-                        <p class="relato-tags">Arte urbano, grafiti y expresión juvenil</p>
-                    </div>
-                    <div class="relato-action">
-                        <span class="relato-time">2:54 min</span>
-                        <audio id="audio-ep6" src=""></audio>
-                        <button class="play-audio-btn" onclick="document.getElementById('audio-ep6').play()">▶</button>
-                    </div>
-                </div>
-
-                <!-- Relato 7 -->
-                <div class="relato-card">
-                    <img src="https://via.placeholder.com/120?text=EP+07" alt="EP 07" class="relato-img">
-                    <div class="relato-info">
-                        <span class="relato-meta">EP 07 · DIC 2019</span>
-                        <h3>La ciudad de las máscaras caídas</h3>
-                        <p class="relato-mural">Mural "La ciudad de las máscaras caídas" · Juan Rodríguez</p>
-                        <p class="relato-tags">Arte urbano, grafiti y expresión juvenil</p>
-                    </div>
-                    <div class="relato-action">
-                        <span class="relato-time">2:40 min</span>
-                        <audio id="audio-ep7" src=""></audio>
-                        <button class="play-audio-btn" onclick="document.getElementById('audio-ep7').play()">▶</button>
-                    </div>
-                </div>
-
             </div>
         </section>
-    </main>
+
+        <!-- SECCIÓN 2: RELATOS SONOROS CON NIQUI -->
+        <section class="container podcast-layout" style="margin-top: 40px;">
+            
+            <!-- Columna Izquierda: Niqui Dice -->
+            <div class="podcast-niqui-col">
+                <div class="niqui-dialogue-container-left" id="niquiBoxRelatos">
+                    <div class="niqui-avatar-wrapper" style="margin: 0 auto 15px auto;">
+                        <img src="images/placeholder-niqui.png" alt="Niqui" class="niqui-avatar-img">
+                    </div>
+                    <div class="niqui-tooltip">
+                        <button class="close-btn" id="closeBtnRelatos">&times;</button>
+                        <h5>NIQUI DICE:</h5>
+                        <p>Estos <strong>Relatos Sonoros</strong> son pequeñas ventanas al alma de nuestro museo. Aquí escucharás de primera mano las voces de la comunidad, las anécdotas de los artistas que pintaron los murales y el profundo significado territorial que hay detrás de cada trazo que adorna los muros. ¡Dale play a nuestras memorias!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Lista de Relatos -->
+            <div class="podcast-content-col" style="max-width: 900px;">
+                <h2 class="section-title text-center" style="color: #CBA052; font-family: var(--font-headings); font-size: 3rem; margin-bottom: 40px;">Relatos sonoros</h2>
+
+                <div class="relatos-list">
+                    
+                    <!-- Relato 1 -->
+                    <div class="relato-card">
+                        <img src="https://via.placeholder.com/120?text=EP+01" alt="EP 01" class="relato-img">
+                        <div class="relato-info">
+                            <span class="relato-meta">EP 01 · JUNIO 2024</span>
+                            <h3>La memoria del barrio</h3>
+                            <p class="relato-mural">Mural "Las Alas del Barrio" · Colectivo Arte · Colegio del barrio</p>
+                            <p class="relato-tags">Identidad, sueños y raíces territoriales</p>
+                        </div>
+                        <div class="relato-action">
+                            <span class="relato-time">1:23 min</span>
+                            <audio class="relato-audio" src="tu-audio-1.mp3"></audio>
+                            <button class="play-audio-btn">▶</button>
+                        </div>
+                    </div>
+
+                    <!-- Relato 2 -->
+                    <div class="relato-card">
+                        <img src="https://via.placeholder.com/120?text=EP+02" alt="EP 02" class="relato-img">
+                        <div class="relato-info">
+                            <span class="relato-meta">EP 02 · MARZO 2023</span>
+                            <h3>Manos que Construyen Paz</h3>
+                            <p class="relato-mural">Mural "Manos que Construyen Paz" · María García</p>
+                            <p class="relato-tags">Proceso colectivo y participación comunitaria</p>
+                        </div>
+                        <div class="relato-action">
+                            <span class="relato-time">1:30 min</span>
+                            <audio class="relato-audio" src="tu-audio-2.mp3"></audio>
+                            <button class="play-audio-btn">▶</button>
+                        </div>
+                    </div>
+
+                    <!-- Relato 3 -->
+                    <div class="relato-card">
+                        <img src="https://via.placeholder.com/120?text=EP+03" alt="EP 03" class="relato-img">
+                        <div class="relato-info">
+                            <span class="relato-meta">EP 03 · ENERO 2024</span>
+                            <h3>Raíces y Sueños</h3>
+                            <p class="relato-mural">Mural "Raíces y Sueños" · Arte Social · Galería Sueños</p>
+                            <p class="relato-tags">Memoria, territorio y sentido de pertenencia</p>
+                        </div>
+                        <div class="relato-action">
+                            <span class="relato-time">1:13 min</span>
+                            <audio class="relato-audio" src="tu-audio-3.mp3"></audio>
+                            <button class="play-audio-btn">▶</button>
+                        </div>
+                    </div>
+
+                    <!-- Relato 4 -->
+                    <div class="relato-card">
+                        <img src="https://via.placeholder.com/120?text=EP+04" alt="EP 04" class="relato-img">
+                        <div class="relato-info">
+                            <span class="relato-meta">EP 04 · NOV 2022</span>
+                            <h3>La fuerza del pueblo</h3>
+                            <p class="relato-mural">Mural "La Fuerza del Pueblo" · Jhoan Sebastián Montoya</p>
+                            <p class="relato-tags">Arte urbano, grafiti y expresión juvenil</p>
+                        </div>
+                        <div class="relato-action">
+                            <span class="relato-time">1:08 min</span>
+                            <audio class="relato-audio" src="tu-audio-4.mp3"></audio>
+                            <button class="play-audio-btn">▶</button>
+                        </div>
+                    </div>
+
+                    <!-- Relato 5 -->
+                    <div class="relato-card">
+                        <img src="https://via.placeholder.com/120?text=EP+05" alt="EP 05" class="relato-img">
+                        <div class="relato-info">
+                            <span class="relato-meta">EP 05 · AGOSTO 2020</span>
+                            <h3>El plato que nunca quedaba vacío</h3>
+                            <p class="relato-mural">Mural "El plato que nunca quedaba vacío" · Juan David Jiménez</p>
+                            <p class="relato-tags">Arte urbano, grafiti y expresión juvenil</p>
+                        </div>
+                        <div class="relato-action">
+                            <span class="relato-time">2:50 min</span>
+                            <audio class="relato-audio" src="tu-audio-5.mp3"></audio>
+                            <button class="play-audio-btn">▶</button>
+                        </div>
+                    </div>
+
+                    <!-- Relato 6 -->
+                    <div class="relato-card">
+                        <img src="https://via.placeholder.com/120?text=EP+06" alt="EP 06" class="relato-img">
+                        <div class="relato-info">
+                            <span class="relato-meta">EP 06 · FEB 2021</span>
+                            <h3>Nadie sabía exactamente cuándo aparecía</h3>
+                            <p class="relato-mural">Mural "Nadie sabía exactamente cuándo aparecía" · Christian Bran Arboleda</p>
+                            <p class="relato-tags">Arte urbano, grafiti y expresión juvenil</p>
+                        </div>
+                        <div class="relato-action">
+                            <span class="relato-time">2:54 min</span>
+                            <audio class="relato-audio" src="tu-audio-6.mp3"></audio>
+                            <button class="play-audio-btn">▶</button>
+                        </div>
+                    </div>
+
+                    <!-- Relato 7 -->
+                    <div class="relato-card">
+                        <img src="https://via.placeholder.com/120?text=EP+07" alt="EP 07" class="relato-img">
+                        <div class="relato-info">
+                            <span class="relato-meta">EP 07 · DIC 2019</span>
+                            <h3>La ciudad de las máscaras caídas</h3>
+                            <p class="relato-mural">Mural "La ciudad de las máscaras caídas" · Juan Rodríguez</p>
+                            <p class="relato-tags">Arte urbano, grafiti y expresión juvenil</p>
+                        </div>
+                        <div class="relato-action">
+                            <span class="relato-time">2:40 min</span>
+                            <audio class="relato-audio" src="tu-audio-7.mp3"></audio>
+                            <button class="play-audio-btn">▶</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
     <!-- FRANJA DE ALIADOS -->
     <div class="partners-carousel-section">

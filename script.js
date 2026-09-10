@@ -293,7 +293,109 @@ document.addEventListener('DOMContentLoaded', () => {
             niquiBoxGaleriaSonora.style.display = 'none';
         });
     }
-// Cierre del cuadro de Niqui en Apóyanos
+   // ==========================================
+    // Lógica del Carrusel de Podcasts (T1 y T2) con Indicador
+    // ==========================================
+    function setupPodcastCarousel(trackId, prevBtnId, nextBtnId, indicatorId) {
+        const track = document.getElementById(trackId);
+        const prevBtn = document.getElementById(prevBtnId);
+        const nextBtn = document.getElementById(nextBtnId);
+        const indicator = document.getElementById(indicatorId);
+        
+        if (!track || !prevBtn || !nextBtn) return;
+
+        const slides = track.querySelectorAll('.podcast-slide');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentIndex) {
+                    slide.classList.add('active');
+                }
+            });
+            if (indicator) {
+                indicator.textContent = `Episodio ${currentIndex + 1} de ${slides.length}`;
+            }
+        }
+
+        // Inicializar el indicador visual al cargar la página
+        if (indicator) {
+            indicator.textContent = `Episodio 1 de ${slides.length}`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateCarousel();
+        });
+    }
+
+    setupPodcastCarousel('track-s1', 'prev-s1', 'next-s1', 'ind-s1');
+    setupPodcastCarousel('track-s2', 'prev-s2', 'next-s2', 'ind-s2');
+
+    // Cierre del aviso de Niqui en la sección de Podcasts
+    const closeBtnPodcast = document.getElementById('closeBtnPodcast');
+    const niquiBoxPodcast = document.getElementById('niquiBoxPodcast');
+    if (closeBtnPodcast && niquiBoxPodcast) {
+        closeBtnPodcast.addEventListener('click', () => {
+            niquiBoxPodcast.style.display = 'none';
+        });
+    }
+
+    // Cierre del cuadro de Niqui en Relatos Sonoros
+    const closeBtnRelatos = document.getElementById('closeBtnRelatos');
+    const niquiBoxRelatos = document.getElementById('niquiBoxRelatos');
+    if (closeBtnRelatos && niquiBoxRelatos) {
+        closeBtnRelatos.addEventListener('click', () => {
+            niquiBoxRelatos.style.display = 'none';
+        });
+    }
+    // ==========================================
+    // Control exclusivo de Relatos Sonoros (Play/Pause mutuo)
+    // ==========================================
+    const relatoCards = document.querySelectorAll('.relato-card');
+
+    relatoCards.forEach(card => {
+        const audio = card.querySelector('.relato-audio');
+        const playBtn = card.querySelector('.play-audio-btn');
+
+        if (audio && playBtn) {
+            playBtn.addEventListener('click', () => {
+                // Si el audio actual está reproduciéndose, lo pausamos
+                if (!audio.paused) {
+                    audio.pause();
+                    playBtn.textContent = '▶';
+                } else {
+                    // Pausar todos los demás audios de la página y resetear sus botones
+                    document.querySelectorAll('.relato-card').forEach(otherCard => {
+                        const otherAudio = otherCard.querySelector('.relato-audio');
+                        const otherBtn = otherCard.querySelector('.play-audio-btn');
+                        if (otherAudio && otherAudio !== audio) {
+                            otherAudio.pause();
+                            otherAudio.currentTime = 0;
+                            if (otherBtn) otherBtn.textContent = '▶';
+                        }
+                    });
+
+                    // Reproducir el audio seleccionado
+                    audio.play();
+                    playBtn.textContent = '❚❚';
+                }
+            });
+
+            // Al terminar el audio, restablecer el botón a Play
+            audio.addEventListener('ended', () => {
+                playBtn.textContent = '▶';
+            });
+        }
+    });
+
+    // Cierre del cuadro de Niqui en Apóyanos
     const closeBtnApoyanos = document.getElementById('closeBtnApoyanos');
     const niquiBoxApoyanos = document.getElementById('niquiBoxApoyanos');
     if (closeBtnApoyanos && niquiBoxApoyanos) {

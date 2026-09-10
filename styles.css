@@ -1643,6 +1643,86 @@ nav ul li .btn-donate {
         gap: 15px;
     }
 }
+/* =========================================
+   CAROUSEL DE PODCASTS Y LAYOUT NIQUI (CENTRADO)
+   ========================================= */
+.podcast-layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+.podcast-niqui-col {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 320px;
+    z-index: 10;
+}
+
+.podcast-content-col {
+    width: 100%;
+    max-width: 750px; /* Ancho máximo centrado perfecto en pantalla */
+}
+
+.episode-indicator {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.podcast-carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.podcast-carousel-track {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    height: 352px;
+}
+
+.podcast-slide {
+    display: none;
+    width: 100%;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.podcast-slide.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsivo para tablets y móviles (Apila Niqui arriba del podcast) */
+@media (max-width: 1100px) {
+    .podcast-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+    .podcast-niqui-col {
+        position: relative;
+        left: 0;
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 40px;
+    }
+}
 
 /* =========================================
    MAQUETACIÓN PÁGINA APÓYANOS (DEL VIDEO)
