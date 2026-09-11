@@ -403,4 +403,12 @@ document.addEventListener('DOMContentLoaded', () => {
             niquiBoxApoyanos.style.display = 'none';
         });
     }
+    // Cierre del cuadro de Niqui en Contacto
+    const closeBtnContacto = document.getElementById('closeBtnContacto');
+    const niquiBoxContacto = document.getElementById('niquiBoxContacto');
+    if (closeBtnContacto && niquiBoxContacto) {
+        closeBtnContacto.addEventListener('click', () => {
+            niquiBoxContacto.style.display = 'none';
+        });
+    }
 });

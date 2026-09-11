@@ -19,7 +19,7 @@
             <img src="images/Blanco_LOGO_MUSEOESCOLAR_horizontal.png" alt="Logo Museo Escolar I.E. Héctor Abad Gómez" class="header-logo-img">
         </a>
     </div>
-        <button class="hamburger" aria-label="Abrir menú">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>
@@ -64,12 +64,12 @@
                 <div class="contact-info-col">
                     
                     <!-- Avatar Niqui con Globo de Diálogo -->
-                    <div class="niqui-dialogue-container" style="position: relative; top: 0; left: 0; margin-bottom: 10px;">
+                    <div class="niqui-dialogue-container" id="niquiBoxContacto" style="position: relative; top: 0; left: 0; margin-bottom: 10px;">
                         <div class="niqui-avatar-wrapper">
                             <img src="images/placeholder-niqui.png" alt="Niqui Guía" class="niqui-avatar-img">
                         </div>
                         <div class="niqui-tooltip">
-                            <button class="close-btn">&times;</button>
+                            <button class="close-btn" id="closeBtnContacto">&times;</button>
                             <h5>NIQUI DICE:</h5>
                             <p>¿Tienes algo para contarnos? ¡Nos encanta escuchar a la comunidad! Escríbenos o búscanos directamente 📬</p>
                         </div>
@@ -232,5 +232,6 @@
         </div>
     </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
