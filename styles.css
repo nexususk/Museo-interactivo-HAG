@@ -1,4 +1,3 @@
-
 :root {
     --primary-blue: #3A6B9B;
     --dark-blue: #234B75;
@@ -173,7 +172,9 @@ nav ul li .btn-donate {
 .dropdown-menu li a:hover {
     background-color: #f1f1f1;
     color: var(--text-dark) !important;
-}/* =========================================
+}
+
+/* =========================================
    HERO SECTION (CARRUSEL)
    ========================================= */
 .hero {
@@ -310,6 +311,7 @@ nav ul li .btn-donate {
 .h-dot.active {
     background-color: var(--accent-yellow);
 }
+
 /* =========================================
    ESTADÍSTICAS
    ========================================= */
@@ -402,24 +404,6 @@ nav ul li .btn-donate {
     margin-bottom: 10px;
 }
 
-.niqui-tooltip {
-    background-color: white;
-    color: var(--text-dark);
-    padding: 15px;
-    border-radius: 8px;
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    max-width: 300px;
-    text-align: left;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.niqui-tooltip h5 {
-    color: var(--primary-blue);
-    margin-bottom: 5px;
-}
-
 .cards-container {
     display: flex;
     justify-content: center;
@@ -435,16 +419,13 @@ nav ul li .btn-donate {
     border: 2px solid rgba(255,255,255,0.2);
     background-image: url('https://via.placeholder.com/300x200?text=Sala');
     background-size: cover;
-    
-    /* Agrega estas tres líneas para la animación de elevación y sombra */
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto al pasar el mouse por encima de cualquier card */
 .card:hover {
-    transform: translateY(-8px); /* Hace que la tarjeta se eleve un poco hacia arriba */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Le añade una sombra sutil para dar profundidad */
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .interactive-buttons {
@@ -460,6 +441,7 @@ nav ul li .btn-donate {
     padding: 80px 40px;
     background-color: var(--bg-light);
     text-align: center;
+    position: relative;
 }
 
 .sound-gallery .subtitle {
@@ -479,13 +461,6 @@ nav ul li .btn-donate {
     max-width: 600px;
     margin: 0 auto 40px auto;
     color: #555;
-}
-
-/* =========================================
-   ESTILOS ESPECÍFICOS PARA EL DIÁLOGO DE NIQUI EN GALERÍA SONORA
-   ========================================= */
-.sound-gallery {
-    position: relative; /* Necesario para que Niqui se posicione bien dentro de esta sección */
 }
 
 .sound-gallery .niqui-dialogue-container {
@@ -817,6 +792,7 @@ nav ul li .btn-donate {
     font-size: 12px;
     color: #aaa;
 }
+
 /* =========================================
    CARRUSEL AUTOMÁTICO DE ALIADOS (LOGOS)
    ========================================= */
@@ -829,15 +805,13 @@ nav ul li .btn-donate {
     position: relative;
 }
 
-/* Contenedor que se mueve de manera infinita */
 .partners-track {
     display: flex;
     width: max-content;
-    animation: scrollLogos 25s linear infinite; /* Velocidad del carrusel (25 segundos) */
+    animation: scrollLogos 25s linear infinite;
     align-items: center;
 }
 
-/* Pausar el movimiento automáticamente si el usuario pasa el mouse por encima */
 .partners-carousel-section:hover .partners-track {
     animation-play-state: paused;
 }
@@ -850,7 +824,7 @@ nav ul li .btn-donate {
 }
 
 .partner-slide img {
-    height: 45px; /* Altura estándar para los logos / placeholders */
+    height: 45px;
     width: auto;
     object-fit: contain;
     opacity: 0.7;
@@ -858,23 +832,17 @@ nav ul li .btn-donate {
 }
 
 .partner-slide img:hover {
-    opacity: 1; /* Resalta el logo al pasar el cursor */
+    opacity: 1;
 }
 
-/* Animación de desplazamiento continuo */
 @keyframes scrollLogos {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
+
 /* =========================================
    ANIMACIONES GLOBALES PARA TODOS LOS BOTONES
    ========================================= */
-
-/* Botón principal (Estilo similar a "¡DONA AQUÍ!": crece con zoom al pasar el mouse) */
 .btn-primary {
     background-color: var(--accent-yellow);
     color: var(--dark-blue);
@@ -887,10 +855,9 @@ nav ul li .btn-donate {
 }
 
 .btn-primary:hover {
-    transform: scale(1.05); /* Efecto zoom dinámico */
+    transform: scale(1.05);
 }
 
-/* Botón secundario (Estilo tipo "Conoce nuestra historia": el fondo se pone más blanco/translúcido) */
 .btn-secondary {
     background-color: transparent;
     color: white;
@@ -903,7 +870,7 @@ nav ul li .btn-donate {
 }
 
 .btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.25); /* Se vuelve un blanco suave y translúcido */
+    background-color: rgba(255, 255, 255, 0.25);
     border-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -958,7 +925,7 @@ nav ul li .btn-donate {
     font-size: 13px;
     letter-spacing: 1px;
 }
-/* Estilo para el botón de cerrar (X) del cuadro de Niqui */
+
 .close-btn {
     position: absolute;
     top: 8px;
@@ -976,20 +943,29 @@ nav ul li .btn-donate {
     color: var(--text-dark);
 }
 
-/* Aseguramos que el tooltip tenga posición relativa para que la X se ubique bien dentro */
-.niqui-tooltip {
-    position: relative !important;
-}
-
 .page-hero {
     background-color: var(--primary-blue);
     color: var(--text-light);
     text-align: center;
     padding: 60px 20px;
 }
-.page-hero .hero-subtitle { font-size: 14px; letter-spacing: 2px; color: var(--accent-yellow); margin-bottom: 10px; }
-.page-title { font-size: 3rem; margin-bottom: 20px; }
-.page-title em { font-style: italic; font-weight: normal; }
+
+.page-hero .hero-subtitle { 
+    font-size: 14px; 
+    letter-spacing: 2px; 
+    color: var(--accent-yellow); 
+    margin-bottom: 10px; 
+}
+
+.page-title { 
+    font-size: 3rem; 
+    margin-bottom: 20px; 
+}
+
+.page-title em { 
+    font-style: italic; 
+    font-weight: normal; 
+}
 
 .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
 .text-center { text-align: center; }
@@ -1015,7 +991,6 @@ nav ul li .btn-donate {
 
 /* Estadísticas Banner */
 .action-btn-container { margin-bottom: 60px; }
-.btn-primary { background: var(--accent-yellow); color: var(--dark-blue); padding: 15px 30px; border-radius: 30px; font-weight: bold; }
 
 /* Línea de tiempo Horizontal (Colegio) */
 .timeline-nav { display: flex; gap: 20px; border-bottom: 2px solid #ddd; margin-bottom: 30px; overflow-x: auto; }
@@ -1038,26 +1013,16 @@ nav ul li .btn-donate {
 .card-content { padding: 20px; }
 .card-content h4 { color: var(--accent-yellow); margin-bottom: 10px; }
 
-/* Responsividad General */
-@media (max-width: 768px) {
-    .museum-intro, .timeline-panel { grid-template-columns: 1fr; }
-    .timeline-v::after { left: 20px; }
-    .timeline-item { width: 100%; padding-left: 50px; padding-right: 10px; text-align: left; }
-    .timeline-item.left, .timeline-item.right { left: 0; }
-    .timeline-item::after, .timeline-item.right::after { left: 10px; }
-    .stats-banner { grid-template-columns: 1fr 1fr; gap: 20px; }
-}
-
 /* Alineación de Niqui a la derecha */
 .page-niqui-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: flex-end; /* Empuja el bloque a la derecha */
+    justify-content: flex-end;
     padding: 0 20px;
     position: relative;
     z-index: 10;
-    margin-top: -40px; /* Superpone ligeramente a la sección anterior */
+    margin-top: -40px;
 }
 
 .niqui-dialogue-container-right {
@@ -1067,7 +1032,7 @@ nav ul li .btn-donate {
     position: relative;
 }
 
-/* Banner de estadísticas redondeado (Historia del museo) */
+/* Banner de estadísticas redondeado */
 .stats-banner {
     background-color: var(--primary-blue);
     color: white;
@@ -1075,9 +1040,9 @@ nav ul li .btn-donate {
     grid-template-columns: repeat(4, 1fr);
     text-align: center;
     padding: 50px 20px;
-    margin: 40px auto 80px auto; /* Centrado horizontalmente */
-    max-width: 1000px; /* Limita el ancho para que no toque los bordes */
-    border-radius: 16px; /* Aplica las esquinas redondeadas */
+    margin: 40px auto 80px auto;
+    max-width: 1000px;
+    border-radius: 16px;
 }
 
 .stats-banner h2 { 
@@ -1091,7 +1056,6 @@ nav ul li .btn-donate {
     font-weight: 600; 
     text-transform: uppercase;
 }
-
 
 /* =========================================
    SOLUCIÓN DEFINITIVA MENÚ MÓVIL (MODAL FLOTANTE)
@@ -1129,7 +1093,6 @@ nav ul li .btn-donate {
         white-space: nowrap !important;
     }
 
-    /* Transformamos el menú desplegable en una ventana flotante limpia y centrada en móviles */
     .has-dropdown {
         position: relative !important;
     }
@@ -1171,7 +1134,6 @@ nav ul li .btn-donate {
         display: block !important;
     }
 
-    /* Mantenemos todas las demás reglas responsive intactas */
     main {
         margin-top: 80px !important;
     }
@@ -1253,10 +1215,11 @@ nav ul li .btn-donate {
 
     .footer-content { flex-direction: column; gap: 40px; text-align: center; }
     .brand-col { max-width: 100%; }
-    .footer-logo { sessionStorage: center; justify-content: center; }
+    .footer-logo { justify-content: center; }
     .social-links { justify-content: center; }
     .footer-bottom { flex-direction: column; text-align: center; gap: 15px; }
 }
+
 /* =========================================
    GALERÍA VISUAL (GRID Y MODAL)
    ========================================= */
@@ -1304,16 +1267,15 @@ nav ul li .btn-donate {
     transform: scale(1.05);
 }
 
-/* Modal Popup */
 .mural-modal {
-    display: none; /* Oculto por defecto */
+    display: none;
     position: fixed;
-    z-index: 9999999; /* Por encima de todo */
+    z-index: 9999999;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro semitransparente */
+    background-color: rgba(0, 0, 0, 0.85);
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -1384,7 +1346,6 @@ nav ul li .btn-donate {
     line-height: 1.6;
 }
 
-/* Modal Responsive (Móviles) */
 @media (max-width: 768px) {
     .modal-content {
         flex-direction: column;
@@ -1407,8 +1368,9 @@ nav ul li .btn-donate {
         gap: 15px;
     }
 }
+
 /* =========================================
-   MENÚ HAMBURGUESA MEJORADO (SOLO RESPONSIVE)
+   MENÚ HAMBURGUESA MEJORADO
    ========================================= */
 .hamburger {
     display: none;
@@ -1435,7 +1397,6 @@ nav ul li .btn-donate {
         display: flex;
     }
 
-    /* Panel lateral derecho con ancho controlado para que no se vea apretado */
     nav {
         position: fixed;
         top: 80px;
@@ -1471,7 +1432,6 @@ nav ul li .btn-donate {
         width: 100%;
     }
 
-    /* Submenús integrados hacia abajo de forma fluida */
     .has-dropdown .dropdown-menu {
         position: static !important;
         display: none !important;
@@ -1503,7 +1463,6 @@ nav ul li .btn-donate {
         padding: 6px 15px !important;
     }
 
-    /* Animación del botón hamburguesa convirtiéndose en 'X' */
     .hamburger.active span:nth-child(1) {
         transform: rotate(45deg) translate(6px, 6px);
     }
@@ -1514,6 +1473,7 @@ nav ul li .btn-donate {
         transform: rotate(-45deg) translate(6px, -6px);
     }
 }
+
 /* =========================================
    GALERÍA SONORA (PODCAST Y RELATOS)
    ========================================= */
@@ -1562,7 +1522,7 @@ nav ul li .btn-donate {
 .relato-meta {
     font-size: 12px;
     font-weight: 700;
-    color: #E05D2A; /* Naranja/Óxido característico */
+    color: #E05D2A;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -1603,7 +1563,7 @@ nav ul li .btn-donate {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: #E05D2A; /* Botón naranja */
+    background-color: #E05D2A;
     color: white;
     border: none;
     font-size: 18px;
@@ -1612,7 +1572,7 @@ nav ul li .btn-donate {
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.2s, transform 0.2s;
-    padding-left: 4px; /* Centrar visualmente el ícono de play */
+    padding-left: 4px;
 }
 
 .play-audio-btn:hover {
@@ -1620,7 +1580,6 @@ nav ul li .btn-donate {
     transform: scale(1.05);
 }
 
-/* Responsivo para los relatos sonoros */
 @media (max-width: 600px) {
     .relato-card {
         flex-direction: column;
@@ -1643,8 +1602,9 @@ nav ul li .btn-donate {
         gap: 15px;
     }
 }
+
 /* =========================================
-   CAROUSEL DE PODCASTS Y LAYOUT NIQUI (CENTRADO)
+   CAROUSEL DE PODCASTS Y LAYOUT NIQUI
    ========================================= */
 .podcast-layout {
     position: relative;
@@ -1664,7 +1624,7 @@ nav ul li .btn-donate {
 
 .podcast-content-col {
     width: 100%;
-    max-width: 750px; /* Ancho máximo centrado perfecto en pantalla */
+    max-width: 750px;
 }
 
 .episode-indicator {
@@ -1709,7 +1669,6 @@ nav ul li .btn-donate {
     to { opacity: 1; }
 }
 
-/* Responsivo para tablets y móviles (Apila Niqui arriba del podcast) */
 @media (max-width: 1100px) {
     .podcast-layout {
         flex-direction: column;
@@ -1725,10 +1684,11 @@ nav ul li .btn-donate {
 }
 
 /* =========================================
-   MAQUETACIÓN PÁGINA APÓYANOS (DEL VIDEO)
+   MAQUETACIÓN PÁGINA APÓYANOS
    ========================================= */
 .apoyanos-section {
-    padding: 40px 0 60px;
+    padding: 30px 20px 50px;
+    box-sizing: border-box;
 }
 
 .apoyanos-layout {
@@ -1737,7 +1697,6 @@ nav ul li .btn-donate {
     align-items: flex-start;
 }
 
-/* Columna Izquierda */
 .apoyanos-left-col {
     flex: 1.2;
 }
@@ -1801,7 +1760,6 @@ nav ul li .btn-donate {
     letter-spacing: 0.5px;
 }
 
-/* Columna Derecha */
 .apoyanos-right-col {
     flex: 1;
     display: flex;
@@ -1881,7 +1839,7 @@ nav ul li .btn-donate {
    BANNER PRE-FOOTER (CALLOUT)
    ========================================= */
 .callout-banner {
-    background-color: #3A78C4; /* Azul exacto del banner */
+    background-color: #3A78C4;
     color: #ffffff;
     text-align: center;
     padding: 80px 20px;
@@ -1905,7 +1863,7 @@ nav ul li .btn-donate {
 .callout-banner h2 em {
     font-style: italic;
     font-weight: 400;
-    opacity: 0.85; /* Ligera transparencia como en el diseño */
+    opacity: 0.85;
 }
 
 .callout-banner p {
@@ -1919,7 +1877,7 @@ nav ul li .btn-donate {
 
 .callout-btn {
     display: inline-block;
-    background-color: #FFA800; /* Amarillo/naranja vibrante del botón */
+    background-color: #FFA800;
     color: #234B75;
     font-family: var(--font-main);
     font-weight: 800;
@@ -1936,29 +1894,6 @@ nav ul li .btn-donate {
     background-color: #ff9900;
 }
 
-@media (max-width: 768px) {
-    .callout-banner {
-        padding: 50px 20px;
-    }
-    .callout-banner h2 {
-        font-size: 2.2rem;
-    }
-    .callout-banner p {
-        font-size: 0.95rem;
-    }
-}
-
-/* =========================================
-   AJUSTE RESPONSIVE (PÁGINA APÓYANOS)
-   ========================================= */
-
-/* Contenedor principal con padding lateral para que no toque los bordes */
-.apoyanos-section {
-    padding: 30px 20px 50px;
-    box-sizing: border-box;
-}
-
-/* Ajustes para tablets y pantallas medianas (menos de 992px) */
 @media (max-width: 992px) {
     .apoyanos-layout {
         flex-direction: column;
@@ -1972,7 +1907,7 @@ nav ul li .btn-donate {
 
     .apoyanos-title {
         font-size: 2rem;
-        word-break: break-word; /* Evita que el título se salga si la pantalla es muy estrecha */
+        word-break: break-word;
     }
 
     .btn-quiero-aportar {
@@ -1982,7 +1917,18 @@ nav ul li .btn-donate {
     }
 }
 
-/* Ajustes para celulares (menos de 600px) */
+@media (max-width: 768px) {
+    .callout-banner {
+        padding: 50px 20px;
+    }
+    .callout-banner h2 {
+        font-size: 2.2rem;
+    }
+    .callout-banner p {
+        font-size: 0.95rem;
+    }
+}
+
 @media (max-width: 600px) {
     .apoyanos-title {
         font-size: 1.75rem;
@@ -1994,7 +1940,6 @@ nav ul li .btn-donate {
         margin-bottom: 20px;
     }
 
-    /* Pasa el grid de aportes de 2 columnas a 1 SOLA columna organizada */
     .aportes-grid {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -2026,5 +1971,161 @@ nav ul li .btn-donate {
 
     .badge-text {
         font-size: 0.6rem;
+    }
+}
+
+/* =========================================
+   NUEVA SECCIÓN: PÁGINA DE CONTACTO Y GOOGLE FORMS
+   ========================================= */
+.contact-page-container {
+    padding: 60px 20px 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Columna Izquierda: Información de Contacto */
+.contact-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-info-title {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contact-info-title em {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.info-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f0f0f0;
+}
+
+.info-icon-box {
+    width: 42px;
+    height: 42px;
+    background-color: var(--primary-blue);
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.info-details h4 {
+    font-family: var(--font-main);
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #8899a6;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.info-details p {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    line-height: 1.3;
+}
+
+.social-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 18px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f0f0f0;
+    border-left: 4px solid var(--accent-yellow);
+}
+
+.social-card h4 {
+    font-family: var(--font-main);
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.social-badges {
+    display: flex;
+    gap: 10px;
+}
+
+.social-badge-btn {
+    background-color: #3b74b4;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* Columna Derecha: Contenedor Tarjeta y Google Forms */
+.contact-form-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-card h2 {
+    font-family: var(--font-headings);
+    font-size: 3rem;
+    color: #3b74b4;
+    margin-bottom: 20px;
+}
+
+.google-forms-container {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+.google-forms-container iframe {
+    width: 100%;
+    height: 650px;
+    border: none;
+}
+
+/* Adaptación responsive para la página de contacto */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-form-card {
+        padding: 20px;
+    }
+    .contact-form-card h2 {
+        font-size: 2.2rem;
+    }
+    .google-forms-container iframe {
+        height: 700px;
     }
 }

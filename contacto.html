@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Museo Escolar I.E. Héctor Abad Gómez</title>
+    <!-- Fuentes de Google Fonts según var(--font-main) y var(--font-headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Neuton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HEADER / NAVEGACIÓN -->
+<header>
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="images/Blanco_LOGO_MUSEOESCOLAR_horizontal.png" alt="Logo Museo Escolar I.E. Héctor Abad Gómez" class="header-logo-img">
+        </a>
+    </div>
+        <button class="hamburger" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+     
+    <nav id="mainNav">
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li class="has-dropdown">HISTORIA ▾
+                <ul class="dropdown-menu">
+                    <li><a href="historia-museo.html">Historia del museo</a></li>
+                    <li><a href="historia-colegio.html">Historia del colegio</a></li>
+                </ul>
+            </li>
+            <li><a href="#">MUSEO INTERACTIVO</a></li>
+            <li class="has-dropdown">GALERÍA ▾
+                <ul class="dropdown-menu">
+                    <li><a href="galeria-visual.html">Galería Visual</a></li>
+                    <li><a href="galeria-sonora.html">Galería Sonora</a></li>
+                </ul>
+            </li>
+            <li><a href="apoyanos.html">APÓYANOS</a></li>
+            <li><a href="contacto.html">CONTACTO</a></li>
+            <li><a href="#" class="btn-donate">¡DONA AQUÍ!</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+        <!-- HERO CONTACTO -->
+        <section class="page-hero">
+            <div class="hero-subtitle">CONTACTO</div>
+            <h1 class="page-title">Escríbenos</h1>
+            <p>¿Tienes preguntas, aportes o simplemente quieres saludar? Estamos aquí para escucharte.</p>
+        </section>
+
+        <!-- CONTENIDO PRINCIPAL DE CONTACTO -->
+        <section class="contact-page-container">
+            <div class="contact-grid">
+                
+                <!-- COLUMNA IZQUIERDA: NIQUI Y DATOS DE CONTACTO -->
+                <div class="contact-info-col">
+                    
+                    <!-- Avatar Niqui con Globo de Diálogo -->
+                    <div class="niqui-dialogue-container" style="position: relative; top: 0; left: 0; margin-bottom: 10px;">
+                        <div class="niqui-avatar-wrapper">
+                            <img src="images/placeholder-niqui.png" alt="Niqui Guía" class="niqui-avatar-img">
+                        </div>
+                        <div class="niqui-tooltip">
+                            <button class="close-btn">&times;</button>
+                            <h5>NIQUI DICE:</h5>
+                            <p>¿Tienes algo para contarnos? ¡Nos encanta escuchar a la comunidad! Escríbenos o búscanos directamente 📬</p>
+                        </div>
+                    </div>
+
+                    <h2 class="contact-info-title">Información de <em>contacto</em></h2>
+
+                    <!-- Tarjeta Dirección -->
+                    <div class="info-card">
+                        <div class="info-icon-box">📍</div>
+                        <div class="info-details">
+                            <h4>DIRECCIÓN</h4>
+                            <p>Cra. 44 #43-96, Barrio Aranjuez Medellín, Antioquia, Colombia</p>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Teléfono -->
+                    <div class="info-card">
+                        <div class="info-icon-box">📞</div>
+                        <div class="info-details">
+                            <h4>TELÉFONO</h4>
+                            <p>+57 (604) 000-0000</p>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Correo Electrónico -->
+                    <div class="info-card">
+                        <div class="info-icon-box">✉️</div>
+                        <div class="info-details">
+                            <h4>CORREO ELECTRÓNICO</h4>
+                            <p>museo@iehectorabadgomez.edu.co</p>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Horario de Atención -->
+                    <div class="info-card">
+                        <div class="info-icon-box">🕒</div>
+                        <div class="info-details">
+                            <h4>HORARIO DE ATENCIÓN</h4>
+                            <p>Lunes a viernes · 7:00 – 17:00 h</p>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Redes Sociales -->
+                    <div class="social-card">
+                        <h4>SÍGUENOS EN REDES SOCIALES</h4>
+                        <div class="social-badges">
+                            <a href="#" class="social-badge-btn">IN</a>
+                            <a href="#" class="social-badge-btn">TI</a>
+                            <a href="#" class="social-badge-btn">YO</a>
+                            <a href="#" class="social-badge-btn">SP</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- COLUMNA DERECHA: FORMULARIO DE MENSAJE -->
+                <div class="contact-form-card">
+                    <h2>Envíanos un mensaje</h2>
+                    <form action="#" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">NOMBRE</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="correo">CORREO</label>
+                                <input type="email" id="correo" name="correo" placeholder="tu@correo.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="asunto">ASUNTO</label>
+                            <input type="text" id="asunto" name="asunto" placeholder="¿De qué quieres hablar?" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">MENSAJE</label>
+                            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-send-message">
+                            ENVIAR MENSAJE &rarr;
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    
+     <div class="partners-carousel-section">
+        <div class="partners-track">
+            <!-- Grupo 1 de Logos (Placeholders) -->
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=U.+de+Medellín" alt="Universidad de Medellín"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=U.+de+Antioquia" alt="U. de Antioquia"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Fundación+Sura" alt="Fundación Sura"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=MinTIC" alt="MinTIC"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Sec.+Educación" alt="Sec. de Educación"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Corpocentro" alt="Corpocentro"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Manguaba" alt="Manguaba"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Fund.+PINTUCO" alt="Fund. PINTUCO"></div>
+
+            <!-- Grupo 2 duplicado (Esencial para crear el efecto infinito sin saltos) -->
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=U.+de+Medellín" alt="Universidad de Medellín"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=U.+de+Antioquia" alt="U. de Antioquia"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Fundación+Sura" alt="Fundación Sura"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=MinTIC" alt="MinTIC"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Sec.+Educación" alt="Sec. de Educación"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Corpocentro" alt="Corpocentro"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Manguaba" alt="Manguaba"></div>
+            <div class="partner-slide"><img src="https://via.placeholder.com/150x50?text=Fund.+PINTUCO" alt="Fund. PINTUCO"></div>
+        </div>
+    </div>
+
+
+    <!-- FOOTER PRINCIPAL -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <div class="logo-icon-small">🏛️</div>
+                    <div class="logo-text">
+                        <h3>I.E. Héctor Abad Gómez</h3>
+                    </div>
+                </div>
+                <p>Proyecto cultural enfocado en la memoria, el arte y la transformación social de nuestra comunidad educativa.</p>
+                <div class="social-links">
+                    <a href="#">IG</a>
+                    <a href="#">TK</a>
+                    <a href="#">YT</a>
+                    <a href="#">SP</a>
+                </div>
+            </div>
+
+            <div class="links-col footer-col">
+                <h4>EXPLORAR</h4>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Museo Interactivo</a></li>
+                    <li><a href="#">Historia del museo</a></li>
+                    <li><a href="#">Historia del colegio</a></li>
+                    <li><a href="#">Apóyanos</a></li>
+                    <li><a href="#">Podcasts</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="contact-col footer-col">
+                <h4>CONTACTO</h4>
+                <p>Cra. 44 #43-96</p>
+                <p>Medellín, Colombia</p>
+                <p>museo@iehag.edu.co</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2024 I.E. Héctor Abad Gómez · Todos los derechos reservados</span>
+            <span>Hecho en Medellín 🌺</span>
+        </div>
+    </footer>
+
+</body>
+</html>
