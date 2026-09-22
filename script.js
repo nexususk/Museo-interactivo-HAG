@@ -1,414 +1,437 @@
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Interacción de los botones de filtro (Galería Sonora)
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-        });
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Interacción de los botones de filtro (Galería Sonora)
+  const filterButtons = document.querySelectorAll(".filter-btn");
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
     });
+  });
 
-    // 2. Interacción básica de los indicadores del carrusel
-    const dots = document.querySelectorAll('.dot');
-    
-    dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-            dots.forEach(d => d.classList.remove('active'));
-            dot.classList.add('active');
-        });
+  // 2. Interacción básica de los indicadores del carrusel
+  const dots = document.querySelectorAll(".dot");
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      dots.forEach((d) => d.classList.remove("active"));
+      dot.classList.add("active");
     });
+  });
 
-    // 3. Lógica del carrusel Hero
-    const slides = document.querySelectorAll('.hero-slide');
-    const heroDots = document.querySelectorAll('.h-dot');
-    const prevHeroBtn = document.querySelector('.prev-hero');
-    const nextHeroBtn = document.querySelector('.next-hero');
-    
-    let currentSlide = 0;
-    const totalSlides = slides.length;
-    let heroInterval;
+  // 3. Lógica del carrusel Hero
+  const slides = document.querySelectorAll(".hero-slide");
+  const heroDots = document.querySelectorAll(".h-dot");
+  const prevHeroBtn = document.querySelector(".prev-hero");
+  const nextHeroBtn = document.querySelector(".next-hero");
 
-    function updateHeroCarousel() {
-        slides.forEach(slide => slide.classList.remove('active'));
-        heroDots.forEach(dot => dot.classList.remove('active'));
-        
-        if(slides[currentSlide]) slides[currentSlide].classList.add('active');
-        if(heroDots[currentSlide]) heroDots[currentSlide].classList.add('active');
+  let currentSlide = 0;
+  const totalSlides = slides.length;
+  let heroInterval;
+
+  function updateHeroCarousel() {
+    slides.forEach((slide) => slide.classList.remove("active"));
+    heroDots.forEach((dot) => dot.classList.remove("active"));
+
+    if (slides[currentSlide]) slides[currentSlide].classList.add("active");
+    if (heroDots[currentSlide]) heroDots[currentSlide].classList.add("active");
+  }
+
+  function nextHeroSlide() {
+    if (totalSlides > 0) {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateHeroCarousel();
     }
+  }
 
-    function nextHeroSlide() {
-        if(totalSlides > 0) {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateHeroCarousel();
+  function prevHeroSlide() {
+    if (totalSlides > 0) {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateHeroCarousel();
+    }
+  }
+
+  function resetHeroInterval() {
+    clearInterval(heroInterval);
+    heroInterval = setInterval(nextHeroSlide, 5000);
+  }
+
+  if (nextHeroBtn && prevHeroBtn) {
+    nextHeroBtn.addEventListener("click", () => {
+      nextHeroSlide();
+      resetHeroInterval();
+    });
+
+    prevHeroBtn.addEventListener("click", () => {
+      prevHeroSlide();
+      resetHeroInterval();
+    });
+  }
+
+  heroDots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      currentSlide = index;
+      updateHeroCarousel();
+      resetHeroInterval();
+    });
+  });
+
+  if (totalSlides > 0) {
+    heroInterval = setInterval(nextHeroSlide, 5000);
+  }
+
+  // 4. Línea de tiempo (Colegio)
+  const yearButtons = document.querySelectorAll(".year-btn");
+  const timelinePanels = document.querySelectorAll(".timeline-panel");
+
+  if (yearButtons.length > 0) {
+    yearButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        yearButtons.forEach((btn) => btn.classList.remove("active"));
+        timelinePanels.forEach((panel) => panel.classList.remove("active"));
+
+        button.classList.add("active");
+
+        const year = button.getAttribute("data-year");
+        const targetPanel = document.getElementById(`panel-${year}`);
+        if (targetPanel) {
+          targetPanel.classList.add("active");
         }
-    }
+      });
+    });
+  }
 
-    function prevHeroSlide() {
-        if(totalSlides > 0) {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateHeroCarousel();
-        }
-    }
+  // 5. Lógica de Galería Sonora
+  const soundFilterButtons = document.querySelectorAll(
+    ".sound-gallery .filter-btn",
+  );
+  const soundPanels = document.querySelectorAll(".sound-panel");
 
-    function resetHeroInterval() {
-        clearInterval(heroInterval);
-        heroInterval = setInterval(nextHeroSlide, 5000);
-    }
+  if (soundFilterButtons.length > 0 && soundPanels.length > 0) {
+    soundFilterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        soundFilterButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
 
-    if(nextHeroBtn && prevHeroBtn) {
-        nextHeroBtn.addEventListener('click', () => {
-            nextHeroSlide();
-            resetHeroInterval();
+        const category = button.getAttribute("data-category");
+
+        soundPanels.forEach((panel) => {
+          if (panel.id === `panel-${category}`) {
+            panel.style.display = "flex";
+            panel.classList.add("active");
+          } else {
+            panel.style.display = "none";
+            panel.classList.remove("active");
+          }
         });
-
-        prevHeroBtn.addEventListener('click', () => {
-            prevHeroSlide();
-            resetHeroInterval();
-        });
-    }
-
-    heroDots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentSlide = index;
-            updateHeroCarousel();
-            resetHeroInterval();
-        });
+      });
     });
 
-    if(totalSlides > 0) {
-        heroInterval = setInterval(nextHeroSlide, 5000);
+    const soundPrev = document.getElementById("soundPrev");
+    const soundNext = document.getElementById("soundNext");
+
+    function toggleSoundPanel() {
+      const currentActiveBtn = document.querySelector(
+        ".sound-gallery .filter-btn.active",
+      );
+      const otherBtn = Array.from(soundFilterButtons).find(
+        (btn) => btn !== currentActiveBtn,
+      );
+      if (otherBtn) {
+        otherBtn.click();
+      }
     }
 
-    // 4. Línea de tiempo (Colegio)
-    const yearButtons = document.querySelectorAll('.year-btn');
-    const timelinePanels = document.querySelectorAll('.timeline-panel');
+    if (soundPrev) soundPrev.addEventListener("click", toggleSoundPanel);
+    if (soundNext) soundNext.addEventListener("click", toggleSoundPanel);
+  }
 
-    if (yearButtons.length > 0) {
-        yearButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                yearButtons.forEach(btn => btn.classList.remove('active'));
-                timelinePanels.forEach(panel => panel.classList.remove('active'));
+  // 6. Carrusel Archivo Histórico
+  const archiveCarousel = document.querySelector(".archive-carousel");
+  const prevArchiveBtn = document.querySelector(".prev-archive");
+  const nextArchiveBtn = document.querySelector(".next-archive");
 
-                button.classList.add('active');
+  if (archiveCarousel && prevArchiveBtn && nextArchiveBtn) {
+    const scrollAmount = 320;
 
-                const year = button.getAttribute('data-year');
-                const targetPanel = document.getElementById(`panel-${year}`);
-                if (targetPanel) {
-                    targetPanel.classList.add('active');
-                }
-            });
+    nextArchiveBtn.addEventListener("click", () => {
+      archiveCarousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
+
+    prevArchiveBtn.addEventListener("click", () => {
+      archiveCarousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    });
+  }
+
+  // 7. Botones de cierre de Niqui
+  const closeBtnMuseo = document.getElementById("closeBtnMuseo");
+  const niquiBoxMuseo = document.getElementById("niquiBoxMuseo");
+  if (closeBtnMuseo && niquiBoxMuseo) {
+    closeBtnMuseo.addEventListener("click", () => {
+      niquiBoxMuseo.style.display = "none";
+    });
+  }
+
+  const closeBtnColegio = document.getElementById("closeBtnColegio");
+  const niquiBoxColegio = document.getElementById("niquiBoxColegio");
+  if (closeBtnColegio && niquiBoxColegio) {
+    closeBtnColegio.addEventListener("click", () => {
+      niquiBoxColegio.style.display = "none";
+    });
+  }
+
+  const closeBtn = document.getElementById("closeNiqui");
+  const niquiBox = document.getElementById("niquiBox");
+  if (closeBtn && niquiBox) {
+    closeBtn.addEventListener("click", () => {
+      niquiBox.style.display = "none";
+    });
+  }
+
+  const closeBtnGallery = document.getElementById("closeNiquiGallery");
+  const niquiGalleryBox = document.getElementById("niquiGalleryBox");
+  if (closeBtnGallery && niquiGalleryBox) {
+    closeBtnGallery.addEventListener("click", () => {
+      niquiGalleryBox.style.display = "none";
+    });
+  }
+
+  // 8. Control de menú desplegable en móviles corregido para clics directos en .has-dropdown
+  const dropdowns = document.querySelectorAll(".has-dropdown");
+
+  dropdowns.forEach((dropdown) => {
+    dropdown.addEventListener("click", (e) => {
+      if (window.innerWidth <= 768) {
+        e.stopPropagation();
+
+        // Cierra los demás menús abiertos
+        dropdowns.forEach((item) => {
+          if (item !== dropdown) item.classList.remove("open");
         });
+
+        // Alterna la clase open en el menú actual
+        dropdown.classList.toggle("open");
+      }
+    });
+  });
+
+  // Cierra el menú al hacer clic en cualquier otra parte de la pantalla
+  document.addEventListener("click", (e) => {
+    if (window.innerWidth <= 768 && !e.target.closest(".has-dropdown")) {
+      dropdowns.forEach((dropdown) => dropdown.classList.remove("open"));
+    }
+  });
+  // 9. Cierre de Niqui en la nueva Galería Visual
+  const closeBtnGaleriaVisual = document.getElementById(
+    "closeBtnGaleriaVisual",
+  );
+  const niquiBoxGaleriaVisual = document.getElementById(
+    "niquiBoxGaleriaVisual",
+  );
+  if (closeBtnGaleriaVisual && niquiBoxGaleriaVisual) {
+    closeBtnGaleriaVisual.addEventListener("click", () => {
+      niquiBoxGaleriaVisual.style.display = "none";
+    });
+  }
+
+  // 10. Lógica del Modal (Popup) interactivo de los Murales
+  const murals = document.querySelectorAll(".mural-item");
+  const modal = document.getElementById("muralModal");
+
+  if (murals.length > 0 && modal) {
+    const modalImg = document.getElementById("modalImage");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalAuthor = document.getElementById("modalAuthor"); // Agregamos la variable del autor aquí
+    const closeModalBtn = document.getElementById("closeMuralModal");
+
+    // Al hacer clic en cualquier mural, inyecta su título, descripción e imagen en el modal
+    murals.forEach((mural) => {
+      mural.addEventListener("click", () => {
+        const imgSrc = mural.querySelector("img").src;
+        const title = mural.getAttribute("data-title");
+        const desc = mural.getAttribute("data-desc");
+        const authorText = mural.getAttribute("data-author"); // Extraemos el autor usando 'mural'
+
+        modalImg.src = imgSrc;
+        modalTitle.textContent = title;
+        modalDesc.textContent = desc;
+
+        // Inyectamos el autor si existe, si no, lo ocultamos
+        if (authorText) {
+          modalAuthor.innerHTML = `<strong>Artista:</strong> ${authorText}`;
+          modalAuthor.style.display = "block";
+        } else {
+          modalAuthor.style.display = "none";
+        }
+
+        modal.classList.add("active");
+        // Evita que el fondo haga scroll mientras el modal está abierto
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    // Cerrar modal al tocar la X
+    closeModalBtn.addEventListener("click", () => {
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+
+    // Cerrar modal al tocar la parte oscura afuera de la tarjeta blanca
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+  }
+  // Menú Hamburguesa Responsive
+  const hamburgerBtn = document.getElementById("hamburgerBtn");
+  const mainNav = document.getElementById("mainNav");
+
+  if (hamburgerBtn && mainNav) {
+    hamburgerBtn.addEventListener("click", () => {
+      hamburgerBtn.classList.toggle("active");
+      mainNav.classList.toggle("active");
+    });
+
+    // Cierra el menú automáticamente al hacer clic en cualquier opción
+    const navLinks = mainNav.querySelectorAll("a");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        hamburgerBtn.classList.remove("active");
+        mainNav.classList.remove("active");
+      });
+    });
+  }
+  // Cierre de Niqui en la nueva Galería Sonora
+  const closeBtnGaleriaSonora = document.getElementById(
+    "closeBtnGaleriaSonora",
+  );
+  const niquiBoxGaleriaSonora = document.getElementById(
+    "niquiBoxGaleriaSonora",
+  );
+  if (closeBtnGaleriaSonora && niquiBoxGaleriaSonora) {
+    closeBtnGaleriaSonora.addEventListener("click", () => {
+      niquiBoxGaleriaSonora.style.display = "none";
+    });
+  }
+  // ==========================================
+  // Lógica del Carrusel de Podcasts (T1 y T2) con Indicador
+  // ==========================================
+  function setupPodcastCarousel(trackId, prevBtnId, nextBtnId, indicatorId) {
+    const track = document.getElementById(trackId);
+    const prevBtn = document.getElementById(prevBtnId);
+    const nextBtn = document.getElementById(nextBtnId);
+    const indicator = document.getElementById(indicatorId);
+
+    if (!track || !prevBtn || !nextBtn) return;
+
+    const slides = track.querySelectorAll(".podcast-slide");
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      slides.forEach((slide, index) => {
+        slide.classList.remove("active");
+        if (index === currentIndex) {
+          slide.classList.add("active");
+        }
+      });
+      if (indicator) {
+        indicator.textContent = `Episodio ${currentIndex + 1} de ${slides.length}`;
+      }
     }
 
-    // 5. Lógica de Galería Sonora
-    const soundFilterButtons = document.querySelectorAll('.sound-gallery .filter-btn');
-    const soundPanels = document.querySelectorAll('.sound-panel');
+    // Inicializar el indicador visual al cargar la página
+    if (indicator) {
+      indicator.textContent = `Episodio 1 de ${slides.length}`;
+    }
 
-    if (soundFilterButtons.length > 0 && soundPanels.length > 0) {
-        soundFilterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                soundFilterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    });
 
-                const category = button.getAttribute('data-category');
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+  }
 
-                soundPanels.forEach(panel => {
-                    if (panel.id === `panel-${category}`) {
-                        panel.style.display = 'flex';
-                        panel.classList.add('active');
-                    } else {
-                        panel.style.display = 'none';
-                        panel.classList.remove('active');
-                    }
-                });
-            });
-        });
+  setupPodcastCarousel("track-s1", "prev-s1", "next-s1", "ind-s1");
+  setupPodcastCarousel("track-s2", "prev-s2", "next-s2", "ind-s2");
 
-        const soundPrev = document.getElementById('soundPrev');
-        const soundNext = document.getElementById('soundNext');
+  // Cierre del aviso de Niqui en la sección de Podcasts
+  const closeBtnPodcast = document.getElementById("closeBtnPodcast");
+  const niquiBoxPodcast = document.getElementById("niquiBoxPodcast");
+  if (closeBtnPodcast && niquiBoxPodcast) {
+    closeBtnPodcast.addEventListener("click", () => {
+      niquiBoxPodcast.style.display = "none";
+    });
+  }
 
-        function toggleSoundPanel() {
-            const currentActiveBtn = document.querySelector('.sound-gallery .filter-btn.active');
-            const otherBtn = Array.from(soundFilterButtons).find(btn => btn !== currentActiveBtn);
-            if (otherBtn) {
-                otherBtn.click();
+  // Cierre del cuadro de Niqui en Relatos Sonoros
+  const closeBtnRelatos = document.getElementById("closeBtnRelatos");
+  const niquiBoxRelatos = document.getElementById("niquiBoxRelatos");
+  if (closeBtnRelatos && niquiBoxRelatos) {
+    closeBtnRelatos.addEventListener("click", () => {
+      niquiBoxRelatos.style.display = "none";
+    });
+  }
+  // ==========================================
+  // Control exclusivo de Relatos Sonoros (Play/Pause mutuo)
+  // ==========================================
+  const relatoCards = document.querySelectorAll(".relato-card");
+
+  relatoCards.forEach((card) => {
+    const audio = card.querySelector(".relato-audio");
+    const playBtn = card.querySelector(".play-audio-btn");
+
+    if (audio && playBtn) {
+      playBtn.addEventListener("click", () => {
+        // Si el audio actual está reproduciéndose, lo pausamos
+        if (!audio.paused) {
+          audio.pause();
+          playBtn.textContent = "▶";
+        } else {
+          // Pausar todos los demás audios de la página y resetear sus botones
+          document.querySelectorAll(".relato-card").forEach((otherCard) => {
+            const otherAudio = otherCard.querySelector(".relato-audio");
+            const otherBtn = otherCard.querySelector(".play-audio-btn");
+            if (otherAudio && otherAudio !== audio) {
+              otherAudio.pause();
+              otherAudio.currentTime = 0;
+              if (otherBtn) otherBtn.textContent = "▶";
             }
+          });
+
+          // Reproducir el audio seleccionado
+          audio.play();
+          playBtn.textContent = "❚❚";
         }
+      });
 
-        if (soundPrev) soundPrev.addEventListener('click', toggleSoundPanel);
-        if (soundNext) soundNext.addEventListener('click', toggleSoundPanel);
+      // Al terminar el audio, restablecer el botón a Play
+      audio.addEventListener("ended", () => {
+        playBtn.textContent = "▶";
+      });
     }
+  });
 
-    // 6. Carrusel Archivo Histórico
-    const archiveCarousel = document.querySelector('.archive-carousel');
-    const prevArchiveBtn = document.querySelector('.prev-archive');
-    const nextArchiveBtn = document.querySelector('.next-archive');
-
-    if (archiveCarousel && prevArchiveBtn && nextArchiveBtn) {
-        const scrollAmount = 320; 
-
-        nextArchiveBtn.addEventListener('click', () => {
-            archiveCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        });
-
-        prevArchiveBtn.addEventListener('click', () => {
-            archiveCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        });
-    }
-
-    // 7. Botones de cierre de Niqui
-    const closeBtnMuseo = document.getElementById('closeBtnMuseo');
-    const niquiBoxMuseo = document.getElementById('niquiBoxMuseo');
-    if (closeBtnMuseo && niquiBoxMuseo) {
-        closeBtnMuseo.addEventListener('click', () => {
-            niquiBoxMuseo.style.display = 'none';
-        });
-    }
-
-    const closeBtnColegio = document.getElementById('closeBtnColegio');
-    const niquiBoxColegio = document.getElementById('niquiBoxColegio');
-    if (closeBtnColegio && niquiBoxColegio) {
-        closeBtnColegio.addEventListener('click', () => {
-            niquiBoxColegio.style.display = 'none';
-        });
-    }
-
-    const closeBtn = document.getElementById('closeNiqui');
-    const niquiBox = document.getElementById('niquiBox');
-    if (closeBtn && niquiBox) {
-        closeBtn.addEventListener('click', () => {
-            niquiBox.style.display = 'none';
-        });
-    }
-
-    const closeBtnGallery = document.getElementById('closeNiquiGallery');
-    const niquiGalleryBox = document.getElementById('niquiGalleryBox');
-    if (closeBtnGallery && niquiGalleryBox) {
-        closeBtnGallery.addEventListener('click', () => {
-            niquiGalleryBox.style.display = 'none';
-        });
-    }
-
-    // 8. Control de menú desplegable en móviles corregido para clics directos en .has-dropdown
-    const dropdowns = document.querySelectorAll('.has-dropdown');
-
-    dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
-                e.stopPropagation();
-                
-                // Cierra los demás menús abiertos
-                dropdowns.forEach(item => {
-                    if (item !== dropdown) item.classList.remove('open');
-                });
-                
-                // Alterna la clase open en el menú actual
-                dropdown.classList.toggle('open');
-            }
-        });
+  // Cierre del cuadro de Niqui en Apóyanos
+  const closeBtnApoyanos = document.getElementById("closeBtnApoyanos");
+  const niquiBoxApoyanos = document.getElementById("niquiBoxApoyanos");
+  if (closeBtnApoyanos && niquiBoxApoyanos) {
+    closeBtnApoyanos.addEventListener("click", () => {
+      niquiBoxApoyanos.style.display = "none";
     });
-
-    // Cierra el menú al hacer clic en cualquier otra parte de la pantalla
-    document.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768 && !e.target.closest('.has-dropdown')) {
-            dropdowns.forEach(dropdown => dropdown.classList.remove('open'));
-        }
+  }
+  // Cierre del cuadro de Niqui en Contacto
+  const closeBtnContacto = document.getElementById("closeBtnContacto");
+  const niquiBoxContacto = document.getElementById("niquiBoxContacto");
+  if (closeBtnContacto && niquiBoxContacto) {
+    closeBtnContacto.addEventListener("click", () => {
+      niquiBoxContacto.style.display = "none";
     });
-    // 9. Cierre de Niqui en la nueva Galería Visual
-    const closeBtnGaleriaVisual = document.getElementById('closeBtnGaleriaVisual');
-    const niquiBoxGaleriaVisual = document.getElementById('niquiBoxGaleriaVisual');
-    if (closeBtnGaleriaVisual && niquiBoxGaleriaVisual) {
-        closeBtnGaleriaVisual.addEventListener('click', () => {
-            niquiBoxGaleriaVisual.style.display = 'none';
-        });
-    }
-
-    // 10. Lógica del Modal (Popup) interactivo de los Murales
-    const murals = document.querySelectorAll('.mural-item');
-    const modal = document.getElementById('muralModal');
-    
-    if (murals.length > 0 && modal) {
-        const modalImg = document.getElementById('modalImage');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalDesc = document.getElementById('modalDesc');
-        const closeModalBtn = document.getElementById('closeMuralModal');
-
-        // Al hacer clic en cualquier mural, inyecta su título, descripción e imagen en el modal
-        murals.forEach(mural => {
-            mural.addEventListener('click', () => {
-                const imgSrc = mural.querySelector('img').src;
-                const title = mural.getAttribute('data-title');
-                const desc = mural.getAttribute('data-desc');
-
-                modalImg.src = imgSrc;
-                modalTitle.textContent = title;
-                modalDesc.textContent = desc;
-
-                modal.classList.add('active');
-                // Evita que el fondo haga scroll mientras el modal está abierto
-                document.body.style.overflow = 'hidden'; 
-            });
-        });
-
-        // Cerrar modal al tocar la X
-        closeModalBtn.addEventListener('click', () => {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-
-        // Cerrar modal al tocar la parte oscura afuera de la tarjeta blanca
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-    }
-    // Menú Hamburguesa Responsive
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const mainNav = document.getElementById('mainNav');
-
-    if (hamburgerBtn && mainNav) {
-        hamburgerBtn.addEventListener('click', () => {
-            hamburgerBtn.classList.toggle('active');
-            mainNav.classList.toggle('active');
-        });
-
-        // Cierra el menú automáticamente al hacer clic en cualquier opción
-        const navLinks = mainNav.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburgerBtn.classList.remove('active');
-                mainNav.classList.remove('active');
-            });
-        });
-    }
-// Cierre de Niqui en la nueva Galería Sonora
-    const closeBtnGaleriaSonora = document.getElementById('closeBtnGaleriaSonora');
-    const niquiBoxGaleriaSonora = document.getElementById('niquiBoxGaleriaSonora');
-    if (closeBtnGaleriaSonora && niquiBoxGaleriaSonora) {
-        closeBtnGaleriaSonora.addEventListener('click', () => {
-            niquiBoxGaleriaSonora.style.display = 'none';
-        });
-    }
-   // ==========================================
-    // Lógica del Carrusel de Podcasts (T1 y T2) con Indicador
-    // ==========================================
-    function setupPodcastCarousel(trackId, prevBtnId, nextBtnId, indicatorId) {
-        const track = document.getElementById(trackId);
-        const prevBtn = document.getElementById(prevBtnId);
-        const nextBtn = document.getElementById(nextBtnId);
-        const indicator = document.getElementById(indicatorId);
-        
-        if (!track || !prevBtn || !nextBtn) return;
-
-        const slides = track.querySelectorAll('.podcast-slide');
-        let currentIndex = 0;
-
-        function updateCarousel() {
-            slides.forEach((slide, index) => {
-                slide.classList.remove('active');
-                if (index === currentIndex) {
-                    slide.classList.add('active');
-                }
-            });
-            if (indicator) {
-                indicator.textContent = `Episodio ${currentIndex + 1} de ${slides.length}`;
-            }
-        }
-
-        // Inicializar el indicador visual al cargar la página
-        if (indicator) {
-            indicator.textContent = `Episodio 1 de ${slides.length}`;
-        }
-
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateCarousel();
-        });
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            updateCarousel();
-        });
-    }
-
-    setupPodcastCarousel('track-s1', 'prev-s1', 'next-s1', 'ind-s1');
-    setupPodcastCarousel('track-s2', 'prev-s2', 'next-s2', 'ind-s2');
-
-    // Cierre del aviso de Niqui en la sección de Podcasts
-    const closeBtnPodcast = document.getElementById('closeBtnPodcast');
-    const niquiBoxPodcast = document.getElementById('niquiBoxPodcast');
-    if (closeBtnPodcast && niquiBoxPodcast) {
-        closeBtnPodcast.addEventListener('click', () => {
-            niquiBoxPodcast.style.display = 'none';
-        });
-    }
-
-    // Cierre del cuadro de Niqui en Relatos Sonoros
-    const closeBtnRelatos = document.getElementById('closeBtnRelatos');
-    const niquiBoxRelatos = document.getElementById('niquiBoxRelatos');
-    if (closeBtnRelatos && niquiBoxRelatos) {
-        closeBtnRelatos.addEventListener('click', () => {
-            niquiBoxRelatos.style.display = 'none';
-        });
-    }
-    // ==========================================
-    // Control exclusivo de Relatos Sonoros (Play/Pause mutuo)
-    // ==========================================
-    const relatoCards = document.querySelectorAll('.relato-card');
-
-    relatoCards.forEach(card => {
-        const audio = card.querySelector('.relato-audio');
-        const playBtn = card.querySelector('.play-audio-btn');
-
-        if (audio && playBtn) {
-            playBtn.addEventListener('click', () => {
-                // Si el audio actual está reproduciéndose, lo pausamos
-                if (!audio.paused) {
-                    audio.pause();
-                    playBtn.textContent = '▶';
-                } else {
-                    // Pausar todos los demás audios de la página y resetear sus botones
-                    document.querySelectorAll('.relato-card').forEach(otherCard => {
-                        const otherAudio = otherCard.querySelector('.relato-audio');
-                        const otherBtn = otherCard.querySelector('.play-audio-btn');
-                        if (otherAudio && otherAudio !== audio) {
-                            otherAudio.pause();
-                            otherAudio.currentTime = 0;
-                            if (otherBtn) otherBtn.textContent = '▶';
-                        }
-                    });
-
-                    // Reproducir el audio seleccionado
-                    audio.play();
-                    playBtn.textContent = '❚❚';
-                }
-            });
-
-            // Al terminar el audio, restablecer el botón a Play
-            audio.addEventListener('ended', () => {
-                playBtn.textContent = '▶';
-            });
-        }
-    });
-
-    // Cierre del cuadro de Niqui en Apóyanos
-    const closeBtnApoyanos = document.getElementById('closeBtnApoyanos');
-    const niquiBoxApoyanos = document.getElementById('niquiBoxApoyanos');
-    if (closeBtnApoyanos && niquiBoxApoyanos) {
-        closeBtnApoyanos.addEventListener('click', () => {
-            niquiBoxApoyanos.style.display = 'none';
-        });
-    }
-    // Cierre del cuadro de Niqui en Contacto
-    const closeBtnContacto = document.getElementById('closeBtnContacto');
-    const niquiBoxContacto = document.getElementById('niquiBoxContacto');
-    if (closeBtnContacto && niquiBoxContacto) {
-        closeBtnContacto.addEventListener('click', () => {
-            niquiBoxContacto.style.display = 'none';
-        });
-    }
+  }
 });
