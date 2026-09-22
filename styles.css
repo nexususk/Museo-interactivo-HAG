@@ -388,6 +388,13 @@ nav ul li .btn-donate {
     position: relative;
 }
 
+.guide-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+}
+
 /* =========================================
    MUSEO INTERACTIVO
    ========================================= */
