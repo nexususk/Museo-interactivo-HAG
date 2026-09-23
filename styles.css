@@ -1,10 +1,10 @@
 :root {
-    --primary-blue: #3A6B9B;
-    --dark-blue: #234B75;
-    --accent-yellow: #FFC107;
+    --primary-blue: #0583F2;
+    --dark-blue: #000069;
+    --accent-yellow: #F19F07;
     --text-dark: #333333;
-    --text-light: #FFFFFF;
-    --bg-light: #F9F9F9;
+    --text-light: #FDFFFC;
+    --bg-light: #FDFFFC;
     --font-main: 'Manrope', sans-serif;
     --font-headings: 'Neuton', serif;
 }
