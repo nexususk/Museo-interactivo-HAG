@@ -285,6 +285,43 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+  // 11. Lógica del Modal de texto para los Momentos de Historia
+  const moments = document.querySelectorAll(".moment-item");
+  const momentModal = document.getElementById("momentModal");
+
+  if (moments.length > 0 && momentModal) {
+    const momentModalTitle = document.getElementById("momentModalTitle");
+    const momentModalDesc = document.getElementById("momentModalDesc");
+    const closeMomentModalBtn = document.getElementById("closeMomentModal");
+
+    // Abrir al hacer clic en un momento
+    moments.forEach((moment) => {
+      moment.addEventListener("click", () => {
+        const title = moment.getAttribute("data-title");
+        const desc = moment.getAttribute("data-desc");
+
+        momentModalTitle.textContent = title;
+        momentModalDesc.textContent = desc;
+
+        momentModal.classList.add("active");
+        document.body.style.overflow = "hidden"; // Bloquea el scroll del fondo
+      });
+    });
+
+    // Cerrar al tocar la X
+    closeMomentModalBtn.addEventListener("click", () => {
+      momentModal.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+
+    // Cerrar al hacer clic en el fondo oscuro
+    momentModal.addEventListener("click", (e) => {
+      if (e.target === momentModal) {
+        momentModal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+  }
   // Menú Hamburguesa Responsive
   const hamburgerBtn = document.getElementById("hamburgerBtn");
   const mainNav = document.getElementById("mainNav");

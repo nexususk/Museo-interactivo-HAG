@@ -1032,6 +1032,21 @@ nav ul li .btn-donate {
     margin-top: -40px;
 }
 
+/* Efectos para la línea de tiempo interactiva */
+.moment-item .timeline-content {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.moment-item .timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Modal solo de texto para la historia */
+.text-only-modal {
+    max-width: 800px !important;
+    margin: 0 auto;
+}
+
 .niqui-dialogue-container-right {
     display: flex;
     align-items: center;
@@ -2155,6 +2170,94 @@ nav ul li .btn-donate {
     width: 100%;
     height: 650px;
     border: none;
+}
+/* =========================================
+   ESTILOS DEL FORMULARIO DE CONTACTO
+   ========================================= */
+.contact-form-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.form-group label {
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #8899a6;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    font-family: var(--font-main);
+    font-size: 1rem;
+    color: var(--text-dark);
+    padding: 14px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Al hacer clic en un campo (focus) */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-blue);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(5, 131, 242, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-send-message {
+    background-color: var(--accent-yellow);
+    color: var(--dark-blue);
+    font-family: var(--font-main);
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.btn-send-message:hover {
+    transform: scale(1.02);
+    background-color: #e09306;
+}
+
+/* Adaptación responsive para celulares */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
 /* Adaptación responsive para la página de contacto */

@@ -48,41 +48,58 @@
     </nav>
     </header>
 
-    <main>
+    <main style="margin-top: 80px;">
         <!-- HERO CONTACTO -->
         <section class="page-hero">
-            <div class="hero-subtitle">CONTACTO</div>
-            <h1 class="page-title">Escríbenos</h1>
-            <p>¿Tienes preguntas, aportes o simplemente quieres saludar? Estamos aquí para escucharte.</p>
+            <h5 class="hero-subtitle">CONTACTO</h5>
+            <h1 class="page-title">Queremos escucharte</h1>
+            <p>¿Tienes preguntas, quieres visitar el museo o simplemente quieres saludar? Estamos aquí para escucharte.</p>
         </section>
+
+        <!-- CAJA DE NIQUI (Mover aquí con las clases correctas) -->
+        <div class="page-niqui-container" id="niquiBoxContacto">
+            <div class="niqui-dialogue-container-right">
+                <div class="niqui-avatar-wrapper">
+                    <img src="images/placeholder-niqui.png" alt="Niqui Guía" class="niqui-avatar-img">
+                </div>
+                <div class="niqui-tooltip">
+                    <button class="close-btn" id="closeBtnContacto">&times;</button>
+                    <h5>NIQUI DICE:</h5>
+                    <p>¿Tienes algo para contarnos? ¡Nos encanta escuchar a la comunidad! Escríbenos o búscanos directamente</p>
+                </div>
+            </div>
+        </div>
 
         <!-- CONTENIDO PRINCIPAL DE CONTACTO -->
         <section class="contact-page-container">
             <div class="contact-grid">
                 
-                <!-- COLUMNA IZQUIERDA: NIQUI Y DATOS DE CONTACTO -->
+                <!-- COLUMNA IZQUIERDA:DATOS DE CONTACTO -->
                 <div class="contact-info-col">
                     
-                    <!-- Avatar Niqui con Globo de Diálogo -->
-                    <div class="niqui-dialogue-container" id="niquiBoxContacto" style="position: relative; top: 0; left: 0; margin-bottom: 10px;">
-                        <div class="niqui-avatar-wrapper">
-                            <img src="images/placeholder-niqui.png" alt="Niqui Guía" class="niqui-avatar-img">
-                        </div>
-                        <div class="niqui-tooltip">
-                            <button class="close-btn" id="closeBtnContacto">&times;</button>
-                            <h5>NIQUI DICE:</h5>
-                            <p>¿Tienes algo para contarnos? ¡Nos encanta escuchar a la comunidad! Escríbenos o búscanos directamente 📬</p>
-                        </div>
-                    </div>
-
                     <h2 class="contact-info-title">Información de <em>contacto</em></h2>
 
-                    <!-- Tarjeta Dirección -->
-                    <div class="info-card">
-                        <div class="info-icon-box">📍</div>
-                        <div class="info-details">
-                            <h4>DIRECCIÓN</h4>
-                            <p>Cra. 44 #43-96, Barrio Aranjuez Medellín, Antioquia, Colombia</p>
+                  <!-- Tarjeta Dirección -->
+                    <div class="info-card" style="flex-direction: column; align-items: stretch; gap: 15px;">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div class="info-icon-box">📍</div>
+                            <div class="info-details">
+                                <h4>DIRECCIÓN</h4>
+                                <p>Cra. 44 #43, Barrio La Candelaria (Comuna 10), Medellín, Antioquia, Colombia</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Mapa Embebido de Google Maps -->
+                        <div style="width: 100%; height: 250px; border-radius: 8px; overflow: hidden; margin-top: 5px;">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.158372573716!2d-75.56921362552102!3d6.242848726362148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428513d53c933%3A0xcac3c2411a578768!2zSS5FLiBIw6ljdG9yIEFiYWQgR8OzbWV6LCBTZWNjacOzbiBEYXLDrW8gTG9uZG_DsW8gQ2FyZG9uYQ!5e0!3m2!1ses!2sco!4v1791010401655!5m2!1ses!2sco" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="strict-origin-when-cross-origin">
+                            </iframe>
                         </div>
                     </div>
 
@@ -91,7 +108,7 @@
                         <div class="info-icon-box">📞</div>
                         <div class="info-details">
                             <h4>TELÉFONO</h4>
-                            <p>+57 (604) 000-0000</p>
+                            <p>+57(604) 216 1258</p>
                         </div>
                     </div>
 
@@ -109,18 +126,16 @@
                         <div class="info-icon-box">🕒</div>
                         <div class="info-details">
                             <h4>HORARIO DE ATENCIÓN</h4>
-                            <p>Lunes a viernes · 7:00 – 17:00 h</p>
+                            <p>Lunes a viernes · 8:00 – 16:00 h</p>
                         </div>
                     </div>
 
-                    <!-- Tarjeta Redes Sociales -->
                     <div class="social-card">
                         <h4>SÍGUENOS EN REDES SOCIALES</h4>
                         <div class="social-badges">
-                            <a href="#" class="social-badge-btn">IN</a>
-                            <a href="#" class="social-badge-btn">TI</a>
-                            <a href="#" class="social-badge-btn">YO</a>
-                            <a href="#" class="social-badge-btn">SP</a>
+                            <a href="https://www.instagram.com/museoescolarhag_/" target="_blank" rel="noopener noreferrer" style="display: inline-block; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                                <img src="images/instagram-icon.png" alt="Instagram Museo Escolar" style="width: 35px; height: 35px; object-fit: contain;">
+                            </a>
                         </div>
                     </div>
 
@@ -198,23 +213,28 @@
                 </div>
                 <p>Proyecto cultural enfocado en la memoria, el arte y la transformación social de nuestra comunidad educativa.</p>
                 <div class="social-links">
-                    <a href="#">IG</a>
-                    <a href="#">TK</a>
-                    <a href="#">YT</a>
-                    <a href="#">SP</a>
+                    <!-- Instagram Museo -->
+                    <a href="https://www.instagram.com/museoescolarhag_/" target="_blank" rel="noopener noreferrer" style="border: none; background: transparent; padding: 0;">
+                        <img src="images/instagram-icon.png" alt="Instagram Museo Escolar" style="width: 35px; height: 35px; object-fit: contain; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                    </a>
+                    
+                    <!-- Spotify Extramural -->
+                    <a href="https://open.spotify.com/show/0t5j8xwTU0EZu17c2sRldK" target="_blank" rel="noopener noreferrer" style="border: none; background: transparent; padding: 0;">
+                        <img src="images/Spotify_icon.png" alt="Podcast Extramural en Spotify" style="width: 35px; height: 35px; object-fit: contain; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                    </a>
                 </div>
             </div>
 
             <div class="links-col footer-col">
                 <h4>EXPLORAR</h4>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href="index.html">Inicio</a></li>
                     <li><a href="#">Museo Interactivo</a></li>
-                    <li><a href="#">Historia del museo</a></li>
-                    <li><a href="#">Historia del colegio</a></li>
-                    <li><a href="#">Apóyanos</a></li>
-                    <li><a href="#">Podcasts</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="historia-museo.html">Historia del museo</a></li>
+                    <li><a href="historia-colegio.html">Historia del colegio</a></li>
+                    <li><a href="apoyanos.html">Apóyanos</a></li>
+                    <li><a href="podcasts.html">Podcasts</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </div>
 

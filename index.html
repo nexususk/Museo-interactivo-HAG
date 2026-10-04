@@ -55,42 +55,47 @@
     <!-- HERO -->
    <section class="hero" id="hero">
         
-        <div class="hero-slide active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x1080?text=Fondo+1');">
+        <!-- Slide 1: Diversidad -->
+        <div class="hero-slide active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/murales/diversidad/Legado-de-afecto-cuidado-y-comunidad.webp');">
             <div class="hero-content">
-                <h2>I.E. HÉCTOR ABAD GÓMEZ</h2>
-                <h1>Raíces y Sueños</h1>
-                <p>Identidad cultural y resistencia</p>
+                <h2>NUESTROS VALORES</h2>
+                <h1>Diversidad</h1>
+                <p>Reconocemos y celebramos las múltiples formas de ser que enriquecen nuestra comunidad.</p>
             </div>
         </div>
 
-        <div class="hero-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x1080/234B75/FFFFFF?text=Fondo+2');">
+        <!-- Slide 2: Inclusión -->
+        <div class="hero-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/murales/inclusion/Manos-que-nos-unen.webp');">
             <div class="hero-content">
-                <h2>I.E. HÉCTOR ABAD GÓMEZ</h2>
-                <h1>Memoria Viva</h1>
-                <p>Un recorrido por nuestro pasado y presente</p>
+                <h2>NUESTROS VALORES</h2>
+                <h1>Inclusión</h1>
+                <p>Construimos un espacio seguro y protector donde todas las voces tienen lugar.</p>
             </div>
         </div>
 
-        <div class="hero-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x1080/3A6B9B/FFFFFF?text=Fondo+3');">
+        <!-- Slide 3: Migración -->
+        <div class="hero-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/murales/migracion/Reflejos-del-ser-el-arte-de-reconocerse.webp');">
             <div class="hero-content">
-                <h2>I.E. HÉCTOR ABAD GÓMEZ</h2>
-                <h1>Voces del Mañana</h1>
-                <p>Construyendo futuro desde las aulas</p>
+                <h2>NUESTROS VALORES</h2>
+                <h1>Migración</h1>
+                <p>Acogemos las historias, raíces y saberes de quienes llegan a nuestro territorio.</p>
             </div>
         </div>
 
-        <div class="hero-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x1080/FFC107/333333?text=Fondo+4');">
+        <!-- Slide 4: Movilidad Humana -->
+        <div class="hero-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/murales/movilidad humana/Libertad-memoria-y-asombro.webp">
             <div class="hero-content">
-                <h2>I.E. HÉCTOR ABAD GÓMEZ</h2>
-                <h1>Arte y Transformación</h1>
-                <p>Nuestra comunidad en movimiento</p>
+                <h2>NUESTROS VALORES</h2>
+                <h1>Movilidad humana</h1>
+                <p>Abrazamos el tránsito de las personas como una oportunidad para tejer nuevos vínculos.</p>
             </div>
         </div>
 
        <div class="hero-buttons">
-            <button class="btn-primary">EXPLORAR EL MUSEO</button>
+            <button class="btn-primary" onclick="window.location.href='galeria-visual.html'">EXPLORAR EL MUSEO</button>
             <button class="btn-secondary" onclick="window.location.href='historia-museo.html'">Conoce nuestra historia</button>
         </div>
+        
         <button class="hero-nav prev-hero">❮</button>
         <button class="hero-nav next-hero">❯</button>
         
@@ -151,17 +156,16 @@
             <div class="niqui-tooltip">
                 <button class="close-btn" id="closeNiqui">&times;</button>
                 <h5>NIQUI DICE:</h5>
-                <p>¡Esta es la entrada al Museo Interactivo! Aquí tienes una vista de las salas que puedes explorar. Cada sala guarda historias únicas que te esperan .</p>
+                <p>¡Bienvenido a nuestro Museo Interactivo! Es un espacio digital en 3D donde puedes caminar, explorar los murales y descubrir las historias de la institución como si estuvieras aquí mismo. ¡Anímate a recorrerlo!</p>
             </div>
         </div>
 
         <h2>MUSEO INTERACTIVO</h2>
-        <p>Descubre nuestras salas</p>
+        <p>Vive la experiencia digital</p>
         
         <div class="cards-container">
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
+            <!-- Solo dejamos un 'card' grande para el render principal -->
+            <div class="card" style="width: 100%; max-width: 900px; height: 400px; background-image: url('images/Inicio-Museo-Interactivo.webp');"></div>
         </div>
 
        <div class="interactive-buttons">
@@ -179,13 +183,13 @@
             <div class="niqui-tooltip">
                 <button class="close-btn" id="closeNiquiGallery">&times;</button>
                 <h5>NIQUI DICE:</h5>
-                <p>¡Bienvenido a la galería sonora! Aquí podrás encontrar relatos sonoros y podcast de los murales.</p>
+                <p>¡Afina el oído! Aquí guardé en mi caparazón los audios donde nuestra propia comunidad nos cuenta los secretos y emociones detrás de cada mural. ¡Anímate a escucharlos!</p>
             </div>
         </div>
 
         <h4 class="subtitle">GALERÍA SONORA</h4>
-        <h2>Explora nuestro museo</h2>
-        <p class="description">Cada sala es una ventana hacia la memoria colectiva y los sueños de nuestra comunidad educativa.</p>
+        <h2>Voces que hacen memoria</h2>
+        <p class="description">Más allá de los colores, nuestros muros tienen voz. Ponte los audífonos y sumérgete en relatos y episodios de podcast para descubrir las historias de resistencia, diversidad y sueños que habitan en la escuela.</p>
         
         <!-- Botones de filtro -->
         <div class="gallery-filters">
@@ -281,10 +285,15 @@
                 </div>
                 <p>Proyecto cultural enfocado en la memoria, el arte y la transformación social de nuestra comunidad educativa.</p>
                 <div class="social-links">
-                    <a href="#">IG</a>
-                    <a href="#">TK</a>
-                    <a href="#">YT</a>
-                    <a href="#">SP</a>
+                    <!-- Instagram Museo -->
+                    <a href="https://www.instagram.com/museoescolarhag_/" target="_blank" rel="noopener noreferrer" style="border: none; background: transparent; padding: 0;">
+                        <img src="images/instagram-icon.png" alt="Instagram Museo Escolar" style="width: 35px; height: 35px; object-fit: contain; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                    </a>
+                    
+                    <!-- Spotify Extramural -->
+                    <a href="https://open.spotify.com/show/0t5j8xwTU0EZu17c2sRldK" target="_blank" rel="noopener noreferrer" style="border: none; background: transparent; padding: 0;">
+                        <img src="images/Spotify_icon.png" alt="Podcast Extramural en Spotify" style="width: 35px; height: 35px; object-fit: contain; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                    </a>
                 </div>
             </div>
 
@@ -297,7 +306,7 @@
                     <li><a href="historia-colegio.html">Historia del colegio</a></li>
                     <li><a href="galeria-visual.html">Galería visual</a></li>
                     <li><a href="galeria-sonora.html">Galería sonora</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </div>
 
