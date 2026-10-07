@@ -397,6 +397,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setupPodcastCarousel("track-s1", "prev-s1", "next-s1", "ind-s1");
   setupPodcastCarousel("track-s2", "prev-s2", "next-s2", "ind-s2");
+  setupPodcastCarousel("track-relatos", "prev-relatos", "next-relatos", "ind-relatos");
 
   // Cierre del aviso de Niqui en la sección de Podcasts
   const closeBtnPodcast = document.getElementById("closeBtnPodcast");
@@ -415,46 +416,7 @@ document.addEventListener("DOMContentLoaded", () => {
       niquiBoxRelatos.style.display = "none";
     });
   }
-  // ==========================================
-  // Control exclusivo de Relatos Sonoros (Play/Pause mutuo)
-  // ==========================================
-  const relatoCards = document.querySelectorAll(".relato-card");
-
-  relatoCards.forEach((card) => {
-    const audio = card.querySelector(".relato-audio");
-    const playBtn = card.querySelector(".play-audio-btn");
-
-    if (audio && playBtn) {
-      playBtn.addEventListener("click", () => {
-        // Si el audio actual está reproduciéndose, lo pausamos
-        if (!audio.paused) {
-          audio.pause();
-          playBtn.textContent = "▶";
-        } else {
-          // Pausar todos los demás audios de la página y resetear sus botones
-          document.querySelectorAll(".relato-card").forEach((otherCard) => {
-            const otherAudio = otherCard.querySelector(".relato-audio");
-            const otherBtn = otherCard.querySelector(".play-audio-btn");
-            if (otherAudio && otherAudio !== audio) {
-              otherAudio.pause();
-              otherAudio.currentTime = 0;
-              if (otherBtn) otherBtn.textContent = "▶";
-            }
-          });
-
-          // Reproducir el audio seleccionado
-          audio.play();
-          playBtn.textContent = "❚❚";
-        }
-      });
-
-      // Al terminar el audio, restablecer el botón a Play
-      audio.addEventListener("ended", () => {
-        playBtn.textContent = "▶";
-      });
-    }
-  });
-
+  
   // Cierre del cuadro de Niqui en Apóyanos
   const closeBtnApoyanos = document.getElementById("closeBtnApoyanos");
   const niquiBoxApoyanos = document.getElementById("niquiBoxApoyanos");

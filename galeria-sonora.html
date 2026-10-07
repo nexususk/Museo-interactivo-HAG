@@ -67,7 +67,7 @@
         </div>
 
       <!-- SECCIÓN 1: PODCAST Y NIQUI -->
-        <section class="container podcast-layout">
+        <section class="container podcast-layout" id="seccion-podcast">
             
             <!-- Columna Izquierda: Niqui Dice -->
             <div class="podcast-niqui-col">
@@ -156,7 +156,7 @@
         </section>
 
         <!-- SECCIÓN 2: RELATOS SONOROS CON NIQUI -->
-        <section class="container podcast-layout" style="margin-top: 40px;">
+       <section class="container podcast-layout" id="seccion-relatos" style="margin-top: 40px;">
             
             <!-- Columna Izquierda: Niqui Dice -->
             <div class="podcast-niqui-col">
@@ -173,123 +173,54 @@
             </div>
 
             <!-- Columna Derecha: Lista de Relatos -->
-            <div class="podcast-content-col" style="max-width: 900px;">
+            <div class="podcast-content-col">
                 <h2 class="section-title text-center" style="color: #CBA052; font-family: var(--font-headings); font-size: 3rem; margin-bottom: 40px;">Relatos sonoros</h2>
 
-                <div class="relatos-list">
-                    
-                    <!-- Relato 1 -->
-                    <div class="relato-card">
-                        <img src="https://via.placeholder.com/120?text=EP+01" alt="EP 01" class="relato-img">
-                        <div class="relato-info">
-                            <span class="relato-meta">EP 01 · JUNIO 2024</span>
-                            <h3>La memoria del barrio</h3>
-                            <p class="relato-mural">Mural "Las Alas del Barrio" · Colectivo Arte · Colegio del barrio</p>
-                            <p class="relato-tags">Identidad, sueños y raíces territoriales</p>
+                  
+                <div class="podcast-season">
+                    <div class="podcast-carousel-wrapper">
+                        <button class="carousel-nav prev-ep" id="prev-relatos">←</button>
+                        
+                        <div class="podcast-carousel-track" id="track-relatos">
+                            <!-- Relato 1: La memoria del barrio -->
+                            <div class="podcast-slide active">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/7HbRvDzZUA1qPruCT6RTea?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            
+                            <!-- Relato 2: La fuerza del pueblo -->
+                            <div class="podcast-slide">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/2HKVgl2dkuulHITcyknFtP?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            
+                            <!-- Relato 3: Identidad y territorio -->
+                            <div class="podcast-slide">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/2qP6XmZCCaSwDtSL6jt28f?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            
+                            <!-- Relato 4: Fotografía y memoria colectiva -->
+                            <div class="podcast-slide">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/4XUdIu7xipgj5yv7LPIgbq?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            
+                            <!-- Relato 5: El tren que se alimentaba de los recuerdos -->
+                            <div class="podcast-slide">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/7q7c4wYJ3yHPG80SDgw8Rz?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            
+                            <!-- Relato 6: La ciudad de las mascaras caidas -->
+                            <div class="podcast-slide">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/7Dah84z3HLnTQCwh7RSF7n?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            
+                            <!-- Relato 7: El plato que nunca quedaba vacio -->
+                            <div class="podcast-slide">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/7bdHDvCU8TfK1UGDD77SeO?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
                         </div>
-                        <div class="relato-action">
-                            <span class="relato-time">1:23 min</span>
-                            <audio class="relato-audio" src="tu-audio-1.mp3"></audio>
-                            <button class="play-audio-btn">▶</button>
-                        </div>
+                        
+                        <button class="carousel-nav next-ep" id="next-relatos">→</button>
                     </div>
-
-                    <!-- Relato 2 -->
-                    <div class="relato-card">
-                        <img src="https://via.placeholder.com/120?text=EP+02" alt="EP 02" class="relato-img">
-                        <div class="relato-info">
-                            <span class="relato-meta">EP 02 · MARZO 2023</span>
-                            <h3>Manos que Construyen Paz</h3>
-                            <p class="relato-mural">Mural "Manos que Construyen Paz" · María García</p>
-                            <p class="relato-tags">Proceso colectivo y participación comunitaria</p>
-                        </div>
-                        <div class="relato-action">
-                            <span class="relato-time">1:30 min</span>
-                            <audio class="relato-audio" src="tu-audio-2.mp3"></audio>
-                            <button class="play-audio-btn">▶</button>
-                        </div>
-                    </div>
-
-                    <!-- Relato 3 -->
-                    <div class="relato-card">
-                        <img src="https://via.placeholder.com/120?text=EP+03" alt="EP 03" class="relato-img">
-                        <div class="relato-info">
-                            <span class="relato-meta">EP 03 · ENERO 2024</span>
-                            <h3>Raíces y Sueños</h3>
-                            <p class="relato-mural">Mural "Raíces y Sueños" · Arte Social · Galería Sueños</p>
-                            <p class="relato-tags">Memoria, territorio y sentido de pertenencia</p>
-                        </div>
-                        <div class="relato-action">
-                            <span class="relato-time">1:13 min</span>
-                            <audio class="relato-audio" src="tu-audio-3.mp3"></audio>
-                            <button class="play-audio-btn">▶</button>
-                        </div>
-                    </div>
-
-                    <!-- Relato 4 -->
-                    <div class="relato-card">
-                        <img src="https://via.placeholder.com/120?text=EP+04" alt="EP 04" class="relato-img">
-                        <div class="relato-info">
-                            <span class="relato-meta">EP 04 · NOV 2022</span>
-                            <h3>La fuerza del pueblo</h3>
-                            <p class="relato-mural">Mural "La Fuerza del Pueblo" · Jhoan Sebastián Montoya</p>
-                            <p class="relato-tags">Arte urbano, grafiti y expresión juvenil</p>
-                        </div>
-                        <div class="relato-action">
-                            <span class="relato-time">1:08 min</span>
-                            <audio class="relato-audio" src="tu-audio-4.mp3"></audio>
-                            <button class="play-audio-btn">▶</button>
-                        </div>
-                    </div>
-
-                    <!-- Relato 5 -->
-                    <div class="relato-card">
-                        <img src="https://via.placeholder.com/120?text=EP+05" alt="EP 05" class="relato-img">
-                        <div class="relato-info">
-                            <span class="relato-meta">EP 05 · AGOSTO 2020</span>
-                            <h3>El plato que nunca quedaba vacío</h3>
-                            <p class="relato-mural">Mural "El plato que nunca quedaba vacío" · Juan David Jiménez</p>
-                            <p class="relato-tags">Arte urbano, grafiti y expresión juvenil</p>
-                        </div>
-                        <div class="relato-action">
-                            <span class="relato-time">2:50 min</span>
-                            <audio class="relato-audio" src="tu-audio-5.mp3"></audio>
-                            <button class="play-audio-btn">▶</button>
-                        </div>
-                    </div>
-
-                    <!-- Relato 6 -->
-                    <div class="relato-card">
-                        <img src="https://via.placeholder.com/120?text=EP+06" alt="EP 06" class="relato-img">
-                        <div class="relato-info">
-                            <span class="relato-meta">EP 06 · FEB 2021</span>
-                            <h3>Nadie sabía exactamente cuándo aparecía</h3>
-                            <p class="relato-mural">Mural "Nadie sabía exactamente cuándo aparecía" · Christian Bran Arboleda</p>
-                            <p class="relato-tags">Arte urbano, grafiti y expresión juvenil</p>
-                        </div>
-                        <div class="relato-action">
-                            <span class="relato-time">2:54 min</span>
-                            <audio class="relato-audio" src="tu-audio-6.mp3"></audio>
-                            <button class="play-audio-btn">▶</button>
-                        </div>
-                    </div>
-
-                    <!-- Relato 7 -->
-                    <div class="relato-card">
-                        <img src="https://via.placeholder.com/120?text=EP+07" alt="EP 07" class="relato-img">
-                        <div class="relato-info">
-                            <span class="relato-meta">EP 07 · DIC 2019</span>
-                            <h3>La ciudad de las máscaras caídas</h3>
-                            <p class="relato-mural">Mural "La ciudad de las máscaras caídas" · Juan Rodríguez</p>
-                            <p class="relato-tags">Arte urbano, grafiti y expresión juvenil</p>
-                        </div>
-                        <div class="relato-action">
-                            <span class="relato-time">2:40 min</span>
-                            <audio class="relato-audio" src="tu-audio-7.mp3"></audio>
-                            <button class="play-audio-btn">▶</button>
-                        </div>
-                    </div>
-
+                    <p class="episode-indicator" id="ind-relatos">Relato 1 de 7</p>
                 </div>
             </div>
         </section>

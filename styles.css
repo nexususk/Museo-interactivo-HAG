@@ -426,6 +426,7 @@ nav ul li .btn-donate {
     border: 2px solid rgba(255,255,255,0.2);
     background-image: url('https://via.placeholder.com/300x200?text=Sala');
     background-size: cover;
+    background-position: center; 
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -678,6 +679,48 @@ nav ul li .btn-donate {
 .dot.active {
     background-color: var(--accent-yellow);
 }
+
+.carousel-track {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+}
+
+
+.gallery-card.sound-panel {
+    grid-row: 1;
+    grid-column: 1;
+    display: flex !important; 
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease; 
+    width: 100%;
+    
+
+    padding: 0 !important; 
+    align-items: stretch !important;
+    min-height: auto !important; 
+}
+
+.gallery-card.sound-panel.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.gallery-card.sound-panel .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important; 
+    height: 100%;
+}
+
+.gallery-card.sound-panel .podcast-box {
+    margin-top: auto; 
+}
+
 
 /* =========================================
    ALIADOS & FOOTER
@@ -1169,6 +1212,9 @@ nav ul li .btn-donate {
         margin-bottom: 0 !important;
         padding: 0 20px;
     }
+    .hero-nav {
+        display: none !important;
+    }
     .hero-content h2 { font-size: 14px; }
     .hero-content h1 { font-size: 32px; line-height: 1.2; }
     .hero-content p { font-size: 16px; }
@@ -1216,7 +1262,7 @@ nav ul li .btn-donate {
     .page-niqui-container { margin-top: -20px; }
 
     .cards-container { flex-direction: column; align-items: center; }
-    .card { width: 100%; max-width: 320px; }
+    .card { width: 100%; max-width: 320px; height: 220px !important; }
     .interactive-buttons { flex-direction: column; width: 100%; }
 
     .gallery-card { flex-direction: column; width: 100%; }
@@ -1637,6 +1683,10 @@ nav ul li .btn-donate {
     background-color: #c94f1f;
     transform: scale(1.05);
 }
+#seccion-podcast,
+#seccion-relatos {
+    scroll-margin-top: 100px;
+}
 
 @media (max-width: 600px) {
     .relato-card {
@@ -1682,7 +1732,7 @@ nav ul li .btn-donate {
 
 .podcast-content-col {
     width: 100%;
-    max-width: 750px;
+    max-width: 900px;
 }
 
 .episode-indicator {
@@ -2273,5 +2323,33 @@ nav ul li .btn-donate {
     }
     .google-forms-container iframe {
         height: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Permitir que los elementos se acomoden en varias líneas */
+    .podcast-carousel-wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px 10px !important;
+    }
+    
+    /* Obligar al reproductor de Spotify a ponerse arriba y tomar TODO el ancho */
+    .podcast-carousel-track {
+        order: -1; 
+        min-width: 100%; 
+        flex: none;
+        margin-bottom: 10px;
+    }
+
+    /* Mostrar las flechas debajo con un buen tamaño para los dedos */
+    .podcast-carousel-wrapper .carousel-nav {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        margin: 0 15px; /* Separación entre la flecha izquierda y derecha */
+        font-size: 18px;
     }
 }
