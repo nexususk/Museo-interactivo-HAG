@@ -1121,6 +1121,15 @@ nav ul li .btn-donate {
     font-weight: 600; 
     text-transform: uppercase;
 }
+/* Forzar tamaño idéntico para todas las imágenes de la línea de tiempo */
+.timeline-image img {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Obliga a que todas las imágenes tengan la misma proporción */
+    object-fit: cover; /* Recorta el sobrante sin deformar la imagen */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra elegante opcional */
+    display: block;
+}
 
 /* =========================================
    SOLUCIÓN DEFINITIVA MENÚ MÓVIL (MODAL FLOTANTE)
