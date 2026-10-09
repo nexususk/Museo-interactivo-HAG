@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museo Interactivo - I.E. Héctor Abad Gómez</title>
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Neuton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Estilos Externos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HEADER / NAVEGACIÓN -->
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="images/Blanco_LOGO_MUSEOESCOLAR_horizontal.png" alt="Logo Museo Escolar" class="header-logo-img">
+            </a>
+        </div>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+        <nav id="mainNav">
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li class="has-dropdown">HISTORIA ▾
+                    <ul class="dropdown-menu">
+                        <li><a href="historia-museo.html">Historia del museo</a></li>
+                        <li><a href="historia-colegio.html">Historia del colegio</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">MUSEO INTERACTIVO ▾
+                    <ul class="dropdown-menu">
+                        <li><a href="museo-interactivo.html">Museo Interactivo</a></li>
+                        <li><a href="trivia.html">Trivia</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">GALERÍA ▾
+                    <ul class="dropdown-menu">
+                        <li><a href="galeria-visual.html">Galería Visual</a></li>
+                        <li><a href="galeria-sonora.html">Galería Sonora</a></li>
+                    </ul>
+                </li>
+                <li><a href="apoyanos.html">APÓYANOS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+                <li><a href="#" class="btn-donate">¡DONA AQUÍ!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="margin-top: 80px;">
+        <!-- HERO SENCILLO -->
+        <section class="page-hero">
+            <h5 class="hero-subtitle">RECORRIDO VIRTUAL</h5>
+            <h1 class="page-title">Museo Interactivo</h1>
+            <p>Explora nuestros murales en un entorno 3D.</p>
+        </section>
+
+        <!-- CONTENEDOR PARA UNITY (Equivalente a 12 columnas) -->
+        <section style="padding: 60px 20px; background-color: var(--bg-light); text-align: center;">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                
+                <!-- ESTE ES EL CUADRADO DONDE TU COMPAÑERO INSERTARÁ EL IFRAME/CANVAS DE UNITY -->
+                <div style="width: 100%; aspect-ratio: 16/9; background-color: #222; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: flex; align-items: center; justify-content: center; color: white; border: 4px solid var(--accent-yellow);">
+                    <p style="font-family: var(--font-main); font-size: 1.2rem; opacity: 0.7;">
+                        [Espacio reservado para el proyecto de Unity WebGL]
+                    </p>
+                </div>
+                
+                <p style="margin-top: 20px; color: #666; font-size: 0.9rem;">
+                    *Toca las flechas de la interfaz para navegar el museo
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FRANJA DE ALIADOS (CARRUSEL AUTOMÁTICO) -->
+    <div class="partners-carousel-section">
+        <div class="partners-track">
+            <!-- Grupo 1 de Logos -->
+            <div class="partner-slide"><img src="images/Alianzas/UDEM.webp" alt="Universidad de Medellín"></div>
+            <div class="partner-slide"><img src="images/Alianzas/UDEA.webp" alt="U. de Antioquia"></div>
+            <div class="partner-slide"><img src="images/Alianzas/Sura.webp" alt="Fundación Sura"></div>
+            <div class="partner-slide"><img src="images/Alianzas/MinTIC.webp" alt="MinTIC"></div>
+            <div class="partner-slide"><img src="images/Alianzas/Secretaria.webp" alt="Sec. de Educación"></div>
+            <div class="partner-slide"><img src="images/Alianzas/Corpocentro.webp" alt="Corpocentro"></div>
+            <div class="partner-slide"><img src="images/Alianzas/Manguala.webp" alt="Manguaba"></div>
+            <div class="partner-slide"><img src="images/Alianzas/Pintuco.webp" alt="Fund. PINTUCO"></div>
+
+            <!-- Grupo 2 duplicado (Para el efecto infinito) -->
+            <div class="partner-slide"><img src="images/Alianzas/UDEM.webp" alt="Universidad de Medellín"></div>
+            <div class="partner-slide"><img src="images/Alianzas/UDEA.webp" alt="U. de Antioquia"></div>
+            <div class="partner-slide"><img src="images/Alianzas/Sura.webp" alt="Fundación Sura"></div>
+            <div class="partner-slide"><img src="images/Alianzas/MinTIC.webp" alt="MinTIC"></div>
+            <div class="partner-slide"><img src="images/Alianzas/Secretaria.webp" alt="Sec. de Educación"></div>
+            <div class="partner-slide"><img src="images/Alianzas/Corpocentro.webp" alt="Corpocentro"></div>
+            <div class="partner-slide"><img src="images/Alianzas/Manguala.webp" alt="Manguaba"></div>
+            <div class="partner-slide"><img src="images/Alianzas/Pintuco.webp" alt="Fund. PINTUCO"></div>
+        </div>
+    </div>
+
+    <!-- FOOTER PRINCIPAL -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <div class="logo-icon-small">🏛️</div>
+                    <div class="logo-text"><h3>I.E. Héctor Abad Gómez</h3></div>
+                </div>
+                <p>Proyecto cultural enfocado en la memoria, el arte y la transformación social de nuestra comunidad educativa.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/museoescolarhag_/" target="_blank" rel="noopener noreferrer" style="border: none; background: transparent; padding: 0;">
+                        <img src="images/instagram-icon.png" alt="Instagram" style="width: 35px; height: 35px; object-fit: contain; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                    </a>
+                    <a href="https://www.tiktok.com/@ie_hectorabadgomez" target="_blank" rel="noopener noreferrer" style="border: none; background: transparent; padding: 0;">
+                        <img src="images/tiktok-icon.webp" alt="TikTok" style="width: 35px; height: 35px; object-fit: contain; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                    </a>
+                    <a href="https://open.spotify.com/show/0t5j8xwTU0EZu17c2sRldK" target="_blank" rel="noopener noreferrer" style="border: none; background: transparent; padding: 0;">
+                        <img src="images/Spotify_icon.png" alt="Spotify" style="width: 35px; height: 35px; object-fit: contain; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col links-col">
+                <h4>EXPLORAR</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="museo-interactivo.html">Museo Interactivo</a></li>
+                    <li><a href="historia-museo.html">Historia del museo</a></li>
+                    <li><a href="galeria-visual.html">Galería Visual</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-col">
+                <h4>CONTACTO</h4>
+                <p>Cra. 44 #43-56<br>Medellín, Colombia<br>museo@iehag.edu.co</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 I.E. Héctor Abad Gómez · Todos los derechos reservados</span>
+            <span>Hecho en Medellín 🌺</span>
+        </div>
+    </footer>
+
+    <!-- Script Principal -->
+    <script src="script.js"></script>
+</body>
+</html>
