@@ -73,19 +73,54 @@
             </div>
         </div>
 
-        <!-- NUEVA SECCIÓN: MISIÓN Y VISIÓN -->
-        <section class="container" style="margin-top: 20px; margin-bottom: 60px;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+       <!-- NUEVA SECCIÓN: MISIÓN Y VISIÓN -->
+        <section class="container" style="margin-top: 0px; margin-bottom: 0px; padding-top: 10px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
                 <!-- Tarjeta Misión -->
-                <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid var(--primary-blue);">
-                    <h2 style="font-family: var(--font-headings); font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 20px;">Nuestra Misión</h2>
-                    <p style="color: var(--text-dark); font-size: 1.05rem; line-height: 1.7;">Formar estudiantes integralmente para el desarrollo de capacidades socioemocionales, científicas, tecnológicas, artísticas y laborales, en el marco de los valores abadistas de justicia social, solidaridad y equidad, desde una perspectiva inclusiva, diversa e intercultural, que les permitan afrontar los desafíos de las nuevas ciudadanías en la configuración de sus proyectos de vida.</p>
+                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid var(--primary-blue);">
+                    <h2 style="font-family: var(--font-headings); font-size: 2.2rem; color: var(--primary-blue); margin-bottom: 15px;">Nuestra Misión</h2>
+                    <p style="color: var(--text-dark); font-size: 1.05rem; line-height: 1.6;">Formar estudiantes integralmente para el desarrollo de capacidades socioemocionales, científicas, tecnológicas, artísticas y laborales, en el marco de los valores abadistas de justicia social, solidaridad y equidad, desde una perspectiva inclusiva, diversa e intercultural, que les permitan afrontar los desafíos de las nuevas ciudadanías en la configuración de sus proyectos de vida.</p>
                 </div>
                 <!-- Tarjeta Visión -->
-                <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid var(--accent-yellow);">
-                    <h2 style="font-family: var(--font-headings); font-size: 2.5rem; color: var(--accent-yellow); margin-bottom: 20px;">Nuestra Visión</h2>
-                    <p style="color: var(--text-dark); font-size: 1.05rem; line-height: 1.7;">Para el año 2030, la Institución Educativa Héctor Abad Gómez se consolidará como líder en educación inclusiva a nivel local, nacional e internacional, desde un enfoque intercultural, en perspectiva de los retos y desafíos del siglo XXI.</p>
+                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid var(--accent-yellow);">
+                    <h2 style="font-family: var(--font-headings); font-size: 2.2rem; color: var(--accent-yellow); margin-bottom: 15px;">Nuestra Visión</h2>
+                    <p style="color: var(--text-dark); font-size: 1.05rem; line-height: 1.6;">Para el año 2030, la Institución Educativa Héctor Abad Gómez se consolidará como líder en educación inclusiva a nivel local, nacional e internacional, desde un enfoque intercultural, en perspectiva de los retos y desafíos del siglo XXI.</p>
                 </div>
+            </div>
+        </section>
+
+        <!-- NUEVA SECCIÓN: RECORDANDO A HÉCTOR ABAD GÓMEZ (VIDEO) -->
+        <section class="container" style="margin-bottom: 60px;">
+            
+            <!-- Niqui flotante (estilo popup) -->
+            <div class="page-niqui-container" id="niquiBoxHector" style="justify-content: flex-start; margin-bottom: 25px; margin-top: 0;">
+                <div class="niqui-dialogue-container-right">
+                    <div class="niqui-avatar-wrapper">
+                        <img src="images/placeholder-niqui.png" alt="Niqui" class="niqui-avatar-img">
+                    </div>
+                    <div class="niqui-tooltip">
+                        <button class="close-btn" id="closeBtnHector">&times;</button>
+                        <h5>NIQUI DICE:</h5>
+                        <p>¡Dale play al video para conocer a la persona que le dio nombre a nuestro colegio! Héctor Abad Gómez no solo fue un médico; fue un pionero de la salud pública, un defensor apasionado de los derechos humanos y alguien que creía firmemente que la educación y la prevención eran las mejores herramientas para construir una sociedad más justa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenedor del contenido (Texto arriba, Video horizontal abajo) -->
+            <div class="hector-abad-section" style="flex-direction: column; text-align: center; gap: 30px; padding: 35px;">
+                
+                <!-- Columna del Texto -->
+                <div class="hector-text-content" style="width: 100%;">
+                    <h2 style="margin-bottom: 15px;">Recordando a Héctor Abad Gómez</h2>
+                    <p class="hector-desc" style="max-width: 850px; margin: 0 auto 10px auto;">Héctor Abad Gómez entendió que la medicina debía ir más allá de los hospitales. Para él, ser médico significaba ser un "activista social" preocupado por las condiciones de vida, la justicia social y la paz.</p>
+                    <p class="hector-desc" style="max-width: 850px; margin: 0 auto;">A través de su enfoque en la medicina preventiva, demostró que muchas enfermedades podían evitarse si los recursos se distribuían mejor y si se garantizaba una vida digna para todos. Su legado nos inspira a seguir trabajando por la equidad y el respeto a la vida.</p>
+                </div>
+
+                <!-- Columna del Video (Horizontal y centrado) -->
+                <div class="video-container" style="width: 100%; max-width: 900px; margin: 0 auto;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/D-ONB9FcggY?si=HMysXHxin1aKIvsc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                
             </div>
         </section>
 

@@ -467,3 +467,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+  const closeBtnHector = document.getElementById("closeBtnHector");
+  const niquiBoxHector = document.getElementById("niquiBoxHector");
+  if (closeBtnHector && niquiBoxHector) {
+    closeBtnHector.addEventListener("click", () => {
+      niquiBoxHector.style.display = "none";
+    });
+  }
