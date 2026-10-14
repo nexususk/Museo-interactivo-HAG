@@ -2608,3 +2608,98 @@ nav ul li .btn-donate {
         padding: 20px;
     }
 }
+/* =========================================
+   DETRÁS DE LOS MURALES (CARRUSEL DE VIDEOS)
+   ========================================= */
+.detras-murales-section {
+    padding: 80px 20px 40px 20px;
+}
+
+.detras-murales-section .section-desc {
+    max-width: 800px;
+    margin: 0 auto 20px auto; /* Reducido de 40px a 20px para juntarlo con lo de abajo */
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.video-carousel-layout {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.video-carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.video-carousel-track {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-slide {
+    display: none;
+    width: 100%;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.video-slide.active {
+    display: block;
+}
+
+.video-title {
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--primary-blue);
+    margin-bottom: 10px; 
+    font-family: var(--font-headings);
+}
+/* Contenedor responsivo para mantener proporción 16:9 de YouTube */
+.video-container-responsive {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000;
+}
+
+.video-container-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media (max-width: 768px) {
+    .video-carousel-wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px 10px;
+    }
+    .video-carousel-track {
+        order: -1;
+        min-width: 100%;
+        flex: none;
+        margin-bottom: 10px;
+    }
+    .video-carousel-wrapper .carousel-nav {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        margin: 0 15px;
+    }
+}
+

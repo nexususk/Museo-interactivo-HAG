@@ -474,3 +474,62 @@ document.addEventListener("DOMContentLoaded", () => {
       niquiBoxHector.style.display = "none";
     });
   }
+  // ==========================================
+  // Lógica del Carrusel de Videos (Detrás de los murales)
+  // ==========================================
+  function setupVideoCarousel(trackId, prevBtnId, nextBtnId, indicatorId) {
+    const track = document.getElementById(trackId);
+    const prevBtn = document.getElementById(prevBtnId);
+    const nextBtn = document.getElementById(nextBtnId);
+    const indicator = document.getElementById(indicatorId);
+
+    if (!track || !prevBtn || !nextBtn) return;
+
+    const slides = track.querySelectorAll(".video-slide");
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      slides.forEach((slide, index) => {
+        // Pausar el video recargando el iframe si se oculta la diapositiva
+        const iframe = slide.querySelector('iframe');
+        if (iframe && index !== currentIndex) {
+            const tempSrc = iframe.src;
+            iframe.src = tempSrc;
+        }
+
+        slide.classList.remove("active");
+        if (index === currentIndex) {
+          slide.classList.add("active");
+        }
+      });
+      if (indicator) {
+        indicator.textContent = `Video ${currentIndex + 1} de ${slides.length}`;
+      }
+    }
+
+    if (indicator) {
+      indicator.textContent = `Video 1 de ${slides.length}`;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+  }
+
+  // Inicializar el carrusel de videos
+  setupVideoCarousel("track-videos", "prev-video", "next-video", "ind-videos");
+
+  // Cierre del aviso de Niqui en la sección de Videos
+  const closeBtnVideos = document.getElementById("closeBtnVideos");
+  const niquiBoxVideos = document.getElementById("niquiBoxVideos");
+  if (closeBtnVideos && niquiBoxVideos) {
+    closeBtnVideos.addEventListener("click", () => {
+      niquiBoxVideos.style.display = "none";
+    });
+  }

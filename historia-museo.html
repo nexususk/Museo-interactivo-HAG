@@ -147,6 +147,72 @@
             </div>
         </div>
 
+       <!-- Sección Detrás de los murales (Carrusel de Videos) -->
+        <section class="detras-murales-section container" id="seccion-detras-murales">
+            <h2 class="text-center section-title">Detrás de los murales</h2>
+            <p class="text-center section-desc">Las obras de este museo van más allá de la pintura. Son relatos sociales que mostramos con orgullo y que, de igual forma en que se les dio, dan vida a identidades y realidades para todos en la comunidad educativa. Las palabras no son suficientes para explicar la importancia de estas obras, pero pueden ayudar a comprender de dónde nacen y por qué nos nutren como institución.</p>
+
+            <!-- Niqui Dice: Presentación de Videos -->
+            <div class="page-niqui-container" id="niquiBoxVideos" style="margin-top: 0; margin-bottom: 20px;">
+                <div class="niqui-dialogue-container-right">
+                    <div class="niqui-avatar-wrapper">
+                        <img src="images/placeholder-niqui.png" alt="Niqui" class="niqui-avatar-img">
+                    </div>
+                    <div class="niqui-tooltip">
+                        <button class="close-btn" id="closeBtnVideos">&times;</button>
+                        <h5>NIQUI DICE:</h5>
+                        <p>¡Aquí puedes ver a las personas detrás de los murales! En estos videos conocerás las historias contadas por tres profes y un coordinador de nuestra institución.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-carousel-layout">
+                <div class="video-carousel-wrapper">
+                    <!-- Botón Anterior -->
+                    <button class="carousel-nav prev-video" id="prev-video">&#10094;</button>
+
+                    <div class="video-carousel-track" id="track-videos">
+                        <!-- Video 1 -->
+                        <div class="video-slide active">
+                            <h4 class="video-title">¿Qué recordamos?</h4>
+                            <div class="video-container-responsive">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/mYZ2YVK_1WE?si=fHZfqTnhHCEAiQW2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        
+                        <!-- Video 2 -->
+                        <div class="video-slide">
+                            <h4 class="video-title">Ser quienes somos a dónde quiera que vamos</h4>
+                            <div class="video-container-responsive">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/mYZ2YVK_1WE?si=fHZfqTnhHCEAiQW2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <!-- Video 3 -->
+                        <div class="video-slide">
+                            <h4 class="video-title">La diferencia nos mueve</h4>
+                            <div class="video-container-responsive">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/mYZ2YVK_1WE?si=fHZfqTnhHCEAiQW2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <!-- Video 4 -->
+                        <div class="video-slide">
+                            <h4 class="video-title">¿Para qué recordar?</h4>
+                            <div class="video-container-responsive">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/mYZ2YVK_1WE?si=fHZfqTnhHCEAiQW2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botón Siguiente -->
+                    <button class="carousel-nav next-video" id="next-video">&#10095;</button>
+                </div>
+                <!-- Indicador de video actual -->
+                <div class="episode-indicator" id="ind-videos">Video 1 de 4</div>
+            </div>
+        </section>
+
         <!-- Banner Estadísticas -->
         <section class="stats-banner">
             <div class="stat-item">
@@ -167,9 +233,7 @@
             </div>
         </section>
         
-        <div class="action-btn-container text-center" style="margin-bottom: 60px;">
-            <a href="#" class="btn-primary" style="display: inline-block;">CONTRIBUYE AL MUSEO →</a>
-        </div>
+       
     </main>
 
     <!-- FRANJA DE ALIADOS (CARRUSEL AUTOMÁTICO) -->
