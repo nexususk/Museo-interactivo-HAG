@@ -2948,3 +2948,10 @@ nav ul li .btn-donate {
     transform: translateY(-2px);
     background-color: #e09306;
 }
+
+/* Quitar la barra fija únicamente en la página de Museo Interactivo y solo en móviles */
+@media (max-width: 768px) {
+    body.page-museo-interactivo header {
+        position: absolute !important;
+    }
+}
