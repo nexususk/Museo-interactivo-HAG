@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Museo Escolar I.E. Héctor Abad Gómez</title>
-    <!-- Fuentes de Google Fonts según var(--font-main) y var(--font-headings) -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Neuton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -46,7 +46,6 @@
                     <li><a href="galeria-sonora.html">Galería Sonora</a></li>
                 </ul>
             </li>
-            <li><a href="apoyanos.html">APÓYANOS</a></li>
             <li><a href="contacto.html">CONTACTO</a></li>
             <li><a href="#" class="btn-donate">¡DONA AQUÍ!</a></li>
         </ul>
@@ -186,10 +185,10 @@
         </section>
     </main>
     
-      <!-- FRANJA DE ALIADOS (CARRUSEL AUTOMÁTICO) -->
+     <!-- FRANJA DE ALIADOS (CARRUSEL AUTOMÁTICO) -->
     <div class="partners-carousel-section">
         <div class="partners-track">
-            <!-- Grupo 1 de Logos (Placeholders) -->
+            <!-- Grupo 1 de Logos -->
             <div class="partner-slide"><img src="images/Alianzas/UDEM.webp" alt="Universidad de Medellín"></div>
             <div class="partner-slide"><img src="images/Alianzas/UDEA.webp" alt="U. de Antioquia"></div>
             <div class="partner-slide"><img src="images/Alianzas/Sura.webp" alt="Fundación Sura"></div>
@@ -198,8 +197,10 @@
             <div class="partner-slide"><img src="images/Alianzas/Corpocentro.webp" alt="Corpocentro"></div>
             <div class="partner-slide"><img src="images/Alianzas/Manguala.webp" alt="Manguaba"></div>
             <div class="partner-slide"><img src="images/Alianzas/Pintuco.webp" alt="Fund. PINTUCO"></div>
+            <div class="partner-slide"><img src="images/Alianzas/la-pascasia.jpg" alt="La Pascasia"></div>
+            <div class="partner-slide"><img src="images/Alianzas/Cesde.png" alt="CESDE"></div>
 
-            <!-- Grupo 2 duplicado (Esencial para crear el efecto infinito sin saltos) -->
+            <!-- Grupo 2 duplicado-->
             <div class="partner-slide"><img src="images/Alianzas/UDEM.webp" alt="Universidad de Medellín"></div>
             <div class="partner-slide"><img src="images/Alianzas/UDEA.webp" alt="U. de Antioquia"></div>
             <div class="partner-slide"><img src="images/Alianzas/Sura.webp" alt="Fundación Sura"></div>
@@ -208,6 +209,8 @@
             <div class="partner-slide"><img src="images/Alianzas/Corpocentro.webp" alt="Corpocentro"></div>
             <div class="partner-slide"><img src="images/Alianzas/Manguala.webp" alt="Manguaba"></div>
             <div class="partner-slide"><img src="images/Alianzas/Pintuco.webp" alt="Fund. PINTUCO"></div>
+            <div class="partner-slide"><img src="images/Alianzas/la-pascasia.jpg" alt="La Pascasia"></div>
+            <div class="partner-slide"><img src="images/Alianzas/Cesde.png" alt="CESDE"></div>
         </div>
     </div>
 
@@ -246,7 +249,6 @@
                     <li><a href="museo-interactivo.html">Museo Interactivo</a></li>
                     <li><a href="historia-museo.html">Historia del museo</a></li>
                     <li><a href="historia-colegio.html">Historia del colegio</a></li>
-                    <li><a href="apoyanos.html">Apóyanos</a></li>
                     <li><a href="podcasts.html">Podcasts</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
@@ -265,7 +267,31 @@
             <span>Hecho en Medellín 🌺</span>
         </div>
     </footer>
-
+<!-- MODAL (POPUP) DE DONACIONES -->
+    <div class="donate-modal" id="donateModal">
+        <div class="donate-modal-content">
+            <button class="donate-close-btn" id="closeDonateModal">&times;</button>
+            <div class="donate-modal-header">
+                <h2>¡Apoya nuestro Museo!</h2>
+                <p>Tu donación nos ayuda a mantener viva la memoria, el arte y la cultura en la I.E. Héctor Abad Gómez.</p>
+            </div>
+            <div class="donate-modal-body">
+                <div class="qr-container">
+                    <!-- Reemplaza esta ruta con la imagen de tu código QR real -->
+                    <img src="images/qr-donacion-placeholder.png" alt="Código QR para donaciones" id="qrImage">
+                </div>
+                <div class="donate-instructions">
+                    <h3>¿Cómo donar?</h3>
+                    <ol>
+                        <li>Abre la aplicación de tu banco o billetera digital (Nequi, Bancolombia, Daviplata, etc.).</li>
+                        <li>Selecciona la opción de escanear código QR.</li>
+                        <li>Escanea la imagen y elige el monto de tu aporte.</li>
+                    </ol>
+                    <p class="donate-thankyou">¡Cada granito de arena cuenta! Gracias por ser parte de este proyecto.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 <script src="script.js"></script>
 </body>
 </html>

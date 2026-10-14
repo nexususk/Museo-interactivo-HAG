@@ -434,3 +434,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// ==========================================
+  // Lógica del Modal (Popup) de Donaciones
+  // ==========================================
+  const donateBtns = document.querySelectorAll('.btn-donate');
+  const donateModal = document.getElementById('donateModal');
+
+  if (donateBtns.length > 0 && donateModal) {
+    const closeDonateModalBtn = document.getElementById('closeDonateModal');
+
+    // Abrir modal al hacer clic en "¡DONA AQUÍ!"
+    donateBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault(); // Evita que la página salte al inicio si el link es "#"
+        donateModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Bloquea el scroll del fondo
+      });
+    });
+
+    // Cerrar modal al tocar la X
+    closeDonateModalBtn.addEventListener('click', () => {
+      donateModal.classList.remove('active');
+      document.body.style.overflow = ''; // Restaura el scroll
+    });
+
+    // Cerrar modal al hacer clic en el fondo oscuro afuera de la tarjeta blanca
+    donateModal.addEventListener('click', (e) => {
+      if (e.target === donateModal) {
+        donateModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
