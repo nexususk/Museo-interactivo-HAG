@@ -2703,3 +2703,248 @@ nav ul li .btn-donate {
     }
 }
 
+/* =========================================
+   ESTILOS DE LA TRIVIA (KAHOOT STYLE)
+   ========================================= */
+.trivia-main-container {
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.niqui-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.25rem;
+    border: 2px solid #e2e8f0;
+}
+
+.niqui-img-wrapper {
+    flex-shrink: 0;
+    background-color: #eff6ff;
+    padding: 8px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-blue);
+}
+
+.niqui-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.niqui-speech {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.1rem 1.4rem;
+    position: relative;
+    flex-grow: 1;
+}
+
+.niqui-name {
+    font-weight: 800;
+    color: var(--primary-blue);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.start-box, .quiz-card, .results-box {
+    background-color: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+}
+
+.start-box h2 {
+    font-family: var(--font-headings);
+    font-size: 2.2rem;
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.rules-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    background-color: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-start, .btn-next {
+    background-color: var(--accent-yellow);
+    color: var(--dark-blue);
+    border: none;
+    padding: 1rem 2.8rem;
+    border-radius: 9999px;
+    font-family: var(--font-main);
+    font-size: 1.2rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-start:hover, .btn-next:hover {
+    transform: translateY(-2px);
+    background-color: #e09306;
+}
+
+.timer-box, .progress-box {
+    background-color: white;
+    border-radius: 16px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border: 1px solid #e2e8f0;
+}
+
+.timer-bar-track, .progress-track {
+    flex-grow: 1;
+    height: 12px;
+    background-color: #e2e8f0;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.timer-bar-fill {
+    height: 100%; width: 100%;
+    background-color: var(--primary-blue);
+    transition: width 1s linear, background-color 0.3s ease;
+}
+
+.progress-fill {
+    height: 100%; width: 0%;
+    background-color: var(--accent-yellow);
+    transition: width 0.4s ease;
+}
+
+.question-number {
+    color: var(--accent-yellow);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.question-title {
+    font-family: var(--font-main);
+    font-size: 1.5rem;
+    color: var(--dark-blue);
+    margin-bottom: 1.75rem;
+}
+
+.question-image-wrapper {
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.question-image-wrapper::after {
+    content: '🔍 Clic para ampliar';
+    position: absolute; bottom: 10px; right: 10px;
+    background: rgba(0,0,0,0.7); color: white;
+    padding: 6px 12px; border-radius: 20px;
+    font-size: 0.8rem; pointer-events: none;
+}
+
+.question-image {
+    width: 100%; height: 320px; object-fit: cover;
+}
+
+.options-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+}
+
+.option-btn {
+    border: none; border-radius: 12px; padding: 1.2rem;
+    font-family: var(--font-main); font-size: 1.05rem; font-weight: 700;
+    color: white; cursor: pointer; display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 4px 0px rgba(0, 0, 0, 0.2); text-align: left;
+}
+.option-btn:nth-child(1) { background-color: #e21b3c; }
+.option-btn:nth-child(2) { background-color: #1368ce; }
+.option-btn:nth-child(3) { background-color: #d89e00; }
+.option-btn:nth-child(4) { background-color: #26890c; }
+
+.option-prefix {
+    background-color: rgba(255,255,255,0.25);
+    width: 34px; height: 34px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+
+.option-btn.correct { background-color: #10b981 !important; outline: 4px solid #059669; }
+.option-btn.wrong { background-color: #ef4444 !important; opacity: 0.4; }
+.option-btn.disabled { pointer-events: none; }
+
+.explanation-box {
+    margin-top: 1.5rem; background-color: #eff6ff;
+    border: 1px solid #bfdbfe; border-radius: 14px;
+    padding: 1.25rem 1.5rem; display: none;
+}
+
+.score-badge {
+    width: 145px; height: 145px; border-radius: 50%;
+    background-color: var(--accent-yellow); color: var(--dark-blue);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    margin: 1.5rem auto;
+}
+.score-number { font-size: 3rem; font-weight: 800; line-height: 1; }
+
+.image-modal {
+    display: none; position: fixed; z-index: 99999;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    justify-content: center; align-items: center; padding: 20px;
+}
+.modal-img { max-width: 90vw; max-height: 90vh; border-radius: 12px; }
+
+@media (max-width: 640px) {
+    .options-grid { grid-template-columns: 1fr; }
+    .niqui-card { flex-direction: column; text-align: center; }
+}
+/* =========================================
+   ESTILOS PANTALLA FINAL DE TRIVIA
+   ========================================= */
+.results-box {
+    text-align: center; /* Centra los textos y el contenido */
+}
+
+.btn-restart {
+    background-color: var(--accent-yellow);
+    color: var(--dark-blue);
+    border: none;
+    padding: 1rem 2.8rem;
+    border-radius: 9999px;
+    font-family: var(--font-main);
+    font-size: 1.2rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+    margin-top: 1.5rem;
+}
+
+.btn-restart:hover {
+    transform: translateY(-2px);
+    background-color: #e09306;
+}
