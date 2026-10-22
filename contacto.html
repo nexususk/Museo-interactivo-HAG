@@ -153,32 +153,79 @@
                 <!-- COLUMNA DERECHA: FORMULARIO DE MENSAJE -->
                 <div class="contact-form-card">
                     <h2>Envíanos un mensaje</h2>
-                    <form action="#" method="POST">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="nombre">NOMBRE</label>
-                                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="correo">CORREO</label>
-                                <input type="email" id="correo" name="correo" placeholder="tu@correo.com" required>
-                            </div>
-                        </div>
+                    <form action="https://formsubmit.co/simongarciab@gmail.com" method="POST" id="dynamicContactForm">
+    <!-- Ajustes invisibles para FormSubmit -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
 
-                        <div class="form-group">
-                            <label for="asunto">ASUNTO</label>
-                            <input type="text" id="asunto" name="asunto" placeholder="¿De qué quieres hablar?" required>
-                        </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label for="nombre">NOMBRE COMPLETO</label>
+            <input type="text" id="nombre" name="Nombre" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="correo">CORREO ELECTRÓNICO</label>
+            <input type="email" id="correo" name="Correo" placeholder="tu@correo.com" required>
+        </div>
+    </div>
 
-                        <div class="form-group">
-                            <label for="mensaje">MENSAJE</label>
-                            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                        </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label for="telefono">TELÉFONO</label>
+            <input type="tel" id="telefono" name="Teléfono" placeholder="Tu número" required>
+        </div>
+        <div class="form-group">
+            <label for="asunto">ASUNTO</label>
+            <select id="asunto" name="Asunto" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="visita">Agendar visita</option>
+                <option value="duda">Responder una duda</option>
+                <option value="sugerencia">Sugerencia</option>
+                <option value="otro">Otro</option>
+            </select>
+        </div>
+    </div>
 
-                        <button type="submit" class="btn-send-message">
-                            ENVIAR MENSAJE &rarr;
-                        </button>
-                    </form>
+    <!-- CAMPOS DINÁMICOS (Ocultos por defecto) -->
+    
+    <!-- 1. Agendar visita -->
+    <div id="campos-visita" style="display: none;">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="fecha">¿QUÉ DÍA PODRÍAS?</label>
+                <input type="date" id="fecha" name="Fecha_Visita">
+            </div>
+            <div class="form-group">
+                <label for="horario">¿EN QUÉ HORARIO?</label>
+                <input type="time" id="horario" name="Horario_Visita">
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Responder una duda -->
+    <div id="campo-duda" class="form-group" style="display: none;">
+        <label for="duda">ESCRIBE TU INQUIETUD O EN QUÉ TE PODEMOS AYUDAR</label>
+        <textarea id="duda" name="Duda_Inquietud" placeholder="Escribe aquí..."></textarea>
+    </div>
+
+    <!-- 3. Sugerencia -->
+    <div id="campo-sugerencia" class="form-group" style="display: none;">
+        <label for="sugerencia">¿CÓMO PODEMOS MEJORAR?</label>
+        <textarea id="sugerencia" name="Sugerencia" placeholder="Escribe tu sugerencia..."></textarea>
+    </div>
+
+    <!-- 4. Otro -->
+    <div id="campo-otro" class="form-group" style="display: none;">
+        <label for="otro">¿QUÉ PODEMOS HACER POR TI?</label>
+        <textarea id="otro" name="Mensaje_Otro" placeholder="Escribe aquí..."></textarea>
+    </div>
+
+    <!-- Contenedor del Mensaje de Éxito (Oculto) -->
+    <div id="mensaje-exito" style="display: none; background-color: #e0f2e9; color: #26890c; padding: 15px; border-radius: 8px; margin-top: 15px; font-weight: 700; text-align: center; border: 1px solid #bfdccb;">
+    </div>
+
+    <button type="submit" id="btn-submit" class="btn-send-message">ENVIAR MENSAJE &rarr;</button>
+</form>
                 </div>
 
             </div>

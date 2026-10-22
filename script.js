@@ -533,3 +533,104 @@ document.addEventListener("DOMContentLoaded", () => {
       niquiBoxVideos.style.display = "none";
     });
   }
+
+  // ==========================================
+  // LÓGICA DEL FORMULARIO DE CONTACTO DINÁMICO
+  // ==========================================
+  const selectAsunto = document.getElementById('asunto');
+  const camposVisita = document.getElementById('campos-visita');
+  const campoDuda = document.getElementById('campo-duda');
+  const campoSugerencia = document.getElementById('campo-sugerencia');
+  const campoOtro = document.getElementById('campo-otro');
+  
+  if (selectAsunto) {
+      const inputsVisita = camposVisita.querySelectorAll('input');
+      const inputDuda = campoDuda.querySelector('textarea');
+      const inputSugerencia = campoSugerencia.querySelector('textarea');
+      const inputOtro = campoOtro.querySelector('textarea');
+
+      function ocultarTodosLosCampos() {
+          camposVisita.style.display = 'none';
+          campoDuda.style.display = 'none';
+          campoSugerencia.style.display = 'none';
+          campoOtro.style.display = 'none';
+          
+          inputsVisita.forEach(input => input.removeAttribute('required'));
+          inputDuda.removeAttribute('required');
+          inputSugerencia.removeAttribute('required');
+          inputOtro.removeAttribute('required');
+      }
+
+      selectAsunto.addEventListener('change', function() {
+          ocultarTodosLosCampos();
+          if (this.value === 'visita') {
+              camposVisita.style.display = 'block';
+              inputsVisita.forEach(input => input.setAttribute('required', 'true'));
+          } else if (this.value === 'duda') {
+              campoDuda.style.display = 'flex';
+              inputDuda.setAttribute('required', 'true');
+          } else if (this.value === 'sugerencia') {
+              campoSugerencia.style.display = 'flex';
+              inputSugerencia.setAttribute('required', 'true');
+          } else if (this.value === 'otro') {
+              campoOtro.style.display = 'flex';
+              inputOtro.setAttribute('required', 'true');
+          }
+      });
+
+      // Envío de datos sin recargar la página (AJAX)
+      const formContacto = document.getElementById('dynamicContactForm');
+      const mensajeExito = document.getElementById('mensaje-exito');
+      const btnSubmit = document.getElementById('btn-submit');
+
+      formContacto.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          btnSubmit.innerHTML = 'ENVIANDO...';
+          btnSubmit.style.opacity = '0.7';
+          btnSubmit.disabled = true;
+
+          const formData = new FormData(formContacto);
+
+          fetch(formContacto.action, {
+              method: 'POST',
+              body: formData,
+              headers: { 'Accept': 'application/json' }
+          })
+          .then(response => {
+              if(response.ok) {
+                  // Textos dinámicos según selección
+                  let textoExito = "";
+                  const valorAsunto = selectAsunto.value;
+                  if (valorAsunto === 'visita') {
+                      textoExito = "Nos pondremos en contacto contigo para confirmar el horario ese día.";
+                  } else if (valorAsunto === 'duda') {
+                      textoExito = "Nos pondremos en contacto para resolver tu inquietud.";
+                  } else if (valorAsunto === 'sugerencia') {
+                      textoExito = "Tendremos en cuenta tu sugerencia. ¡Gracias!";
+                  } else {
+                      textoExito = "Nos pondremos en contacto pronto.";
+                  }
+                  
+                  mensajeExito.textContent = textoExito;
+                  mensajeExito.style.display = 'block';
+                  
+                  formContacto.reset();
+                  ocultarTodosLosCampos();
+                  
+                  btnSubmit.innerHTML = 'ENVIAR MENSAJE &rarr;';
+                  btnSubmit.style.opacity = '1';
+                  btnSubmit.disabled = false;
+                  
+                  setTimeout(() => { mensajeExito.style.display = 'none'; }, 6000);
+              }
+          })
+          .catch(error => {
+              console.error('Error:', error);
+              btnSubmit.innerHTML = 'ENVIAR MENSAJE &rarr;';
+              btnSubmit.style.opacity = '1';
+              btnSubmit.disabled = false;
+              alert("Hubo un error al enviar el formulario. Intenta nuevamente.");
+          });
+      });
+  }
