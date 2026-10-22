@@ -582,13 +582,19 @@ document.addEventListener("DOMContentLoaded", () => {
       const formContacto = document.getElementById('dynamicContactForm');
       const mensajeExito = document.getElementById('mensaje-exito');
       const btnSubmit = document.getElementById('btn-submit');
-
-      formContacto.addEventListener('submit', function(e) {
+formContacto.addEventListener('submit', function(e) {
           e.preventDefault();
           
-          btnSubmit.innerHTML = 'ENVIANDO...';
+          // 1. Iniciamos la animación de los puntitos
+          let dotCount = 0;
+          btnSubmit.innerHTML = 'ENVIANDO';
           btnSubmit.style.opacity = '0.7';
           btnSubmit.disabled = true;
+          
+          const loadingInterval = setInterval(() => {
+              dotCount = (dotCount + 1) % 4; // Cicla entre 0, 1, 2 y 3 puntos
+              btnSubmit.innerHTML = 'ENVIANDO' + '.'.repeat(dotCount);
+          }, 400); // Cambia cada 400 milisegundos
 
           const formData = new FormData(formContacto);
 
@@ -600,6 +606,8 @@ document.addEventListener("DOMContentLoaded", () => {
               body: formData
           })
           .then(response => {
+              clearInterval(loadingInterval); // Detenemos la animación al recibir respuesta
+              
               if(response.ok) {
                   let textoExito = "";
                   const valorAsunto = selectAsunto.value;
@@ -632,6 +640,7 @@ document.addEventListener("DOMContentLoaded", () => {
               }
           })
           .catch(error => {
+              clearInterval(loadingInterval); // Detenemos la animación si hay error
               console.error('Error:', error);
               btnSubmit.innerHTML = 'ENVIAR MENSAJE &rarr;';
               btnSubmit.style.opacity = '1';
