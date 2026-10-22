@@ -594,12 +594,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
           fetch(formContacto.action, {
               method: 'POST',
-              body: formData,
-              headers: { 'Accept': 'application/json' }
+              headers: { 
+                  'Accept': 'application/json' 
+              },
+              body: formData
           })
           .then(response => {
               if(response.ok) {
-                  // Textos dinámicos según selección
                   let textoExito = "";
                   const valorAsunto = selectAsunto.value;
                   if (valorAsunto === 'visita') {
@@ -612,7 +613,6 @@ document.addEventListener("DOMContentLoaded", () => {
                       textoExito = "Nos pondremos en contacto pronto.";
                   }
                   
-                  
                   mensajeExito.textContent = textoExito;
                   mensajeExito.style.display = 'block';
                   
@@ -623,22 +623,20 @@ document.addEventListener("DOMContentLoaded", () => {
                   btnSubmit.style.opacity = '1';
                   btnSubmit.disabled = false;
                   
-                  setTimeout(() => { mensajeExito.style.display = 'none'; }, 6000);
+                  setTimeout(() => { mensajeExito.style.display = 'none'; }, 10000);
               } else {
-                  // NUEVO: Qué hacer si FormSubmit rechaza el envío
                   btnSubmit.innerHTML = 'ENVIAR MENSAJE &rarr;';
                   btnSubmit.style.opacity = '1';
                   btnSubmit.disabled = false;
-                  alert("Error al enviar. Asegúrate de haber activado el correo en FormSubmit.");
+                  alert("Error al enviar. Intenta nuevamente.");
               }
-          
           })
           .catch(error => {
               console.error('Error:', error);
               btnSubmit.innerHTML = 'ENVIAR MENSAJE &rarr;';
               btnSubmit.style.opacity = '1';
               btnSubmit.disabled = false;
-              alert("Hubo un error al enviar el formulario. Intenta nuevamente.");
+              alert("Hubo un problema de conexión. Intenta nuevamente.");
           });
       });
   }
