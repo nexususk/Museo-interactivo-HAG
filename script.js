@@ -612,6 +612,7 @@ document.addEventListener("DOMContentLoaded", () => {
                       textoExito = "Nos pondremos en contacto pronto.";
                   }
                   
+                  
                   mensajeExito.textContent = textoExito;
                   mensajeExito.style.display = 'block';
                   
@@ -623,7 +624,14 @@ document.addEventListener("DOMContentLoaded", () => {
                   btnSubmit.disabled = false;
                   
                   setTimeout(() => { mensajeExito.style.display = 'none'; }, 6000);
+              } else {
+                  // NUEVO: Qué hacer si FormSubmit rechaza el envío
+                  btnSubmit.innerHTML = 'ENVIAR MENSAJE &rarr;';
+                  btnSubmit.style.opacity = '1';
+                  btnSubmit.disabled = false;
+                  alert("Error al enviar. Asegúrate de haber activado el correo en FormSubmit.");
               }
+          
           })
           .catch(error => {
               console.error('Error:', error);
